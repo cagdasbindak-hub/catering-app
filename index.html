@@ -201,10 +201,16 @@ p{margin:0}
 .opt:has(input:checked) .radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--ink)}
 
 /* Add-ons */
-.addon-groups{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
-.agroup{display:grid;gap:6px;align-content:start}
+.addon-groups{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+/* Two columns: the long Sides list takes the right column, Sauces and Drinks stack on the left. */
+.addons-block{container-type:inline-size}
+@container (min-width:536px) and (max-width:811.98px){
+  .addon-groups{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto 1fr}
+  .addon-groups .agroup:nth-child(2){grid-column:2;grid-row:1 / span 2}
+}
+.agroup{display:grid;gap:6px;align-content:start;min-width:0}
 .agroup h5{margin:0 0 4px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
-.addon{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer}
+.addon{display:flex;align-items:center;gap:12px;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer}
 .addon:hover{border-color:var(--ink-3)}
 .addon input{position:absolute;opacity:0;pointer-events:none}
 .check{width:20px;height:20px;border-radius:6px;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
@@ -218,7 +224,8 @@ p{margin:0}
 .addon.inc .check svg{opacity:1;color:var(--surface)}
 .addon-name{flex:1;min-width:0;font-size:15px;line-height:1.3}
 .addon-desc{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--ink-2)}
-.addon-price{font-family:var(--f-mono);font-size:13px;font-weight:600;white-space:nowrap;color:var(--ink-2)}
+.addon-price{font-family:var(--f-mono);font-size:13px;font-weight:600;white-space:nowrap;color:var(--ink-2);text-align:right}
+.addon-price .per{display:block;font-size:11px;font-weight:500}
 .addon.inc .addon-price{color:var(--basil)}
 
 /* Ticket */
@@ -473,8 +480,8 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
             <div class="opts three" id="packages" role="radiogroup"></div>
           </div>
 
-          <div class="block">
-            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per kuvert.</p></div>
+          <div class="block addons-block">
+            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per kuvert, ostbrickorna per bricka.</p></div>
             <div class="addon-groups" id="addons"></div>
           </div>
 
@@ -641,7 +648,9 @@ var ADDONS = [
   {id:'focaccia',g:'side',price:19,sv:'Focaccia med olivolja',en:'Focaccia with olive oil'},
   {id:'oliver',g:'side',price:22,sv:'Oliver och marinerade grönsaker',en:'Olives and marinated vegetables'},
   {id:'edamame',g:'side',price:19,sv:'Edamame med flingsalt',en:'Edamame with sea salt'},
-  {id:'ostkex',g:'side',price:35,sv:'Ostbricka med kex',en:'Cheese board with crackers',d:{sv:'Lagrad gouda, brie och blåmögelost med kex, druvor och fikonmarmelad.',en:'Aged gouda, brie and blue cheese with crackers, grapes and fig jam.'}},
+  // tray: a fixed price per board for the whole group, not per serving (Tijani's tip, Cagdas OK 2026-09-26)
+  {id:'ostliten',g:'side',price:249,tray:true,sv:'Ostbricka, liten',en:'Cheese board, small',d:{sv:'Räcker till cirka 10 personer. Lagrad gouda, brie och blåmögelost med kex, druvor och fikonmarmelad.',en:'Serves about 10. Aged gouda, brie and blue cheese with crackers, grapes and fig jam.'}},
+  {id:'oststor',g:'side',price:449,tray:true,sv:'Ostbricka, stor',en:'Cheese board, large',d:{sv:'Räcker till cirka 20 personer. Samma ostar och tillbehör som den lilla.',en:'Serves about 20. Same cheeses and sides as the small one.'}},
   {id:'dryck',g:'sweet',price:22,sv:'Dryck, läsk eller vatten',en:'Drink, soda or water'},
   {id:'tiramisu',g:'sweet',price:39,sv:'Tiramisu',en:'Tiramisu'},
   {id:'mochi',g:'sweet',price:35,sv:'Mochi, 2 st',en:'Mochi, 2 pcs'}
@@ -654,6 +663,7 @@ var PACKAGES = [
 ];
 var MIN = 10, FEE = 295, FREE_FROM = 3000, MAX_QTY = 500;
 var UPDATES = [
+  {d:'2026-09-26',sv:'Ostbrickan har nu fast pris för hela sällskapet: liten (cirka 10 personer) 249 kr eller stor (cirka 20 personer) 449 kr.',en:'The cheese board now has a fixed price for the whole group: small (about 10 people) SEK 249 or large (about 20 people) SEK 449.'},
   {d:'2026-09-26',sv:'Länken "Installera appen" syns nu alltid bredvid Feedback, även i appen, så att du kan visa andra hur man installerar.',en:'The "Install the app" link is now always next to Feedback, even in the app, so you can show others how to install it.'},
   {d:'2026-09-26',sv:'Ostbrickan visar nu vilka ostar och tillbehör som ingår (tack Tijani för tipset).',en:'The cheese board now shows which cheeses and sides are included (thanks Tijani for the tip).'},
   {d:'2026-09-26',sv:'Notiser: tryck "Få notis när vi svarar" efter ditt förslag, så hör vi av oss direkt när svaret finns.',en:'Notifications: tap "Get notified when we reply" after your suggestion and we will let you know as soon as there is an answer.'},
@@ -685,7 +695,7 @@ var T = {
     less:'Ta bort ett kuvert av {d}',more:'Lägg till ett kuvert av {d}',qty:'Antal kuvert av {d}',
     pkg_h:'Gör det till ett paket',pkg_p:'Ett paket kostar mindre än samma saker var för sig.',
     save:'Spara {x}/kuvert',best:'Bäst värde',plus_price:'+{x}/kuvert',no_extra:'Ingen extra kostnad',
-    addons_h:'Tillval',addons_p:'Priset gäller per kuvert.',included:'Ingår',
+    addons_h:'Tillval',addons_p:'Priset gäller per kuvert, ostbrickorna per bricka.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
     deliv_h:'Leverans',dv_deliver:'Leverans',dv_deliver_d:'{fee}. Fri leverans över {free}.',dv_pickup:'Hämta själv',dv_pickup_d:'Kostnadsfritt. Vi har allt färdigpackat.',
     t_h:'Din beställning',t_empty:'Välj en rätt för att börja. Priset räknas ut här medan du väljer.',
     t_pkg:'{name}-paket',t_delivery:'Leverans',t_pickup:'Hämtning',free:'Fri',t_total:'Totalt',t_per:'≈ {x} per kuvert',t_vat:'Inkl. moms',
@@ -831,7 +841,7 @@ var T = {
     less:'Remove one serving of {d}',more:'Add one serving of {d}',qty:'Servings of {d}',
     pkg_h:'Make it a combo',pkg_p:'A combo costs less than the same items one by one.',
     save:'Save {x}/serving',best:'Best value',plus_price:'+{x}/serving',no_extra:'No extra cost',
-    addons_h:'Extras',addons_p:'Prices are per serving.',included:'Included',
+    addons_h:'Extras',addons_p:'Prices are per serving; cheese boards are per board.',included:'Included',per_tray:'/board',tray_one:'1 board',
     deliv_h:'Delivery',dv_deliver:'Delivery',dv_deliver_d:'{fee}. Free delivery over {free}.',dv_pickup:'Pick up',dv_pickup_d:'Free. Everything is packed and ready.',
     t_h:'Your order',t_empty:'Pick a dish to start. The price adds up here as you choose.',
     t_pkg:'{name} combo',t_delivery:'Delivery',t_pickup:'Pickup',free:'Free',t_total:'Total',t_per:'≈ {x} per serving',t_vat:'VAT incl.',
@@ -1002,7 +1012,7 @@ function calc(){
   var portions=0, dishes=0, lines=[];
   DISHES.forEach(function(d){ var q=S.qty[d.id]||0; if(q>0){ portions+=q; dishes+=q*d.price; lines.push({d:d,q:q,sum:q*d.price}); } });
   var p=pkgById(S.pkg), pkgSum=portions*p.price;
-  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id] && !included(a.id)) extras.push({a:a,sum:portions*a.price}); });
+  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id] && !included(a.id)) extras.push({a:a,sum:a.tray?a.price:portions*a.price}); });
   var extrasSum=extras.reduce(function(s,e){return s+e.sum},0);
   var sub=dishes+pkgSum+extrasSum;
   var fee = S.delivery==='deliver' ? (sub>=FREE_FROM ? 0 : FEE) : 0;
@@ -1085,7 +1095,7 @@ function renderAddons(){
       var inc=included(a.id), on=inc||!!S.addons[a.id];
       return '<label class="addon'+(inc?' inc':'')+'"><input type="checkbox" id="ad-'+a.id+'" data-addon="'+a.id+'"'+(on?' checked':'')+(inc?' disabled':'')+'>'+
         '<span class="check" aria-hidden="true">'+CHECK+'</span><span class="addon-name">'+esc(L(a))+(a.d?'<span class="addon-desc">'+esc(L(a.d))+'</span>':'')+'</span>'+
-        '<span class="addon-price">'+esc(inc?t('included'):'+'+kr(a.price))+'</span></label>';
+        '<span class="addon-price">'+esc(inc?t('included'):'+'+kr(a.price))+(a.tray&&!inc?'<span class="per">'+esc(t('per_tray'))+'</span>':'')+'</span></label>';
     }).join('')+'</div>';
   }).join('');
 }
@@ -1099,7 +1109,7 @@ function renderTicket(){
   } else {
     var rows = c.lines.map(function(l){ return '<li><span>'+l.q+' × '+esc(L(l.d)[0])+'</span><span>'+esc(kr(l.sum))+'</span></li>'; });
     if(c.pkg.price) rows.push('<li><span>'+esc(t('t_pkg',{name:L(c.pkg)[0]}))+'<span class="sub">'+c.portions+' × '+esc(kr(c.pkg.price))+'</span></span><span>'+esc(kr(c.pkgSum))+'</span></li>');
-    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+c.portions+' × '+esc(kr(e.a.price))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
+    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+esc(e.a.tray?t('tray_one'):c.portions+' × '+kr(e.a.price))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
     rows.push('<li><span>'+esc(S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'</span><span'+(c.fee?'':' class="free"')+'>'+esc(c.fee?kr(c.fee):t('free'))+'</span></li>');
     var nudge='';
     if(c.portions<MIN) nudge='<div class="nudge"><span>'+t('nudge_min',{n:MIN-c.portions})+'</span></div>';
@@ -1154,7 +1164,7 @@ function summaryText(){
   var c=calc(), lines=[t('sum_title'),''];
   c.lines.forEach(function(l){ lines.push(l.q+' × '+L(l.d)[0]+'  '+kr(l.sum)); });
   if(c.pkg.price) lines.push(t('t_pkg',{name:L(c.pkg)[0]})+' ('+c.portions+' × '+kr(c.pkg.price)+')  '+kr(c.pkgSum));
-  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+c.portions+' × '+kr(e.a.price)+')  '+kr(e.sum)); });
+  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+(e.a.tray?t('tray_one'):c.portions+' × '+kr(e.a.price))+')  '+kr(e.sum)); });
   lines.push((S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'  '+(c.fee?kr(c.fee):t('free')));
   lines.push(t('t_total')+': '+kr(c.total)+' ('+t('t_vat')+')','');
   var f=formDraft;
@@ -1697,7 +1707,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '0dd84d517';
+  var BUILD = '0dd8cff1c';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
