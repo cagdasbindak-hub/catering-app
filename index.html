@@ -20,7 +20,7 @@
 <link rel="canonical" href="https://cagdasbindak-hub.github.io/catering-app/">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
-<script>window.TK_SITE={"site": true, "supabaseUrl": "https://kqerdppduaqnuigykpoj.supabase.co", "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxZXJkcHBkdWFxbnVpZ3lrcG9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0MTMyODcsImV4cCI6MjEwNTk4OTI4N30.UPkUcFIZd22D3MTuOx38LycN33XwjuRUYf8wA1pjuWo"};</script>
+<script>window.TK_SITE={"site": true, "supabaseUrl": "https://kqerdppduaqnuigykpoj.supabase.co", "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxZXJkcHBkdWFxbnVpZ3lrcG9qIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA0MTMyODcsImV4cCI6MjEwNTk4OTI4N30.UPkUcFIZd22D3MTuOx38LycN33XwjuRUYf8wA1pjuWo", "vapidPublicKey": "BM5a0IRI-NaM7CR0ZKJZ7uLccv7W9FnijLpiHRMju__UgdlY81vIdZY8OzspDyR8Mf46ZSQyI_viqDzA_HFU6ag"};</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap">
@@ -653,6 +653,7 @@ var PACKAGES = [
 ];
 var MIN = 10, FEE = 295, FREE_FROM = 3000, MAX_QTY = 500;
 var UPDATES = [
+  {d:'2026-09-26',sv:'Notiser: tryck "Få notis när vi svarar" efter ditt förslag, så hör vi av oss direkt när svaret finns.',en:'Notifications: tap "Get notified when we reply" after your suggestion and we will let you know as soon as there is an answer.'},
   {d:'2026-09-26',sv:'Feedbacktavlan är kopplad: alla förslag sparas nu och syns för alla besökare.',en:'The feedback board is connected: every suggestion is now saved and visible to all visitors.'},
   {d:'2026-09-26',sv:'Ny feedbacksida: alla kan lämna förslag med skärmbilder, och varje förslag får svar och status. Sidan kan installeras som app, och en kort länk finns: tinyurl.com/catering-app.',en:'New feedback page: anyone can leave suggestions with screenshots, and every suggestion gets a reply and a status. The site can be installed as an app, and there is a short link: tinyurl.com/catering-app.'},
   {d:'2026-09-26',sv:'Egen webbadress som uppdaterar sig själv när en ny version finns.',en:'Its own web address that updates itself when a new version is out.'},
@@ -1691,7 +1692,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '0dd5f5213';
+  var BUILD = '0dd621320';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
