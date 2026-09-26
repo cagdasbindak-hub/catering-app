@@ -94,6 +94,18 @@ p{margin:0}
 
 /* Header */
 .testbar{background:var(--sunk);color:var(--ink-2);font-size:13px;text-align:center;padding:7px 16px}
+.or-list{display:grid;gap:12px}
+.or-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:10px}
+.or-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.or-top b{font-size:18px}
+.or-top time{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.or-facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.or-facts dt{color:var(--ink-2)}
+.or-facts dd{margin:0;overflow-wrap:anywhere}
+.or-facts a{font-weight:600}
+.or-lines{margin:0;padding:0;list-style:none;display:grid;gap:4px;font-family:var(--f-mono);font-size:13px}
+.or-lines li{display:flex;justify-content:space-between;gap:12px}
+.or-total{display:flex;justify-content:space-between;font-family:var(--f-mono);font-weight:600;border-top:1.5px dashed var(--line);padding-top:8px}
 .hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
 .hdr-in{display:flex;align-items:center;gap:10px;height:62px}
 .logo{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;flex:none;text-decoration:none;font-family:var(--f-display);font-weight:900;font-size:27px;letter-spacing:.03em;text-transform:uppercase;line-height:1}
@@ -157,7 +169,7 @@ p{margin:0}
 .fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
 .dishes{display:grid;gap:12px;grid-template-columns:1fr}
-@media (min-width:640px){.dishes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dishes{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
 .dish{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,box-shadow .15s}
 .dish.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
 .dish-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px}
@@ -166,6 +178,10 @@ p{margin:0}
 .pick{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
 .dish h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:.95;text-wrap:balance}
 .dish p{color:var(--ink-2);font-size:15px;line-height:1.45}
+.contents-h{margin-top:4px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.menu-contents{margin:0 0 4px;padding:0;list-style:none;display:grid;gap:5px;font-size:15px;line-height:1.35}
+.menu-contents li{display:flex;gap:9px;align-items:baseline}
+.menu-contents li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--ink-3);transform:translateY(-2px)}
 .allergens{display:flex;flex-wrap:wrap;gap:5px;padding:0;margin:0;list-style:none}
 .allergens li{font-family:var(--f-mono);font-size:11px;padding:2px 7px;border-radius:5px;border:1px solid var(--line);color:var(--ink-2)}
 .allergens li.vegan{border-color:transparent;background:var(--basil-soft);color:var(--ink)}
@@ -464,37 +480,24 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
       <div class="section-head">
         <p class="eyebrow" data-i18n="menu_kicker">Meny och pris</p>
         <h2 class="display" data-i18n="menu_h">Bygg din beställning</h2>
-        <p data-i18n="menu_p">Priser per kuvert inklusive moms. Blanda gärna rätter från olika kök.</p>
+        <p data-i18n="menu_p">Välj buffé och antal personer. Priser per person, exklusive moms.</p>
       </div>
 
       <div class="order-grid">
         <div>
           <div class="block">
-            <div class="block-head"><h3 data-i18n="dishes_h">Rätter</h3></div>
-            <div class="filters" id="filters" role="group"></div>
+            <div class="block-head"><h3 data-i18n="dishes_h">Buffémenyer</h3><p data-i18n="dishes_p">Allt serveras som buffé i stora fat.</p></div>
             <div class="dishes" id="dishes"></div>
           </div>
 
-          <div class="block">
-            <div class="block-head"><h3 data-i18n="pkg_h">Gör det till ett paket</h3><p data-i18n="pkg_p">Ett paket kostar mindre än samma saker var för sig.</p></div>
-            <div class="opts three" id="packages" role="radiogroup"></div>
-          </div>
-
           <div class="block addons-block">
-            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per kuvert, ostbrickorna per bricka.</p></div>
+            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per person, ostbrickorna per bricka.</p></div>
             <div class="addon-groups" id="addons"></div>
           </div>
 
           <div class="block">
             <div class="block-head"><h3 data-i18n="deliv_h">Leverans</h3></div>
-            <div class="opts two" role="radiogroup" id="delivery">
-              <label class="opt"><input type="radio" name="delivery" value="deliver" id="dv-deliver" checked>
-                <span class="opt-top"><span class="opt-name" data-i18n="dv_deliver">Leverans</span><span class="radio" aria-hidden="true"></span></span>
-                <span class="opt-desc" id="dvDeliverDesc"></span></label>
-              <label class="opt"><input type="radio" name="delivery" value="pickup" id="dv-pickup">
-                <span class="opt-top"><span class="opt-name" data-i18n="dv_pickup">Hämta själv</span><span class="radio" aria-hidden="true"></span></span>
-                <span class="opt-desc" data-i18n="dv_pickup_d">Kostnadsfritt. Vi har allt färdigpackat.</span></label>
-            </div>
+            <p class="note" id="dvNote"></p>
           </div>
         </div>
 
@@ -583,6 +586,17 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
   </div>
 </section>
 
+<section class="view" id="view-orders" hidden data-section="orders" aria-labelledby="orTitle">
+  <div class="wrap view-in narrow">
+    <a class="back" href="#feedback" data-i18n="back_fb">← Till feedback</a>
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="or_kicker">Bara för ägaren</p>
+      <h1 class="display view-h" id="orTitle" data-i18n="or_title">Beställningar</h1>
+    </div>
+    <div class="or-list" id="orList" aria-live="polite"></div>
+  </div>
+</section>
+
 <footer class="foot">
   <div class="wrap foot-in">
     <span data-i18n="foot">Tre Kök är ett arbetsnamn. Testversion 0.1.</span>
@@ -629,16 +643,21 @@ var ALLERGENS = {
   e:{sv:'Ägg',en:'Egg'}, f:{sv:'Fisk',en:'Fish'}, s:{sv:'Soja',en:'Soy'},
   se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}
 };
+// Buffets (Cagdas/Tijani 2026-09-26): people order buffet, served in large dishes, not packed portions.
+// Price per person, excluding VAT. c = what is included, shown as a list. No sushi rice: rice noodles.
 var DISHES = [
-  {id:'lasagne',k:'it',price:149,pick:true,a:['g','l'],sv:['Lasagne al forno','Långkokt köttfärsragu, béchamel och parmesan.'],en:['Lasagne al forno','Slow-cooked beef ragù, béchamel and parmesan.']},
-  {id:'pesto',k:'it',price:139,a:['g','l','n'],sv:['Pasta pesto med kyckling','Penne, basilikapesto, kyckling och soltorkade tomater.'],en:['Chicken pesto pasta','Penne, basil pesto, chicken and sun-dried tomatoes.']},
-  {id:'arrabbiata',k:'it',price:119,a:['g','v'],sv:['Penne arrabbiata','Tomat, vitlök och chili.'],en:['Penne arrabbiata','Tomato, garlic and chili.']},
-  {id:'laxpoke',k:'poke',price:159,pick:true,a:['f','s','se'],sv:['Laxpoke','Sushiris, lax, avokado, mango, edamame och sesam.'],en:['Salmon poke','Sushi rice, salmon, avocado, mango, edamame and sesame.']},
-  {id:'teriyaki',k:'poke',price:145,a:['g','s','se'],sv:['Kyckling teriyaki','Sushiris, kyckling, gurka, rödkål och rostad lök.'],en:['Chicken teriyaki','Sushi rice, chicken, cucumber, red cabbage and crispy onion.']},
-  {id:'tofupoke',k:'poke',price:135,a:['s','se','v'],sv:['Tofupoke','Sushiris, marinerad tofu, sjögrässallad och avokado.'],en:['Tofu poke','Sushi rice, marinated tofu, seaweed salad and avocado.']},
-  {id:'padthai',k:'wok',price:145,pick:true,a:['e','n','f'],sv:['Pad thai med kyckling','Risnudlar, ägg, böngroddar, jordnötter och lime.'],en:['Chicken pad thai','Rice noodles, egg, bean sprouts, peanuts and lime.']},
-  {id:'yakisoba',k:'wok',price:149,a:['g','s'],sv:['Yakisoba med biff','Vetenudlar, biff, vitkål och yakisobasås.'],en:['Beef yakisoba','Wheat noodles, beef, cabbage and yakisoba sauce.']},
-  {id:'gronwok',k:'wok',price:125,a:['g','s','v'],sv:['Grönsakswok med tofu','Vetenudlar, tofu, broccoli, sockerärtor och ingefära.'],en:['Vegetable wok with tofu','Wheat noodles, tofu, broccoli, sugar snaps and ginger.']}
+  {id:'italiensk',k:'it',price:145,pick:true,a:['g','l','n'],
+    sv:['Italiensk buffé','Tre pastarätter att ta av.'],en:['Italian buffet','Three pasta dishes to help yourself to.'],
+    c:{sv:['Lasagne al forno med köttfärsragu','Pasta pesto med kyckling och soltorkade tomater','Penne arrabbiata (vegansk)','Riven parmesan'],
+       en:['Lasagne al forno with beef ragù','Pesto pasta with chicken and sun-dried tomatoes','Penne arrabbiata (vegan)','Grated parmesan']}},
+  {id:'poke',k:'poke',price:155,pick:true,a:['f','g','e','s','se'],
+    sv:['Pokebuffé','Alla bygger sin egen bowl.'],en:['Poke buffet','Everyone builds their own bowl.'],
+    c:{sv:['Risnudlar','Lax och kyckling teriyaki','Marinerad tofu (vegansk)','Avokado, mango, edamame, gurka och rödkål','Sesamfrön, rostad lök, spicy mayo och sojasås'],
+       en:['Rice noodles','Salmon and chicken teriyaki','Marinated tofu (vegan)','Avocado, mango, edamame, cucumber and red cabbage','Sesame seeds, crispy onion, spicy mayo and soy sauce']}},
+  {id:'wok',k:'wok',price:145,pick:true,a:['g','e','n','f','s'],
+    sv:['Wokbuffé','Tre wokrätter att ta av.'],en:['Wok buffet','Three wok dishes to help yourself to.'],
+    c:{sv:['Pad thai med kyckling (risnudlar, ägg och jordnötter)','Yakisoba med biff (vetenudlar och vitkål)','Grönsakswok med tofu (vegansk)','Lime och färsk koriander'],
+       en:['Chicken pad thai (rice noodles, egg and peanuts)','Beef yakisoba (wheat noodles and cabbage)','Vegetable wok with tofu (vegan)','Lime and fresh coriander']}}
 ];
 var ADDONS = [
   {id:'spicymayo',g:'sauce',price:12,sv:'Spicy mayo',en:'Spicy mayo'},
@@ -656,13 +675,9 @@ var ADDONS = [
   {id:'mochi',g:'sweet',price:35,sv:'Mochi, 2 st',en:'Mochi, 2 pcs'}
 ];
 var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
-var PACKAGES = [
-  {id:'bas',price:0,inc:[],sv:['Bas','Bara huvudrätten.'],en:['Basic','Just the main dish.']},
-  {id:'plus',price:49,inc:['sallad','focaccia','dryck'],best:true,sv:['Plus','Grönsallad, focaccia och dryck.'],en:['Plus','Green salad, focaccia and a drink.']},
-  {id:'fest',price:85,inc:['sallad','focaccia','dryck','tiramisu'],sv:['Fest','Allt i Plus och tiramisu.'],en:['Party','Everything in Plus and tiramisu.']}
-];
-var MIN = 10, FEE = 295, FREE_FROM = 3000, MAX_QTY = 500;
+var MIN = 10, FEE = 395, MAX_QTY = 2000;  // delivery: always 395 kr excl. VAT, no pickup, no free delivery
 var UPDATES = [
+  {d:'2026-09-26',sv:'Nu beställer du buffé: Italiensk buffé, Pokebuffé eller Wokbuffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets: Italian, Poke or Wok, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
   {d:'2026-09-26',sv:'Ostbrickan har nu fast pris för hela sällskapet: liten (cirka 10 personer) 249 kr eller stor (cirka 20 personer) 449 kr.',en:'The cheese board now has a fixed price for the whole group: small (about 10 people) SEK 249 or large (about 20 people) SEK 449.'},
   {d:'2026-09-26',sv:'Länken "Installera appen" syns nu alltid bredvid Feedback, även i appen, så att du kan visa andra hur man installerar.',en:'The "Install the app" link is now always next to Feedback, even in the app, so you can show others how to install it.'},
   {d:'2026-09-26',sv:'Ostbrickan visar nu vilka ostar och tillbehör som ingår (tack Tijani för tipset).',en:'The cheese board now shows which cheeses and sides are included (thanks Tijani for the tip).'},
@@ -672,13 +687,15 @@ var UPDATES = [
   {d:'2026-09-26',sv:'Egen webbadress som uppdaterar sig själv när en ny version finns.',en:'Its own web address that updates itself when a new version is out.'},
   {d:'2026-09-26',sv:'Första versionen: meny från tre kök, beställning med paket och tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: menu from three kitchens, ordering with combos and extras, Swedish and English, light and dark mode.'}
 ];
-var GOODFOR = {sv:['Kontorslunch och möten','Födelsedagar och fester','Idrottslag och cuper','Mingel och bröllop'],en:['Office lunches and meetings','Birthdays and parties','Sports teams and tournaments','Receptions and weddings']};
+var GOODFOR = {sv:['Skolor och förskolor','Idrottsföreningar och cuper','Kyrkor och församlingar','Kontor och möten','Fester och bröllop'],en:['Schools and preschools','Sports clubs and tournaments','Churches and parishes','Offices and meetings','Parties and weddings']};
 var FAQ = [
-  {sv:['Hur långt i förväg behöver jag beställa?','Senast två dagar innan. Beställningar över 50 kuvert gärna en vecka innan.'],en:['How far ahead do I need to order?','At least two days before. For more than 50 servings, a week ahead is best.']},
-  {sv:['Kan ni hantera allergier?','Ja. Varje rätt visar sina allergener. Skriv dina önskemål i förfrågan så anpassar vi.'],en:['Can you handle allergies?','Yes. Every dish lists its allergens. Add your needs to the request and we adjust.']},
-  {sv:['Vad är minsta beställning?','10 kuvert. Du kan blanda rätter från alla tre kök.'],en:['What is the minimum order?','10 servings. You can mix dishes from all three kitchens.']},
-  {sv:['Vad kostar leveransen?','295 kr. Leveransen är fri när beställningen är över 3 000 kr. Du kan också hämta själv.'],en:['What does delivery cost?','SEK 295. Delivery is free for orders over SEK 3,000. You can also pick up yourself.']},
-  {sv:['Hur betalar jag?','Företag får faktura. Privatpersoner betalar när vi bekräftar beställningen.'],en:['How do I pay?','Companies get an invoice. Private customers pay when we confirm the order.']}
+  {sv:['Hur serveras maten?','Som buffé i stora fat, så att alla tar själva. Maten packas inte i enskilda portioner.'],en:['How is the food served?','As a buffet in large dishes, so everyone helps themselves. The food is not packed in single portions.']},
+  {sv:['Hur långt i förväg behöver jag beställa?','Senast två dagar innan. För fler än 50 personer gärna en vecka innan.'],en:['How far ahead do I need to order?','At least two days before. For more than 50 people, a week ahead is best.']},
+  {sv:['Kan ni hantera allergier?','Ja. Varje buffé visar vad den innehåller och vilka allergener som finns. Skriv dina önskemål i beställningen så anpassar vi.'],en:['Can you handle allergies?','Yes. Every buffet lists what it contains and its allergens. Add your needs to the order and we adjust.']},
+  {sv:['Vad är minsta beställning?','10 personer. Du kan blanda buffé från alla tre kök.'],en:['What is the minimum order?','10 people. You can mix buffets from all three kitchens.']},
+  {sv:['Vad kostar leveransen?','395 kr exklusive moms, oavsett hur stor beställningen är. Vi levererar till adressen du anger.'],en:['What does delivery cost?','SEK 395 excluding VAT, whatever the size of the order. We deliver to the address you give.']},
+  {sv:['Är priserna med moms?','Nej. Alla priser visas exklusive moms. Momsen kommer till på fakturan.'],en:['Do the prices include VAT?','No. All prices are shown excluding VAT. VAT is added on the invoice.']},
+  {sv:['Hur betalar jag?','Företag, skolor och föreningar får faktura. Privatpersoner betalar när vi bekräftar beställningen.'],en:['How do I pay?','Companies, schools and clubs get an invoice. Private customers pay when we confirm the order.']}
 ];
 
 /* ---------- Text ---------- */
@@ -686,46 +703,59 @@ var T = {
   sv:{
     test_banner:'Testversion. Beställningar skickas inte på riktigt än.',
     nav_menu:'Meny',nav_how:'Så funkar det',nav_faq:'Frågor',cta_order:'Beställ',
-    hero_kicker:'Catering · från 10 personer',hero_l1:'Catering från',hero_l2:'tre kök',
-    hero_sub:'Italienskt, pokebowls och wok. Välj rätter, lägg till det lilla extra och se totalpriset direkt.',
+    hero_kicker:'Buffécatering · från 10 personer',hero_l1:'Catering från',hero_l2:'tre kök',
+    hero_sub:'Buffé från tre kök: italienskt, poke och wok. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.',
     hero_cta:'Bygg din beställning',hero_cta2:'Så funkar det',
-    fact_from:'Från {p}/kuvert',fact_min:'Minst 10 kuvert',fact_lead:'Beställ 2 dagar innan',
-    menu_kicker:'Meny och pris',menu_h:'Bygg din beställning',menu_p:'Priser per kuvert inklusive moms. Blanda gärna rätter från olika kök.',
-    dishes_h:'Rätter',filter_all:'Allt',add:'Lägg till',pick:'Kockens val',per:'/kuvert',servings:'kuvert',
-    less:'Ta bort ett kuvert av {d}',more:'Lägg till ett kuvert av {d}',qty:'Antal kuvert av {d}',
-    pkg_h:'Gör det till ett paket',pkg_p:'Ett paket kostar mindre än samma saker var för sig.',
-    save:'Spara {x}/kuvert',best:'Bäst värde',plus_price:'+{x}/kuvert',no_extra:'Ingen extra kostnad',
-    addons_h:'Tillval',addons_p:'Priset gäller per kuvert, ostbrickorna per bricka.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
-    deliv_h:'Leverans',dv_deliver:'Leverans',dv_deliver_d:'{fee}. Fri leverans över {free}.',dv_pickup:'Hämta själv',dv_pickup_d:'Kostnadsfritt. Vi har allt färdigpackat.',
-    t_h:'Din beställning',t_empty:'Välj en rätt för att börja. Priset räknas ut här medan du väljer.',
-    t_pkg:'{name}-paket',t_delivery:'Leverans',t_pickup:'Hämtning',free:'Fri',t_total:'Totalt',t_per:'≈ {x} per kuvert',t_vat:'Inkl. moms',
-    nudge_min:'Lägg till <b>{n} kuvert</b> till. Minsta beställning är 10.',
-    nudge_free:'<b>{x}</b> kvar till fri leverans.',
-    nudge_pkg:'Tips: <b>Plus</b> ger sallad, focaccia och dryck för {x} per kuvert.',nudge_pkg_btn:'Välj Plus',
-    continue:'Fortsätt',t_note:'Du betalar inget nu.',
+    fact_from:'Från {p}/person exkl. moms',fact_min:'Minst 10 personer',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
+    menu_kicker:'Buffé och pris',menu_h:'Bygg din beställning',menu_p:'Välj buffé och antal personer. Priser per person, exklusive moms.',
+    dishes_h:'Buffémenyer',dishes_p:'Allt serveras som buffé i stora fat.',contents_h:'Det här ingår',add:'Välj',pick:'Populär',per:'/person',
+    less:'En person färre för {d}',more:'En person till för {d}',qty:'Antal personer för {d}',unit:'pers.',
+    addons_h:'Tillval',addons_p:'Priset gäller per person, ostbrickorna per bricka.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
+    deliv_h:'Leverans',dv_note:'Vi levererar till adressen du anger. Leveransen kostar {fee} exklusive moms, oavsett hur stor beställningen är.',
+    t_h:'Din beställning',t_empty:'Välj en buffé för att börja. Priset räknas ut här medan du väljer.',
+    t_line:'{n} personer × {p}',t_delivery:'Leverans',t_total:'Totalt',t_per:'≈ {x} per person',t_vat:'Exkl. moms',
+    nudge_min:'Lägg till <b>{n} personer</b> till. Minsta beställning är 10 personer.',
+    nudge_drink:'Tips: lägg till <b>dryck</b> för {x} per person.',nudge_drink_btn:'Lägg till dryck',drink_added:'Dryck tillagd ✓',
+    continue:'Fortsätt',t_note:'Du betalar inget nu. Vi bekräftar inom 24 timmar.',
     d_h:'Dina uppgifter',f_name:'Namn',f_phone:'Telefon',f_email:'E-post',f_company:'Företag',opt:'valfritt',
     f_address:'Leveransadress',f_date:'Datum',f_time:'Tid',f_notes:'Allergier och önskemål',
     f_notes_ph:'Till exempel: 3 glutenfria, en nötallergi',contact_hint:'Telefon eller e-post räcker.',
-    err_contact:'Fyll i telefon eller e-post så att vi kan nå dig.',err_min:'Minsta beställning är 10 kuvert.',
-    send:'Skicka förfrågan',back:'Tillbaka',
-    done_h:'Förfrågan klar',done_p:'Det här är en testversion, så inget skickades. När sidan är klar går förfrågan direkt till oss och vi svarar inom 24 timmar.',
-    copy:'Kopiera sammanfattning',copied:'Kopierat',copy_fail:'Markera texten och kopiera själv.',edit:'Ändra beställning',
-    bar_see:'Se beställning',bar_count:'{n} kuvert',
+    err_contact:'Fyll i telefon eller e-post så att vi kan nå dig.',err_min:'Minsta beställning är 10 personer.',
+    err_send:'Det gick inte att skicka. Kolla nätet och försök igen.',
+    send:'Skicka beställning',sending:'Skickar …',back:'Tillbaka',
+    done_h:'Förhandsvisning',done_p:'Det här är en förhandsvisning, så inget skickades. På den riktiga sidan går beställningen direkt till oss.',
+    sent_h:'Tack för din beställning!',sent_p:'Vi har fått den och hör av oss inom 24 timmar för att bekräfta. Här är en sammanfattning:',
+    copy:'Kopiera sammanfattning',copied:'Kopierat',copy_fail:'Markera texten och kopiera själv.',edit:'Ändra beställning',new_order:'Gör en ny beställning',
+    bar_see:'Se beställning',bar_count:'{n} personer',
     how_kicker:'Tre steg',how_h:'Så funkar det',
-    s1_h:'Välj och se priset',s1_p:'Rätter, paket och tillval. Totalen räknas ut medan du väljer.',
-    s2_h:'Skicka en förfrågan',s2_p:'Vi bekräftar datum, tid och allergier inom 24 timmar.',
-    s3_h:'Vi levererar',s3_p:'Varmt eller kylt, på utsatt tid, med servetter och bestick.',
+    s1_h:'Välj buffé och se priset',s1_p:'Buffé, antal personer och tillval. Priset räknas ut medan du väljer.',
+    s2_h:'Skicka beställningen',s2_p:'Vi bekräftar datum, tid och allergier inom 24 timmar.',
+    s3_h:'Vi levererar',s3_p:'Buffén kommer i stora fat på utsatt tid, med servetter och bestick.',
     faq_kicker:'Innan du beställer',faq_h:'Vanliga frågor',
     upd_kicker:'Vad som är nytt',upd_h:'Senaste uppdateringar',
-    foot:'Tre Kök är ett arbetsnamn. Testversion 0.1.',
+    foot:'Tre Kök är ett arbetsnamn. Version 0.2.',
     fb_q:'Vad tycker du om sidan?',fb_btn:'Tyck till',fb_close:'Stäng',
     to_en:'Switch to English',theme_dark:'Byt till mörkt läge',theme_light:'Byt till ljust läge',
-    sum_title:'Förfrågan, Tre Kök Catering',sum_delivery:'Leverans',sum_pickup:'Hämtar själv',
+    sum_title:'Beställning, Tre Kök Catering',sum_vat:'exkl. moms',
     art_label:'Pokebowl, pasta och nudlar sedda ovanifrån',
     install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
     nav_feedback:"Feedback",
     nav_install:"Installera appen",
     back_home:"← Till sidan",
+    back_fb:"← Till feedback",
+    or_kicker:"Bara för ägaren",
+    or_title:"Beställningar",
+    or_link:"Se beställningar",
+    or_only_owner:"Den här sidan är bara för ägaren. Öppna ägarlänken först.",
+    or_empty:"Inga beställningar ännu.",
+    or_loading:"Hämtar beställningar …",
+    or_error:"Det gick inte att hämta beställningarna just nu.",
+    or_when:"Leverans",
+    or_address:"Adress",
+    or_phone:"Telefon",
+    or_email:"E-post",
+    or_persons:"Personer",
+    or_notes:"Önskemål",
     foot_fb:"Feedback och förslag",
     close:"Stäng",
     fb_kicker:"Hjälp oss bli bättre",
@@ -794,7 +824,7 @@ var T = {
     fb_saved:"Sparat",
     fb_cancel:"Avbryt",
     owner_h:"Du är ägare",
-    owner_p:"Få en notis på den här enheten varje gång någon skickar feedback. Du kan också svara direkt på tavlan.",
+    owner_p:"Få en notis på den här enheten när någon beställer eller skickar feedback. Du kan också svara direkt på tavlan.",
     owner_btn:"Slå på notiser",
     owner_on:"Notiser är på för den här enheten.",
     owner_fail:"Det gick inte. Öppna ägarlänken igen och försök en gång till.",
@@ -832,45 +862,58 @@ var T = {
   en:{
     test_banner:'Test version. Orders are not sent for real yet.',
     nav_menu:'Menu',nav_how:'How it works',nav_faq:'FAQ',cta_order:'Order',
-    hero_kicker:'Catering · from 10 people',hero_l1:'Catering from',hero_l2:'three kitchens',
-    hero_sub:'Italian, poke bowls and wok. Pick your dishes, add the extras and see the total price right away.',
+    hero_kicker:'Buffet catering · from 10 people',hero_l1:'Catering from',hero_l2:'three kitchens',
+    hero_sub:'Buffets from three kitchens: Italian, poke and wok. Pick a buffet and the number of people, add the extras and see the price right away.',
     hero_cta:'Build your order',hero_cta2:'How it works',
-    fact_from:'From {p}/serving',fact_min:'Minimum 10 servings',fact_lead:'Order 2 days ahead',
-    menu_kicker:'Menu and prices',menu_h:'Build your order',menu_p:'Prices per serving, VAT included. Feel free to mix dishes from different kitchens.',
-    dishes_h:'Dishes',filter_all:'All',add:'Add',pick:"Chef's pick",per:'/serving',servings:'servings',
-    less:'Remove one serving of {d}',more:'Add one serving of {d}',qty:'Servings of {d}',
-    pkg_h:'Make it a combo',pkg_p:'A combo costs less than the same items one by one.',
-    save:'Save {x}/serving',best:'Best value',plus_price:'+{x}/serving',no_extra:'No extra cost',
-    addons_h:'Extras',addons_p:'Prices are per serving; cheese boards are per board.',included:'Included',per_tray:'/board',tray_one:'1 board',
-    deliv_h:'Delivery',dv_deliver:'Delivery',dv_deliver_d:'{fee}. Free delivery over {free}.',dv_pickup:'Pick up',dv_pickup_d:'Free. Everything is packed and ready.',
-    t_h:'Your order',t_empty:'Pick a dish to start. The price adds up here as you choose.',
-    t_pkg:'{name} combo',t_delivery:'Delivery',t_pickup:'Pickup',free:'Free',t_total:'Total',t_per:'≈ {x} per serving',t_vat:'VAT incl.',
-    nudge_min:'Add <b>{n} more servings</b>. The minimum order is 10.',
-    nudge_free:'<b>{x}</b> left for free delivery.',
-    nudge_pkg:'Tip: <b>Plus</b> adds salad, focaccia and a drink for {x} per serving.',nudge_pkg_btn:'Choose Plus',
-    continue:'Continue',t_note:'You pay nothing now.',
+    fact_from:'From {p}/person excl. VAT',fact_min:'Minimum 10 people',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
+    menu_kicker:'Buffets and prices',menu_h:'Build your order',menu_p:'Pick a buffet and the number of people. Prices per person, excluding VAT.',
+    dishes_h:'Buffet menus',dishes_p:'Everything is served as a buffet in large dishes.',contents_h:'What is included',add:'Choose',pick:'Popular',per:'/person',
+    less:'One person less for {d}',more:'One more person for {d}',qty:'Number of people for {d}',unit:'ppl',
+    addons_h:'Extras',addons_p:'Prices are per person; cheese boards are per board.',included:'Included',per_tray:'/board',tray_one:'1 board',
+    deliv_h:'Delivery',dv_note:'We deliver to the address you give. Delivery is {fee} excluding VAT, whatever the size of the order.',
+    t_h:'Your order',t_empty:'Pick a buffet to start. The price adds up here as you choose.',
+    t_line:'{n} people × {p}',t_delivery:'Delivery',t_total:'Total',t_per:'≈ {x} per person',t_vat:'Excl. VAT',
+    nudge_min:'Add <b>{n} more people</b>. The minimum order is 10 people.',
+    nudge_drink:'Tip: add <b>drinks</b> for {x} per person.',nudge_drink_btn:'Add drinks',drink_added:'Drinks added ✓',
+    continue:'Continue',t_note:'You pay nothing now. We confirm within 24 hours.',
     d_h:'Your details',f_name:'Name',f_phone:'Phone',f_email:'Email',f_company:'Company',opt:'optional',
     f_address:'Delivery address',f_date:'Date',f_time:'Time',f_notes:'Allergies and requests',
     f_notes_ph:'For example: 3 gluten-free, one nut allergy',contact_hint:'Phone or email is enough.',
-    err_contact:'Add a phone number or email so we can reach you.',err_min:'The minimum order is 10 servings.',
-    send:'Send request',back:'Back',
-    done_h:'Request ready',done_p:'This is a test version, so nothing was sent. When the site is live, requests go straight to us and we reply within 24 hours.',
-    copy:'Copy summary',copied:'Copied',copy_fail:'Select the text and copy it yourself.',edit:'Edit order',
-    bar_see:'View order',bar_count:'{n} servings',
+    err_contact:'Add a phone number or email so we can reach you.',err_min:'The minimum order is 10 people.',
+    err_send:'Could not send. Check your connection and try again.',
+    send:'Send order',sending:'Sending …',back:'Back',
+    done_h:'Preview',done_p:'This is a preview, so nothing was sent. On the real site the order goes straight to us.',
+    sent_h:'Thank you for your order!',sent_p:'We have received it and will contact you within 24 hours to confirm. Here is a summary:',
+    copy:'Copy summary',copied:'Copied',copy_fail:'Select the text and copy it yourself.',edit:'Edit order',new_order:'Place a new order',
+    bar_see:'View order',bar_count:'{n} people',
     how_kicker:'Three steps',how_h:'How it works',
-    s1_h:'Choose and see the price',s1_p:'Dishes, combos and extras. The total adds up as you choose.',
-    s2_h:'Send a request',s2_p:'We confirm date, time and allergies within 24 hours.',
-    s3_h:'We deliver',s3_p:'Hot or chilled, on time, with napkins and cutlery.',
+    s1_h:'Pick a buffet and see the price',s1_p:'Buffet, number of people and extras. The price adds up as you choose.',
+    s2_h:'Send the order',s2_p:'We confirm date, time and allergies within 24 hours.',
+    s3_h:'We deliver',s3_p:'The buffet arrives in large dishes on time, with napkins and cutlery.',
     faq_kicker:'Before you order',faq_h:'Common questions',
     upd_kicker:"What's new",upd_h:'Latest updates',
-    foot:'Tre Kök is a working name. Test version 0.1.',
+    foot:'Tre Kök is a working name. Version 0.2.',
     fb_q:'What do you think of the site?',fb_btn:'Feedback',fb_close:'Close',
     to_en:'Byt till svenska',theme_dark:'Switch to dark mode',theme_light:'Switch to light mode',
-    sum_title:'Request, Tre Kök Catering',sum_delivery:'Delivery',sum_pickup:'Pickup',
+    sum_title:'Order, Tre Kök Catering',sum_vat:'excl. VAT',
     art_label:'Poke bowl, pasta and noodles seen from above',
     install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
     nav_feedback:"Feedback",
     nav_install:"Install the app",
+    back_fb:"← Back to feedback",
+    or_kicker:"Owner only",
+    or_title:"Orders",
+    or_link:"See orders",
+    or_only_owner:"This page is for the owner only. Open the owner link first.",
+    or_empty:"No orders yet.",
+    or_loading:"Loading orders …",
+    or_error:"Could not load the orders right now.",
+    or_when:"Delivery",
+    or_address:"Address",
+    or_phone:"Phone",
+    or_email:"Email",
+    or_persons:"People",
+    or_notes:"Requests",
     back_home:"← Back to the site",
     foot_fb:"Feedback and suggestions",
     close:"Close",
@@ -940,7 +983,7 @@ var T = {
     fb_saved:"Saved",
     fb_cancel:"Cancel",
     owner_h:"You're the owner",
-    owner_p:"Get a notification on this device whenever someone sends feedback. You can also reply right on the board.",
+    owner_p:"Get a notification on this device whenever someone orders or sends feedback. You can also reply right on the board.",
     owner_btn:"Turn on notifications",
     owner_on:"Notifications are on for this device.",
     owner_fail:"That did not work. Open the owner link again and try once more.",
@@ -978,7 +1021,7 @@ var T = {
 };
 
 /* ---------- State ---------- */
-var S = {lang:'sv', filter:'all', qty:{}, pkg:'bas', addons:{}, delivery:'deliver', step:'build'};
+var S = {lang:'sv', qty:{}, addons:{}, step:'build', sent:false};
 function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
 (function restore(){
@@ -988,13 +1031,11 @@ function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
     var c = JSON.parse(raw);
     if(c && typeof c==='object'){
       if(c.qty) DISHES.forEach(function(d){ var n=parseInt(c.qty[d.id],10); if(n>0) S.qty[d.id]=Math.min(n,MAX_QTY); });
-      if(PACKAGES.some(function(p){return p.id===c.pkg})) S.pkg=c.pkg;
       if(c.addons) ADDONS.forEach(function(a){ if(c.addons[a.id]) S.addons[a.id]=true; });
-      if(c.delivery==='pickup') S.delivery='pickup';
     }
   }catch(e){} }
 })();
-function saveCart(){ store('tk_cart', JSON.stringify({qty:S.qty,pkg:S.pkg,addons:S.addons,delivery:S.delivery})); }
+function saveCart(){ store('tk_cart', JSON.stringify({qty:S.qty,addons:S.addons})); }
 
 /* ---------- Helpers ---------- */
 function t(k,vars){ var s=(T[S.lang]&&T[S.lang][k]); if(s==null) s=T.sv[k]||k; if(vars) Object.keys(vars).forEach(function(v){ s=s.split('{'+v+'}').join(vars[v]); }); return s; }
@@ -1003,20 +1044,17 @@ function kr(n){ var key=S.lang; if(!fmtCache[key]) fmtCache[key]=new Intl.Number
 function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
 function $(id){ return document.getElementById(id); }
 function L(o){ return o[S.lang]||o.sv; }
-function pkgById(id){ for(var i=0;i<PACKAGES.length;i++) if(PACKAGES[i].id===id) return PACKAGES[i]; return PACKAGES[0]; }
-function included(id){ return pkgById(S.pkg).inc.indexOf(id)>-1; }
-function pkgValue(p){ return p.inc.reduce(function(s,id){ var a=ADDONS.filter(function(x){return x.id===id})[0]; return s+(a?a.price:0); },0); }
 var CHECK='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
+// Everything excludes VAT. Buffets and most extras are per person, cheese boards per board,
+// delivery is one fixed fee per order.
 function calc(){
-  var portions=0, dishes=0, lines=[];
-  DISHES.forEach(function(d){ var q=S.qty[d.id]||0; if(q>0){ portions+=q; dishes+=q*d.price; lines.push({d:d,q:q,sum:q*d.price}); } });
-  var p=pkgById(S.pkg), pkgSum=portions*p.price;
-  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id] && !included(a.id)) extras.push({a:a,sum:a.tray?a.price:portions*a.price}); });
-  var extrasSum=extras.reduce(function(s,e){return s+e.sum},0);
-  var sub=dishes+pkgSum+extrasSum;
-  var fee = S.delivery==='deliver' ? (sub>=FREE_FROM ? 0 : FEE) : 0;
-  return {portions:portions,lines:lines,pkg:p,pkgSum:pkgSum,extras:extras,sub:sub,fee:fee,total:sub+(portions?fee:0)};
+  var persons=0, food=0, lines=[];
+  DISHES.forEach(function(d){ var q=S.qty[d.id]||0; if(q>0){ persons+=q; food+=q*d.price; lines.push({d:d,q:q,sum:q*d.price}); } });
+  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id]) extras.push({a:a,sum:a.tray?a.price:persons*a.price}); });
+  var sub=food+extras.reduce(function(s,e){return s+e.sum},0);
+  var fee=persons?FEE:0;
+  return {portions:persons,lines:lines,extras:extras,sub:sub,fee:fee,total:sub+fee};
 }
 
 /* ---------- Render: static bits ---------- */
@@ -1030,21 +1068,13 @@ function applyText(){
   $('art').setAttribute('aria-label', t('art_label'));
   $('heroKitchens').innerHTML = Object.keys(KITCHENS).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
   var min = Math.min.apply(null, DISHES.map(function(d){return d.price}));
-  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
-  $('dvDeliverDesc').textContent = t('dv_deliver_d',{fee:kr(FEE),free:kr(FREE_FROM)});
+  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_fee',{fee:kr(FEE)}),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+  $('dvNote').textContent = t('dv_note',{fee:kr(FEE)});
   $('goodfor').innerHTML = GOODFOR[S.lang].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('faq').innerHTML = FAQ.map(function(f){ var q=L(f); return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join('');
   renderUpdates();
   $('tMeta').innerHTML = esc(new Date().toLocaleDateString(S.lang==='sv'?'sv-SE':'en-GB',{weekday:'short',day:'numeric',month:'short'}));
   updateThemeBtn();
-}
-
-function renderFilters(){
-  var items=[{id:'all',label:t('filter_all')}].concat(Object.keys(KITCHENS).map(function(k){return {id:k,label:L(KITCHENS[k]),color:KITCHENS[k].color}}));
-  $('filters').setAttribute('aria-label', t('dishes_h'));
-  $('filters').innerHTML = items.map(function(it){
-    return '<button type="button" class="fchip" data-filter="'+it.id+'" aria-pressed="'+(S.filter===it.id)+'">'+(it.color?'<i style="background:'+it.color+'"></i>':'')+esc(it.label)+'</button>';
-  }).join('');
 }
 
 function dishControl(d){
@@ -1055,12 +1085,12 @@ function dishControl(d){
     '<button type="button" data-inc="'+d.id+'" aria-label="'+esc(t('more',{d:name}))+'">+</button></span>';
 }
 function renderDishes(){
-  var list = DISHES.filter(function(d){ return S.filter==='all' || d.k===S.filter; });
-  $('dishes').innerHTML = list.map(function(d){
+  $('dishes').innerHTML = DISHES.map(function(d){
     var K=KITCHENS[d.k], txt=L(d), q=S.qty[d.id]||0;
     return '<article class="dish'+(q?' on':'')+'" id="dish-'+d.id+'">'+
       '<div class="dish-top"><span class="ktag"><i style="background:'+K.color+'"></i>'+esc(L(K))+'</span>'+(d.pick?'<span class="pick">'+esc(t('pick'))+'</span>':'')+'</div>'+
       '<h4>'+esc(txt[0])+'</h4><p>'+esc(txt[1])+'</p>'+
+      '<p class="contents-h">'+esc(t('contents_h'))+'</p><ul class="menu-contents">'+L(d.c).map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'+
       '<ul class="allergens">'+d.a.map(function(a){ return '<li'+(a==='v'?' class="vegan"':'')+'>'+esc(L(ALLERGENS[a]))+'</li>'; }).join('')+'</ul>'+
       '<div class="dish-foot"><span class="price">'+esc(kr(d.price))+'<small>'+esc(t('per'))+'</small></span><span class="ctl" id="ctl-'+d.id+'">'+dishControl(d)+'</span></div>'+
     '</article>';
@@ -1076,45 +1106,30 @@ function refreshDish(id, focus){
   if(focus){ var el = ctl.querySelector(focus); if(el) el.focus(); }
 }
 
-function renderPackages(){
-  $('packages').setAttribute('aria-label', t('pkg_h'));
-  $('packages').innerHTML = PACKAGES.map(function(p){
-    var txt=L(p), save=pkgValue(p)-p.price;
-    return '<label class="opt"><input type="radio" name="pkg" id="pkg-'+p.id+'" value="'+p.id+'"'+(S.pkg===p.id?' checked':'')+'>'+
-      '<span class="opt-top"><span class="opt-name">'+esc(txt[0])+'</span><span class="radio" aria-hidden="true"></span></span>'+
-      '<span class="opt-price">'+esc(p.price?t('plus_price',{x:kr(p.price)}):t('no_extra'))+'</span>'+
-      '<span class="opt-desc">'+esc(txt[1])+'</span>'+
-      ((p.best||save>0)?'<span class="opt-tags">'+(p.best?'<span class="tag hot">'+esc(t('best'))+'</span>':'')+(save>0?'<span class="tag">'+esc(t('save',{x:kr(save)}))+'</span>':'')+'</span>':'')+
-    '</label>';
-  }).join('');
-}
-
 function renderAddons(){
   $('addons').innerHTML = GROUPS.map(function(g){
     return '<div class="agroup"><h5>'+esc(L(g))+'</h5>'+ADDONS.filter(function(a){return a.g===g.id}).map(function(a){
-      var inc=included(a.id), on=inc||!!S.addons[a.id];
-      return '<label class="addon'+(inc?' inc':'')+'"><input type="checkbox" id="ad-'+a.id+'" data-addon="'+a.id+'"'+(on?' checked':'')+(inc?' disabled':'')+'>'+
+      return '<label class="addon"><input type="checkbox" id="ad-'+a.id+'" data-addon="'+a.id+'"'+(S.addons[a.id]?' checked':'')+'>'+
         '<span class="check" aria-hidden="true">'+CHECK+'</span><span class="addon-name">'+esc(L(a))+(a.d?'<span class="addon-desc">'+esc(L(a.d))+'</span>':'')+'</span>'+
-        '<span class="addon-price">'+esc(inc?t('included'):'+'+kr(a.price))+(a.tray&&!inc?'<span class="per">'+esc(t('per_tray'))+'</span>':'')+'</span></label>';
+        '<span class="addon-price">'+esc('+'+kr(a.price))+(a.tray?'<span class="per">'+esc(t('per_tray'))+'</span>':'')+'</span></label>';
     }).join('')+'</div>';
   }).join('');
 }
 
 /* ---------- Ticket ---------- */
+function lineSub(e, persons){ return e.a.tray ? t('tray_one') : t('t_line',{n:persons,p:kr(e.a.price)}); }
 function renderTicket(){
   var c = calc();
   var body = $('tBody');
   if(!c.portions){
     body.innerHTML = '<div class="t-empty"><span class="plates" aria-hidden="true"><i></i><i></i><i></i></span><p>'+esc(t('t_empty'))+'</p></div>';
   } else {
-    var rows = c.lines.map(function(l){ return '<li><span>'+l.q+' × '+esc(L(l.d)[0])+'</span><span>'+esc(kr(l.sum))+'</span></li>'; });
-    if(c.pkg.price) rows.push('<li><span>'+esc(t('t_pkg',{name:L(c.pkg)[0]}))+'<span class="sub">'+c.portions+' × '+esc(kr(c.pkg.price))+'</span></span><span>'+esc(kr(c.pkgSum))+'</span></li>');
-    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+esc(e.a.tray?t('tray_one'):c.portions+' × '+kr(e.a.price))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
-    rows.push('<li><span>'+esc(S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'</span><span'+(c.fee?'':' class="free"')+'>'+esc(c.fee?kr(c.fee):t('free'))+'</span></li>');
+    var rows = c.lines.map(function(l){ return '<li><span>'+esc(L(l.d)[0])+'<span class="sub">'+esc(t('t_line',{n:l.q,p:kr(l.d.price)}))+'</span></span><span>'+esc(kr(l.sum))+'</span></li>'; });
+    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+esc(lineSub(e,c.portions))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
+    rows.push('<li><span>'+esc(t('t_delivery'))+'</span><span>'+esc(kr(c.fee))+'</span></li>');
     var nudge='';
     if(c.portions<MIN) nudge='<div class="nudge"><span>'+t('nudge_min',{n:MIN-c.portions})+'</span></div>';
-    else if(S.delivery==='deliver' && c.sub<FREE_FROM) nudge='<div class="nudge"><span>'+t('nudge_free',{x:esc(kr(FREE_FROM-c.sub))})+'</span></div>';
-    else if(S.pkg==='bas') nudge='<div class="nudge"><span>'+t('nudge_pkg',{x:esc(kr(pkgById('plus').price))})+'</span><button type="button" data-pick-plus>'+esc(t('nudge_pkg_btn'))+'</button></div>';
+    else if(!Object.keys(S.addons).length && S.step==='build') nudge='<div class="nudge"><span>'+t('nudge_drink',{x:esc(kr(ADDONS.filter(function(a){return a.id==='dryck'})[0].price))})+'</span><button type="button" data-add-drink>'+esc(t('nudge_drink_btn'))+'</button></div>';
     body.innerHTML =
       '<ul class="t-lines">'+rows.join('')+'</ul><hr class="rule">'+
       '<div class="t-total"><span class="lbl">'+esc(t('t_total'))+'</span><span class="amt">'+esc(kr(c.total))+'</span></div>'+
@@ -1138,7 +1153,7 @@ function minDate(){ var d=new Date(); d.setDate(d.getDate()+2); function p(n){re
 var formDraft = {};
 function renderForm(){
   var times=[]; for(var h=10;h<20;h++) times.push((h<10?'0':'')+h+':00–'+(h+1)+':00');
-  var f=formDraft, deliver=S.delivery==='deliver';
+  var f=formDraft;
   $('tForm').innerHTML =
     '<hr class="rule"><form class="form" id="detailsForm" novalidate>'+
     '<h4 id="dH" tabindex="-1">'+esc(t('d_h'))+'</h4>'+
@@ -1146,12 +1161,12 @@ function renderForm(){
     '<div class="row2">'+field('f-phone','phone',t('f_phone'),'tel','tel',false)+field('f-email','email',t('f_email'),'email','email',false)+'</div>'+
     '<p class="hint">'+esc(t('contact_hint'))+'</p>'+
     field('f-company','company',t('f_company')+' <span>('+esc(t('opt'))+')</span>','text','organization',false,true)+
-    (deliver?field('f-address','address',t('f_address'),'text','street-address',true):'')+
+    field('f-address','address',t('f_address'),'text','street-address',true)+
     '<div class="row2"><div class="field"><label for="f-date">'+esc(t('f_date'))+'</label><input id="f-date" name="date" type="date" required min="'+minDate()+'" value="'+esc(f.date||'')+'"></div>'+
     '<div class="field"><label for="f-time">'+esc(t('f_time'))+'</label><select id="f-time" name="time" required>'+times.map(function(x){return '<option'+(f.time===x?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div></div>'+
     '<div class="field"><label for="f-notes">'+esc(t('f_notes'))+' <span>('+esc(t('opt'))+')</span></label><textarea id="f-notes" name="notes" maxlength="800" placeholder="'+esc(t('f_notes_ph'))+'">'+esc(f.notes||'')+'</textarea></div>'+
     '<p class="err" id="fErr" hidden></p>'+
-    '<button type="submit" class="btn btn-primary btn-block">'+esc(t('send'))+'</button>'+
+    '<button type="submit" class="btn btn-primary btn-block" id="sendBtn">'+esc(t('send'))+'</button>'+
     '<button type="button" class="btn btn-ghost btn-block" id="backBtn">'+esc(t('back'))+'</button>'+
     '</form>';
   function field(id,name,label,type,ac,req,rawLabel){
@@ -1162,20 +1177,31 @@ function collectDraft(){ var form=$('detailsForm'); if(!form) return; ['name','p
 
 function summaryText(){
   var c=calc(), lines=[t('sum_title'),''];
-  c.lines.forEach(function(l){ lines.push(l.q+' × '+L(l.d)[0]+'  '+kr(l.sum)); });
-  if(c.pkg.price) lines.push(t('t_pkg',{name:L(c.pkg)[0]})+' ('+c.portions+' × '+kr(c.pkg.price)+')  '+kr(c.pkgSum));
-  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+(e.a.tray?t('tray_one'):c.portions+' × '+kr(e.a.price))+')  '+kr(e.sum)); });
-  lines.push((S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'  '+(c.fee?kr(c.fee):t('free')));
-  lines.push(t('t_total')+': '+kr(c.total)+' ('+t('t_vat')+')','');
+  c.lines.forEach(function(l){ lines.push(L(l.d)[0]+' ('+t('t_line',{n:l.q,p:kr(l.d.price)})+')  '+kr(l.sum)); });
+  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+lineSub(e,c.portions)+')  '+kr(e.sum)); });
+  lines.push(t('t_delivery')+'  '+kr(c.fee));
+  lines.push(t('t_total')+': '+kr(c.total)+' ('+t('sum_vat')+')','');
   var f=formDraft;
   [['f_name',f.name],['f_phone',f.phone],['f_email',f.email],['f_company',f.company],['f_address',f.address],['f_date',f.date],['f_time',f.time],['f_notes',f.notes]].forEach(function(p){ if(p[1]) lines.push(t(p[0])+': '+p[1]); });
-  if(S.delivery!=='deliver') lines.push(t('sum_pickup'));
   return lines.join('\n');
 }
+// The order as it is saved for the owner (always in Swedish, whatever language the visitor used).
+function orderRow(){
+  var c=calc(), f=formDraft;
+  return {
+    persons:c.portions, total:c.total,
+    items:{menus:c.lines.map(function(l){ return {id:l.d.id,name:l.d.sv[0],persons:l.q,price:l.d.price,sum:l.sum}; }),
+           extras:c.extras.map(function(e){ return {id:e.a.id,name:e.a.sv,tray:!!e.a.tray,price:e.a.price,sum:e.sum}; }),
+           delivery:c.fee, vat:'exkl. moms'},
+    name:f.name||'', phone:f.phone||'', email:f.email||'', company:f.company||'', address:f.address||'',
+    delivery_date:f.date, delivery_time:f.time||'', notes:f.notes||'', lang:S.lang
+  };
+}
 function renderDone(){
-  $('tDone').innerHTML = '<hr class="rule"><div class="done"><h4 id="doneH" tabindex="-1">'+esc(t('done_h'))+'</h4><p>'+esc(t('done_p'))+'</p><pre id="sumText">'+esc(summaryText())+'</pre>'+
+  $('tDone').innerHTML = '<hr class="rule"><div class="done"><h4 id="doneH" tabindex="-1">'+esc(t(S.sent?'sent_h':'done_h'))+'</h4><p>'+esc(t(S.sent?'sent_p':'done_p'))+'</p><pre id="sumText">'+esc(summaryText())+'</pre>'+
     '<button type="button" class="btn btn-primary btn-block" id="copyBtn">'+esc(t('copy'))+'</button>'+
-    '<button type="button" class="btn btn-ghost btn-block" id="editBtn">'+esc(t('edit'))+'</button></div>';
+    (S.sent ? '<button type="button" class="btn btn-ghost btn-block" id="newBtn">'+esc(t('new_order'))+'</button>'
+            : '<button type="button" class="btn btn-ghost btn-block" id="editBtn">'+esc(t('edit'))+'</button>')+'</div>';
 }
 
 function setStep(step){
@@ -1200,7 +1226,7 @@ function setQty(id,n,focus){
 }
 $('dishes').addEventListener('click', function(e){
   var b = e.target.closest('button'); if(!b) return;
-  if(b.dataset.add){ var total=calc().portions; setQty(b.dataset.add, total>=MIN?5:MIN-total<5?5:MIN-total, '[data-inc]'); }
+  if(b.dataset.add){ setQty(b.dataset.add, MIN, '[data-inc]'); }
   else if(b.dataset.inc){ setQty(b.dataset.inc,(S.qty[b.dataset.inc]||0)+1); }
   else if(b.dataset.dec){ var id=b.dataset.dec, n=(S.qty[id]||0)-1; setQty(id,n, n<=0?'[data-add]':null); }
 });
@@ -1210,33 +1236,40 @@ $('dishes').addEventListener('change', function(e){
   setQty(el.dataset.qty, n, n<=0?'[data-add]':null);
 });
 $('dishes').addEventListener('keydown', function(e){ if(e.key==='Enter' && e.target.dataset && e.target.dataset.qty){ e.target.blur(); } });
-$('filters').addEventListener('click', function(e){ var b=e.target.closest('[data-filter]'); if(!b) return; S.filter=b.dataset.filter; renderFilters(); renderDishes(); var nb=$('filters').querySelector('[data-filter="'+S.filter+'"]'); if(nb) nb.focus(); });
-$('packages').addEventListener('change', function(e){ if(e.target.name!=='pkg') return; S.pkg=e.target.value; saveCart(); renderAddons(); renderTicket(); });
 $('addons').addEventListener('change', function(e){ var id=e.target.dataset.addon; if(!id) return; if(e.target.checked) S.addons[id]=true; else delete S.addons[id]; saveCart(); renderTicket(); });
-$('delivery').addEventListener('change', function(e){ if(e.target.name!=='delivery') return; S.delivery=e.target.value; saveCart(); if(S.step==='details'){ collectDraft(); renderForm(); } renderTicket(); });
 
 document.querySelector('.ticket').addEventListener('click', function(e){
   var b=e.target.closest('button'); if(!b) return;
   if(b.id==='toDetails'){ setStep('details'); var h=$('dH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'start',behavior:'smooth'}); } }
   else if(b.id==='backBtn'){ setStep('build'); var tb=$('toDetails'); if(tb) tb.focus(); }
   else if(b.id==='editBtn'){ setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
-  else if(b.hasAttribute('data-pick-plus')){ S.pkg='plus'; saveCart(); renderPackages(); renderAddons(); renderTicket(); toast('Plus ✓'); }
+  else if(b.id==='newBtn'){ S.qty={}; S.addons={}; S.sent=false; formDraft={}; saveCart(); renderDishes(); renderAddons(); setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
+  else if(b.hasAttribute('data-add-drink')){ S.addons.dryck=true; saveCart(); renderAddons(); renderTicket(); toast(t('drink_added')); }
   else if(b.id==='copyBtn'){
     var txt=$('sumText').textContent;
     var fallback=function(){ var r=document.createRange(); r.selectNodeContents($('sumText')); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); toast(t('copy_fail')); };
     try{ navigator.clipboard.writeText(txt).then(function(){ toast(t('copied')); }, fallback); }catch(err){ fallback(); }
   }
 });
+var sendingOrder=false;
 document.querySelector('.ticket').addEventListener('submit', function(e){
   if(e.target.id!=='detailsForm') return;
   e.preventDefault();
+  if(sendingOrder) return;
   var form=e.target, err=$('fErr'); err.hidden=true;
   collectDraft();
   if(calc().portions<MIN){ err.textContent=t('err_min'); err.hidden=false; return; }
   if(!form.reportValidity()) return;
   if(!formDraft.phone && !formDraft.email){ err.textContent=t('err_contact'); err.hidden=false; form.elements.phone.focus(); return; }
-  setStep('done');
-  var h=$('doneH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'center',behavior:'smooth'}); }
+  var finish=function(){
+    setStep('done');
+    var h=$('doneH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'center',behavior:'smooth'}); }
+  };
+  if(!DB){ finish(); return; }   // preview (claude.ai link): nothing is sent
+  var btn=$('sendBtn'); sendingOrder=true; btn.disabled=true; btn.textContent=t('sending');
+  sb('/rest/v1/orders',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(orderRow())})
+    .then(function(){ sendingOrder=false; S.sent=true; store('tk_cart',''); finish(); })
+    .catch(function(){ sendingOrder=false; btn.disabled=false; btn.textContent=t('send'); err.textContent=t('err_send'); err.hidden=false; });
 });
 document.querySelector('.ticket').addEventListener('input', function(e){ if(e.target.form && e.target.form.id==='detailsForm') collectDraft(); });
 
@@ -1284,17 +1317,19 @@ function renderUpdates(){
 }
 $('updMore').addEventListener('click', function(){ updAll=!updAll; renderUpdates(); });
 
-/* ---------- Pages: home, #feedback, #installera ---------- */
-function currentView(){ var h=location.hash; if(h==='#feedback') return 'feedback'; if(h==='#installera') return 'install'; return 'home'; }
+/* ---------- Pages: home, #feedback, #installera, #bestallningar (owner) ---------- */
+function currentView(){ var h=location.hash; if(h==='#feedback') return 'feedback'; if(h==='#installera') return 'install'; if(h==='#bestallningar') return 'orders'; return 'home'; }
 function route(){
   checkOwnerHash();
   var v=currentView();
   $('top').hidden = v!=='home';
   $('view-feedback').hidden = v!=='feedback';
   $('view-install').hidden = v!=='install';
+  $('view-orders').hidden = v!=='orders';
   document.body.setAttribute('data-view', v);
   if(v==='feedback'){ hideStrip('fb'); renderFeedbackPage(); loadBoard(); window.scrollTo(0,0); }
   else if(v==='install'){ hideStrip('in'); renderInstall(); window.scrollTo(0,0); }
+  else if(v==='orders'){ hideStrip('fb'); loadOrders(); window.scrollTo(0,0); }
   else if(location.hash.length>1){ var el=document.getElementById(location.hash.slice(1)); if(el) setTimeout(function(){ el.scrollIntoView(); },0); }
   renderBar(calc());
 }
@@ -1440,7 +1475,8 @@ function renderOwner(){
   box.innerHTML='<h2 class="card-h">'+esc(t('owner_h'))+'</h2><p>'+esc(t('owner_p'))+'</p>'+
     (on ? '<p class="hint">'+esc(t('owner_on'))+'</p>' :
       (pushReady() ? (platform()==='ios'&&!isStandalone() ? '<p class="hint">'+esc(t('fb_watch_install'))+'</p>' : '<button type="button" class="btn btn-primary btn-sm" id="ownerPush">'+esc(t('owner_btn'))+'</button>') : ''))+
-    '<p class="err" id="ownerErr" hidden></p>';
+    '<p class="err" id="ownerErr" hidden></p>'+
+    '<p><a class="btn btn-ghost btn-sm" href="#bestallningar">'+esc(t('or_link'))+'</a></p>';
   var b=$('ownerPush');
   if(b) b.addEventListener('click', function(){
     b.disabled=true;
@@ -1448,6 +1484,39 @@ function renderOwner(){
       .catch(function(e){ b.disabled=false; var er=$('ownerErr'); er.textContent = e&&e.denied ? t('fb_watch_denied') : t('owner_fail'); er.hidden=false; });
   });
 }
+
+/* ---------- Orders (owner only, #bestallningar) ---------- */
+var O = {items:[], loaded:false, error:false};
+function loadOrders(){
+  if(!(OWNER && DB)){ renderOrders(); return; }
+  O.loaded=false; O.error=false; renderOrders();
+  rpc('owner_orders',{code:OWNER}).then(function(rows){ O.items=Array.isArray(rows)?rows:[]; O.loaded=true; renderOrders(); })
+    .catch(function(){ O.error=true; renderOrders(); });
+}
+function orderCard(o){
+  var it=o.items||{}, lines=[];
+  (it.menus||[]).forEach(function(m){ lines.push([m.name+' · '+m.persons+' '+t('unit'), m.sum]); });
+  (it.extras||[]).forEach(function(x){ lines.push([x.name+(x.tray?'':' · '+o.persons+' '+t('unit')), x.sum]); });
+  if(it.delivery) lines.push([t('t_delivery'), it.delivery]);
+  var tel=String(o.phone||'').replace(/[^+\d]/g,''), mail=/^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(o.email||'') ? o.email : '';
+  var h='<article class="or-item"><div class="or-top"><b>'+esc(o.name||'')+(o.company?' · '+esc(o.company):'')+'</b><time datetime="'+esc(o.created_at||'')+'">'+esc(fmtDate(o.created_at,true))+'</time></div><dl class="or-facts">'+
+    '<dt>'+esc(t('or_when'))+'</dt><dd>'+esc((o.delivery_date||'')+(o.delivery_time?' · '+o.delivery_time:''))+'</dd>'+
+    '<dt>'+esc(t('or_address'))+'</dt><dd>'+esc(o.address||'')+'</dd>'+
+    '<dt>'+esc(t('or_persons'))+'</dt><dd>'+esc(String(o.persons||''))+'</dd>';
+  if(o.phone) h+='<dt>'+esc(t('or_phone'))+'</dt><dd>'+(tel?'<a href="tel:'+esc(tel)+'">'+esc(o.phone)+'</a>':esc(o.phone))+'</dd>';
+  if(o.email) h+='<dt>'+esc(t('or_email'))+'</dt><dd>'+(mail?'<a href="mailto:'+esc(mail)+'">'+esc(o.email)+'</a>':esc(o.email))+'</dd>';
+  if(o.notes) h+='<dt>'+esc(t('or_notes'))+'</dt><dd>'+esc(o.notes)+'</dd>';
+  return h+'</dl><ul class="or-lines">'+lines.map(function(l){ return '<li><span>'+esc(l[0])+'</span><span>'+esc(kr(l[1]))+'</span></li>'; }).join('')+'</ul>'+
+    '<div class="or-total"><span>'+esc(t('t_total'))+' ('+esc(t('sum_vat'))+')</span><span>'+esc(kr(o.total||0))+'</span></div></article>';
+}
+function renderOrders(){
+  var el=$('orList');
+  if(!(OWNER && DB)){ el.innerHTML='<div class="empty">'+esc(t('or_only_owner'))+'</div>'; return; }
+  if(O.error){ el.innerHTML='<div class="empty"><p>'+esc(t('or_error'))+'</p><button type="button" class="btn btn-ghost btn-sm" data-retry-orders style="margin-top:10px">'+esc(t('fb_retry'))+'</button></div>'; return; }
+  if(!O.loaded){ el.innerHTML='<div class="empty">'+esc(t('or_loading'))+'</div>'; return; }
+  el.innerHTML = O.items.length ? O.items.map(orderCard).join('') : '<div class="empty">'+esc(t('or_empty'))+'</div>';
+}
+$('orList').addEventListener('click', function(e){ if(e.target.closest('[data-retry-orders]')) loadOrders(); });
 
 /* ---------- Feedback: compose ---------- */
 var F = {kind:'idea', area:'other', rating:0, images:[], busy:0, more:false, sending:false, sent:null};
@@ -1630,6 +1699,7 @@ $('fbList').addEventListener('click', function(e){
   window.claude.use('comments').then(function(ns){ if(!ns) return; comments=ns; if(currentView()==='feedback') renderAfterSend(); }, function(){});
 })();
 if(ON_SITE){ $('footInstall').hidden=false; $('navInstall').hidden=false; } // always: the page also shows how to install on other devices
+if(DB) document.querySelector('.testbar').hidden=true;  // orders really are sent on the real site
 
 /* ---------- Hero illustration ---------- */
 function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
@@ -1689,13 +1759,13 @@ function buildArt(){
 
 /* ---------- Boot ---------- */
 function renderAll(){
-  applyText(); renderFilters(); renderDishes(); renderPackages(); renderAddons();
-  $('dv-'+S.delivery).checked = true;
+  applyText(); renderDishes(); renderAddons();
   if(S.step==='details') renderForm();
   if(S.step==='done') renderDone();
   renderTicket();
   if(typeof currentView==='function' && currentView()==='feedback') renderFeedbackPage();
   if(typeof currentView==='function' && currentView()==='install') renderInstall();
+  if(typeof currentView==='function' && currentView()==='orders') renderOrders();
 }
 buildArt();
 renderAll();
@@ -1707,7 +1777,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '0dd8cff1c';
+  var BUILD = '0dd99dc42';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
