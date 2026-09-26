@@ -20,6 +20,7 @@
 <link rel="canonical" href="https://cagdasbindak-hub.github.io/catering-app/">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>window.TK_SITE={"site": true};</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap">
@@ -317,6 +318,92 @@ body.has-bar .fb{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:var(--shadow)}
 body.has-bar .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 
+
+/* Views (feedback, install) */
+.view{padding-block:clamp(24px,5vw,56px) clamp(48px,8vw,96px)}
+.view-in.narrow{max-width:760px}
+.view-h{font-size:clamp(52px,11vw,96px)}
+.back{display:inline-flex;align-items:center;min-height:40px;font-weight:600;color:var(--ink-2);text-decoration:none;margin-bottom:12px}
+.back:hover{color:var(--ink)}
+.note{padding:10px 14px;border-radius:10px;background:var(--ginger-soft);color:var(--ink);font-size:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(16px,3vw,24px);display:grid;gap:14px;align-content:start}
+.card-h{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:1}
+.fb-grid{display:grid;gap:16px;align-items:start}
+@media (min-width:900px){.fb-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.fb-side{display:grid;gap:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-weight:600;font-size:14px;color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+fieldset.field{border:0;margin:0;padding:0;min-width:0}
+fieldset.field legend{font-size:14px;font-weight:600;padding:0;margin-bottom:8px}
+.stars{display:flex;gap:4px}
+.star{width:40px;height:40px;border:0;background:transparent;font-size:26px;line-height:1;color:var(--line);padding:0}
+.star.on{color:var(--ginger)}
+.shots{display:flex;flex-wrap:wrap;gap:8px}
+.shots:empty{display:none}
+.shot{position:relative;width:84px;height:84px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--sunk)}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot button{position:absolute;top:4px;right:4px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:15px;line-height:1}
+.shot.busy::after{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--surface) 55%,transparent)}
+.btn-sm{min-height:40px;padding:0 16px;font-size:14px}
+.shot-btn{cursor:pointer;justify-self:start}
+.shot-btn svg,.btn svg{width:18px;height:18px;flex:none}
+.more-btn{justify-self:start;border:0;background:none;padding:4px 0;font-weight:600;color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+.sent{display:grid;gap:12px;padding:14px;border-radius:12px;background:var(--basil-soft)}
+.sent p{font-weight:600}
+.sent .hint{font-weight:400}
+.quote{margin:0;padding:10px 12px;border-left:3px solid var(--ink-3);background:var(--paper);border-radius:0 8px 8px 0;white-space:pre-wrap;font-size:14px;user-select:text}
+.owner-card{background:var(--ginger-soft);border-color:transparent}
+.board{margin-top:clamp(28px,5vw,48px);display:grid;gap:14px}
+.board-h{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(34px,6vw,48px);line-height:1}
+.fb-list{display:grid;gap:12px}
+@media (min-width:900px){.fb-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fb-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:10px;align-content:start}
+.fb-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.fb-top .who{font-weight:700}
+.fb-top time{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.pill{margin-left:auto;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--sunk);color:var(--ink);white-space:nowrap}
+.pill.st-todo{background:var(--ginger-soft)}.pill.st-in_progress{background:var(--salmon-soft)}.pill.st-done{background:var(--basil-soft)}.pill.st-declined{background:var(--sunk);color:var(--ink-2)}
+.badges{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.badge{font-size:12px;font-weight:600;padding:3px 8px;border-radius:6px;border:1px solid var(--line);color:var(--ink-2)}
+.badge.bug{border-color:transparent;background:var(--accent-soft);color:var(--ink)}
+.stars-ro{color:var(--ginger);font-size:13px;letter-spacing:1px}
+.fb-msg{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
+.fb-shots{display:flex;flex-wrap:wrap;gap:8px}
+.fb-shots a{display:block;width:96px;height:96px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.fb-shots img{width:100%;height:100%;object-fit:cover;display:block}
+.fb-reply{padding:10px 12px;border-radius:10px;background:var(--basil-soft);display:grid;gap:4px}
+.fb-reply b{font-size:13px}
+.fb-reply p{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
+.fb-wait{font-size:13px;color:var(--ink-2);font-style:italic}
+.review{display:grid;gap:10px;padding-top:6px;border-top:1px dashed var(--line)}
+.review textarea{width:100%;min-height:80px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);font-size:15px;resize:vertical}
+.empty{padding:28px 16px;text-align:center;color:var(--ink-2);border:1.5px dashed var(--line);border-radius:var(--r)}
+.install-go{display:grid;gap:12px}
+.guide{display:grid;gap:12px}
+.guide details{border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.guide summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-size:17px;display:flex;justify-content:space-between;gap:12px}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::after{content:"+";font-family:var(--f-mono);color:var(--ink-2)}
+.guide details[open] summary::after{content:"−"}
+.guide ol{list-style:none;margin:0;padding:0 18px 18px;display:grid;gap:12px;counter-reset:st}
+.guide li{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;counter-increment:st}
+.guide li::before{content:counter(st);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-family:var(--f-display);font-weight:800;font-size:20px}
+.guide li b{display:block;font-weight:600}
+.guide li span{color:var(--ink-2);font-size:14px}
+.guide .ico{display:inline-flex;vertical-align:-4px;width:22px;height:22px;margin-inline:2px;color:var(--ink)}
+/* Strips (feedback from the top, install from the bottom) */
+.strip{position:fixed;left:0;right:0;z-index:48;display:flex;align-items:center;max-width:440px;margin-inline:auto;width:calc(100% - 32px);border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.22)}
+.strip-top{top:calc(env(safe-area-inset-top,0px) + 8px);background:var(--ink);color:var(--paper);animation:dropin .45s cubic-bezier(.2,.8,.2,1) both}
+.strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 16px);background:var(--accent);color:var(--on-accent);animation:risein .45s cubic-bezier(.2,.8,.2,1) both}
+body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
+.strip-main{flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:11px 4px 11px 18px;border:0;background:none;color:inherit;font:inherit;font-weight:700;font-size:15px;text-decoration:none;text-align:left}
+.strip-main span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.strip-main svg{width:18px;height:18px;flex:none}
+.strip-x{flex:none;width:42px;height:42px;border:0;background:none;color:inherit;font-size:20px;line-height:1;border-radius:50%;opacity:.85}
+.strip-x:hover{opacity:1}
+@keyframes dropin{from{transform:translateY(-140%)}to{transform:none}}
+@keyframes risein{from{transform:translateY(160%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -333,6 +420,7 @@ body.has-bar .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
       <a href="#bestall" data-i18n="nav_menu">Meny</a>
       <a href="#sa-funkar-det" data-i18n="nav_how">Så funkar det</a>
       <a href="#fragor" data-i18n="nav_faq">Frågor</a>
+      <a href="#feedback" data-i18n="nav_feedback">Feedback</a>
     </nav>
     <div class="hdr-tools">
       <button class="icon-btn" id="langBtn" type="button">EN</button>
@@ -445,25 +533,55 @@ body.has-bar .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     </div>
   </section>
 
-  <section class="section" id="uppdateringar" data-section="updates">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow" data-i18n="upd_kicker">Vad som är nytt</p>
-        <h2 class="display" data-i18n="upd_h">Senaste uppdateringar</h2>
-      </div>
-      <ul class="updates" id="updates"></ul>
-    </div>
-  </section>
 </main>
+
+<section class="view" id="view-feedback" hidden data-section="feedback" aria-labelledby="fbTitle">
+  <div class="wrap view-in">
+    <a class="back" href="#top" data-i18n="back_home">← Till sidan</a>
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="fb_kicker">Hjälp oss bli bättre</p>
+      <h1 class="display view-h" id="fbTitle" data-i18n="fb_title">Feedback</h1>
+      <p data-i18n="fb_intro">Hjälp oss göra sidan bättre! Allt som skickas syns här för alla, och varje förslag får ett svar och en status.</p>
+      <p class="note" id="fbLocalNote" hidden data-i18n="fb_local">Förhandsvisning: förslag sparas bara i den här webbläsaren tills databasen är kopplad.</p>
+    </div>
+    <div class="fb-grid">
+      <div class="card" id="fbCompose"></div>
+      <div class="fb-side">
+        <div class="card owner-card" id="fbOwner" hidden></div>
+        <section class="card" aria-labelledby="updH">
+          <h2 class="card-h" id="updH" data-i18n="upd_h">Senaste uppdateringar</h2>
+          <ul class="updates" id="updates"></ul>
+          <button class="linkbtn" type="button" id="updMore" hidden></button>
+        </section>
+      </div>
+    </div>
+    <section class="board" aria-labelledby="boardTitle">
+      <h2 class="board-h" id="boardTitle"></h2>
+      <div class="filters" id="fbFilters" role="group"></div>
+      <div class="fb-list" id="fbList" aria-live="polite"></div>
+    </section>
+  </div>
+</section>
+
+<section class="view" id="view-install" hidden data-section="install" aria-labelledby="inTitle">
+  <div class="wrap view-in narrow">
+    <a class="back" href="#top" data-i18n="back_home">← Till sidan</a>
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="in_kicker">Egen ikon på hemskärmen</p>
+      <h1 class="display view-h" id="inTitle" data-i18n="in_title">Installera Tre Kök</h1>
+      <p data-i18n="in_why">Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.</p>
+    </div>
+    <div id="inBody"></div>
+  </div>
+</section>
 
 <footer class="foot">
   <div class="wrap foot-in">
     <span data-i18n="foot">Tre Kök är ett arbetsnamn. Testversion 0.1.</span>
     <span class="foot-actions">
-      <button class="linkbtn" type="button" id="installBtn" hidden data-i18n="install">Installera som app</button>
-      <button class="linkbtn" type="button" id="fbFooter" hidden data-i18n="fb_btn">Tyck till</button>
+      <a class="linkbtn" href="#feedback" data-i18n="foot_fb">Feedback och förslag</a>
+      <a class="linkbtn" href="#installera" id="footInstall" hidden data-i18n="in_link">Installera som app</a>
     </span>
-    <p class="hint" id="iosHint" hidden data-i18n="ios_hint">På iPhone: tryck på Dela och välj Lägg till på hemskärmen.</p>
   </div>
 </footer>
 
@@ -472,10 +590,13 @@ body.has-bar .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   <a class="btn" href="#biljett" data-i18n="bar_see">Se beställning</a>
 </div>
 
-<div class="fb" id="fbPill" hidden role="complementary">
-  <span data-i18n="fb_q">Vad tycker du om sidan?</span>
-  <button class="btn btn-primary" type="button" id="fbGo" data-i18n="fb_btn">Tyck till</button>
-  <button class="x" type="button" id="fbX">×</button>
+<div class="strip strip-top" id="fbStrip" hidden>
+  <a class="strip-main" href="#feedback" id="fbStripLink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span id="fbStripText"></span></a>
+  <button class="strip-x" type="button" id="fbStripX">×</button>
+</div>
+<div class="strip strip-bottom" id="inStrip" hidden>
+  <button class="strip-main" type="button" id="inStripGo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="in_nudge">Installera Tre Kök som app 📲</span></button>
+  <button class="strip-x" type="button" id="inStripX">×</button>
 </div>
 
 <div class="toast" id="toast" hidden role="status"></div>
@@ -532,6 +653,8 @@ var PACKAGES = [
 ];
 var MIN = 10, FEE = 295, FREE_FROM = 3000, MAX_QTY = 500;
 var UPDATES = [
+  {d:'2026-09-26',sv:'Ny feedbacksida: alla kan lämna förslag med skärmbilder, och varje förslag får svar och status. Sidan kan installeras som app, och en kort länk finns: tinyurl.com/catering-app.',en:'New feedback page: anyone can leave suggestions with screenshots, and every suggestion gets a reply and a status. The site can be installed as an app, and there is a short link: tinyurl.com/catering-app.'},
+  {d:'2026-09-26',sv:'Egen webbadress som uppdaterar sig själv när en ny version finns.',en:'Its own web address that updates itself when a new version is out.'},
   {d:'2026-09-26',sv:'Första versionen: meny från tre kök, beställning med paket och tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: menu from three kitchens, ordering with combos and extras, Swedish and English, light and dark mode.'}
 ];
 var GOODFOR = {sv:['Kontorslunch och möten','Födelsedagar och fester','Idrottslag och cuper','Mingel och bröllop'],en:['Office lunches and meetings','Birthdays and parties','Sports teams and tournaments','Receptions and weddings']};
@@ -585,6 +708,109 @@ var T = {
     sum_title:'Förfrågan, Tre Kök Catering',sum_delivery:'Leverans',sum_pickup:'Hämtar själv',
     art_label:'Pokebowl, pasta och nudlar sedda ovanifrån',
     install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
+    nav_feedback:"Feedback",
+    back_home:"← Till sidan",
+    foot_fb:"Feedback och förslag",
+    close:"Stäng",
+    fb_kicker:"Hjälp oss bli bättre",
+    fb_title:"Feedback",
+    fb_intro:"Hjälp oss göra sidan bättre! Allt som skickas syns här för alla, och varje förslag får ett svar och en status.",
+    fb_local:"Förhandsvisning: förslag sparas bara i den här webbläsaren tills databasen är kopplad.",
+    fb_compose:"Lämna ett förslag",
+    fb_kind:"Vad gäller det?",
+    k_bug:"Något fungerar inte",
+    k_idea:"Förslag",
+    k_design:"Utseende",
+    k_other:"Övrigt",
+    fb_area:"Var på sidan?",
+    a_menu:"Meny och rätter",
+    a_order:"Beställning",
+    a_packages:"Paket och tillval",
+    a_mobile:"På mobilen",
+    a_other:"Annat",
+    fb_rating:"Hur gillar du sidan hittills?",
+    fb_rating_label:"{n} av 5",
+    fb_message:"Ditt förslag",
+    fb_message_ph:"Beskriv så konkret du kan. Vad gjorde du, vad hände och vad hade du förväntat dig?",
+    fb_name:"Ditt namn",
+    fb_name_hint:"visas på tavlan, frivilligt",
+    fb_public:"Syns för alla. Skriv inga lösenord eller privata uppgifter.",
+    fb_more:"Fler detaljer (var på sidan, betyg)",
+    fb_less:"Färre detaljer",
+    fb_send:"Skicka",
+    fb_sending:"Skickar …",
+    fb_missing:"Skriv några ord om vad du tycker.",
+    fb_sent:"Tack! Ditt förslag ligger nu på tavlan.",
+    fb_another:"Skriv ett förslag till",
+    fb_add_shot:"Lägg till skärmbild",
+    fb_shot:"Skärmbild",
+    fb_shot_remove:"Ta bort skärmbild",
+    fb_shot_max:"Högst 3 skärmbilder.",
+    fb_shot_bad:"Det gick inte att läsa bilden. Prova en PNG eller JPG.",
+    fb_shot_fail:"Skärmbilden gick inte att ladda upp. Försök igen.",
+    fb_watch:"Få notis när vi svarar",
+    fb_watching:"Vi meddelar dig när det kommer ett svar.",
+    fb_watch_install:"Vill du få notis när vi svarar? På iPhone: lägg sidan på hemskärmen först.",
+    fb_watch_denied:"Notiser är avstängda för sidan. Du kan slå på dem i webbläsarens inställningar.",
+    fb_watch_fail:"Det gick inte att slå på notiser just nu.",
+    fb_comment_title:"Skicka även som kommentar",
+    fb_comment_body:"Ett kommentarsfält öppnas med din text. Tryck på skicka där.",
+    fb_comment_btn:"Öppna kommentar",
+    fb_error:"Det gick inte att skicka. Kolla nätet och försök igen.",
+    fb_load_error:"Det gick inte att hämta förslagen just nu.",
+    fb_retry:"Försök igen",
+    fb_loading:"Hämtar förslag …",
+    fb_board:"Alla förslag",
+    fb_empty:"Inga förslag ännu. Bli först!",
+    fb_filter_empty:"Inga förslag med den statusen.",
+    s_new:"Nytt",
+    s_todo:"Ska göras",
+    s_in_progress:"Pågår",
+    s_done:"Gjort",
+    s_declined:"Görs inte",
+    fb_all:"Alla",
+    fb_anon:"Anonym",
+    fb_reply:"Svar från utvecklaren",
+    fb_waiting:"Väntar på svar",
+    fb_review:"Svara",
+    fb_reply_ph:"Svar som alla kan se",
+    fb_save_reply:"Spara svar",
+    fb_saved:"Sparat",
+    fb_cancel:"Avbryt",
+    owner_h:"Du är ägare",
+    owner_p:"Få en notis på den här enheten varje gång någon skickar feedback. Du kan också svara direkt på tavlan.",
+    owner_btn:"Slå på notiser",
+    owner_on:"Notiser är på för den här enheten.",
+    owner_fail:"Det gick inte. Öppna ägarlänken igen och försök en gång till.",
+    upd_more:"Visa alla {n}",
+    upd_less:"Visa färre",
+    nudge1:"Hittat något konstigt? Tryck och berätta 💬",
+    nudge2:"Har du en idé? Skriv den här 💡",
+    nudge3:"Vad tycker du om sidan? Tryck här",
+    nudge4:"Något som krånglar? Berätta för oss",
+    in_nudge:"Installera Tre Kök som app 📲",
+    in_link:"Installera som app",
+    in_kicker:"Egen ikon på hemskärmen",
+    in_title:"Installera Tre Kök",
+    in_why:"Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.",
+    in_one_tap:"Installera",
+    in_done:"Tre Kök är installerad. Öppna den från ikonen på hemskärmen.",
+    in_iphone:"Så gör du på iPhone",
+    in_ios1:"Tryck på Dela-knappen",
+    in_ios1_hint:"Längst ner i Safari (eller uppe till höger på iPad).",
+    in_ios2:"Välj ”Lägg till på hemskärmen”",
+    in_ios2_hint:"Scrolla ner i listan om du inte ser det direkt.",
+    in_ios3:"Tryck på ”Lägg till”",
+    in_open:"Öppna Tre Kök från den nya ikonen",
+    in_android:"Så gör du på Android",
+    in_and1:"Tryck på ⋮ uppe till höger",
+    in_and2:"Välj ”Installera app” eller ”Lägg till på startskärmen”",
+    in_and3:"Bekräfta med ”Installera”",
+    in_computer:"Så gör du på datorn",
+    in_pc1:"Klicka på installera-ikonen längst till höger i adressfältet",
+    in_pc1_hint:"Finns i Chrome och Edge. I Safari på Mac: Arkiv → Lägg till i Dock.",
+    in_pc2:"Klicka på ”Installera”",
+    in_other:"Andra enheter",
     upd_text:'Det finns en ny version av sidan.',upd_btn:'Uppdatera'
   },
   en:{
@@ -627,6 +853,109 @@ var T = {
     sum_title:'Request, Tre Kök Catering',sum_delivery:'Delivery',sum_pickup:'Pickup',
     art_label:'Poke bowl, pasta and noodles seen from above',
     install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
+    nav_feedback:"Feedback",
+    back_home:"← Back to the site",
+    foot_fb:"Feedback and suggestions",
+    close:"Close",
+    fb_kicker:"Help us get better",
+    fb_title:"Feedback",
+    fb_intro:"Help us make the site better! Everything sent is shown here for everyone, and every suggestion gets a reply and a status.",
+    fb_local:"Preview: suggestions are only saved in this browser until the database is connected.",
+    fb_compose:"Leave a suggestion",
+    fb_kind:"What is it about?",
+    k_bug:"Something is broken",
+    k_idea:"Suggestion",
+    k_design:"Look and feel",
+    k_other:"Other",
+    fb_area:"Where on the site?",
+    a_menu:"Menu and dishes",
+    a_order:"Ordering",
+    a_packages:"Combos and extras",
+    a_mobile:"On the phone",
+    a_other:"Other",
+    fb_rating:"How do you like the site so far?",
+    fb_rating_label:"{n} of 5",
+    fb_message:"Your suggestion",
+    fb_message_ph:"Be as specific as you can. What did you do, what happened and what did you expect?",
+    fb_name:"Your name",
+    fb_name_hint:"shown on the board, optional",
+    fb_public:"Visible to everyone. Do not write passwords or private details.",
+    fb_more:"More details (where on the site, rating)",
+    fb_less:"Fewer details",
+    fb_send:"Send",
+    fb_sending:"Sending …",
+    fb_missing:"Write a few words about what you think.",
+    fb_sent:"Thanks! Your suggestion is now on the board.",
+    fb_another:"Write another suggestion",
+    fb_add_shot:"Add screenshot",
+    fb_shot:"Screenshot",
+    fb_shot_remove:"Remove screenshot",
+    fb_shot_max:"At most 3 screenshots.",
+    fb_shot_bad:"Could not read that image. Try a PNG or JPG.",
+    fb_shot_fail:"The screenshot could not be uploaded. Try again.",
+    fb_watch:"Get notified when we reply",
+    fb_watching:"We'll let you know when there is a reply.",
+    fb_watch_install:"Want a notification when we reply? On iPhone: add the site to your home screen first.",
+    fb_watch_denied:"Notifications are off for this site. You can turn them on in the browser settings.",
+    fb_watch_fail:"Could not turn on notifications right now.",
+    fb_comment_title:"Also send as a comment",
+    fb_comment_body:"A comment box opens with your text. Press send there.",
+    fb_comment_btn:"Open comment",
+    fb_error:"Could not send. Check your connection and try again.",
+    fb_load_error:"Could not load the suggestions right now.",
+    fb_retry:"Try again",
+    fb_loading:"Loading suggestions …",
+    fb_board:"All suggestions",
+    fb_empty:"No suggestions yet. Be the first!",
+    fb_filter_empty:"No suggestions with that status.",
+    s_new:"New",
+    s_todo:"Planned",
+    s_in_progress:"In progress",
+    s_done:"Done",
+    s_declined:"Won't do",
+    fb_all:"All",
+    fb_anon:"Anonymous",
+    fb_reply:"Reply from the developer",
+    fb_waiting:"Waiting for a reply",
+    fb_review:"Reply",
+    fb_reply_ph:"Reply everyone can see",
+    fb_save_reply:"Save reply",
+    fb_saved:"Saved",
+    fb_cancel:"Cancel",
+    owner_h:"You're the owner",
+    owner_p:"Get a notification on this device whenever someone sends feedback. You can also reply right on the board.",
+    owner_btn:"Turn on notifications",
+    owner_on:"Notifications are on for this device.",
+    owner_fail:"That did not work. Open the owner link again and try once more.",
+    upd_more:"Show all {n}",
+    upd_less:"Show fewer",
+    nudge1:"Found something odd? Tap and tell us 💬",
+    nudge2:"Got an idea? Write it here 💡",
+    nudge3:"What do you think of the site? Tap here",
+    nudge4:"Something not working? Tell us",
+    in_nudge:"Install Tre Kök as an app 📲",
+    in_link:"Install as app",
+    in_kicker:"Your own icon on the home screen",
+    in_title:"Install Tre Kök",
+    in_why:"As an app the site gets its own icon on the home screen, opens full screen and can send notifications, just like a regular app.",
+    in_one_tap:"Install",
+    in_done:"Tre Kök is installed. Open it from the icon on your home screen.",
+    in_iphone:"On iPhone",
+    in_ios1:"Tap the Share button",
+    in_ios1_hint:"At the bottom of Safari (top right on iPad).",
+    in_ios2:"Choose “Add to Home Screen”",
+    in_ios2_hint:"Scroll down the list if you do not see it right away.",
+    in_ios3:"Tap “Add”",
+    in_open:"Open Tre Kök from the new icon",
+    in_android:"On Android",
+    in_and1:"Tap ⋮ at the top right",
+    in_and2:"Choose “Install app” or “Add to Home screen”",
+    in_and3:"Confirm with “Install”",
+    in_computer:"On a computer",
+    in_pc1:"Click the install icon at the right end of the address bar",
+    in_pc1_hint:"Available in Chrome and Edge. In Safari on Mac: File → Add to Dock.",
+    in_pc2:"Click “Install”",
+    in_other:"Other devices",
     upd_text:'A new version of the site is available.',upd_btn:'Update'
   }
 };
@@ -679,7 +1008,8 @@ function applyText(){
   document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = t(el.getAttribute('data-i18n')); });
   $('langBtn').textContent = S.lang==='sv' ? 'EN' : 'SV';
   $('langBtn').setAttribute('aria-label', t('to_en'));
-  $('fbX').setAttribute('aria-label', t('fb_close'));
+  $('fbStripX').setAttribute('aria-label', t('close'));
+  $('inStripX').setAttribute('aria-label', t('close'));
   $('art').setAttribute('aria-label', t('art_label'));
   $('heroKitchens').innerHTML = Object.keys(KITCHENS).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
   var min = Math.min.apply(null, DISHES.map(function(d){return d.price}));
@@ -687,11 +1017,7 @@ function applyText(){
   $('dvDeliverDesc').textContent = t('dv_deliver_d',{fee:kr(FEE),free:kr(FREE_FROM)});
   $('goodfor').innerHTML = GOODFOR[S.lang].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('faq').innerHTML = FAQ.map(function(f){ var q=L(f); return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join('');
-  $('updates').innerHTML = UPDATES.map(function(u){
-    var d = new Date(u.d+'T12:00:00');
-    var ds = d.toLocaleDateString(S.lang==='sv'?'sv-SE':'en-GB',{day:'numeric',month:'short',year:'numeric'});
-    return '<li><time datetime="'+u.d+'">'+esc(ds)+'</time><span>'+esc(L(u))+'</span></li>';
-  }).join('');
+  renderUpdates();
   $('tMeta').innerHTML = esc(new Date().toLocaleDateString(S.lang==='sv'?'sv-SE':'en-GB',{weekday:'short',day:'numeric',month:'short'}));
   updateThemeBtn();
 }
@@ -783,7 +1109,7 @@ function renderTicket(){
 }
 
 function renderBar(c){
-  var bar=$('bar'), show = c.portions>0 && !ticketVisible && S.step!=='done';
+  var bar=$('bar'), show = c.portions>0 && !ticketVisible && S.step!=='done' && currentView()==='home';
   bar.hidden = !show;
   document.body.classList.toggle('has-bar', show && window.innerWidth<1000);
   $('barTotal').textContent = kr(c.total);
@@ -919,44 +1245,374 @@ if('IntersectionObserver' in window){
 }
 window.addEventListener('resize', function(){ renderBar(calc()); });
 
-/* ---------- Feedback (comment composer) ---------- */
-var comments=null, fbShown=false;
-function sectionInView(){
-  var secs=document.querySelectorAll('[data-section]'), mid=window.innerHeight/2, best=null;
-  secs.forEach(function(s){ var r=s.getBoundingClientRect(); if(r.top<=mid && r.bottom>=mid) best=s; });
-  return best || document.querySelector('main');
+/* ---------- Site config, dates ---------- */
+var CFG = window.TK_SITE || null;           // set only on the real website (scripts/build_site.py)
+var ON_SITE = !!CFG;
+var DB = !!(CFG && CFG.supabaseUrl && CFG.anonKey);
+var FAST = window.TK_TEST_FAST === true;    // tests only: shorter timers
+function fmtDate(iso, withTime){
+  var d=new Date(iso); if(isNaN(d)) return '';
+  var o={day:'numeric',month:'short'}; if(d.getFullYear()!==new Date().getFullYear()) o.year='numeric';
+  if(withTime){ o.hour='2-digit'; o.minute='2-digit'; }
+  return d.toLocaleString(S.lang==='sv'?'sv-SE':'en-GB',o);
 }
-function hideFeedback(){ $('fbPill').hidden=true; $('fbFooter').hidden=true; comments=null; }
-function openFeedback(){
-  if(!comments) return;
-  $('fbPill').hidden=true;
-  comments.openComposer({element:sectionInView()}).catch(function(err){
-    var code=err&&err.code;
-    if(code==='unavailable'||code==='not_granted'||code==='capability_disabled'||code==='capability_removed'||code==='forbidden') hideFeedback();
-    else if(code==='rate_limited') {}
+var updAll=false;
+function renderUpdates(){
+  var list = updAll ? UPDATES : UPDATES.slice(0,3);
+  $('updates').innerHTML = list.map(function(u){
+    return '<li><time datetime="'+u.d+'">'+esc(fmtDate(u.d+'T12:00:00'))+'</time><span>'+esc(L(u))+'</span></li>';
+  }).join('');
+  var more=$('updMore'); more.hidden = UPDATES.length<=3;
+  more.textContent = updAll ? t('upd_less') : t('upd_more',{n:UPDATES.length});
+}
+$('updMore').addEventListener('click', function(){ updAll=!updAll; renderUpdates(); });
+
+/* ---------- Pages: home, #feedback, #installera ---------- */
+function currentView(){ var h=location.hash; if(h==='#feedback') return 'feedback'; if(h==='#installera') return 'install'; return 'home'; }
+function route(){
+  checkOwnerHash();
+  var v=currentView();
+  $('top').hidden = v!=='home';
+  $('view-feedback').hidden = v!=='feedback';
+  $('view-install').hidden = v!=='install';
+  document.body.setAttribute('data-view', v);
+  if(v==='feedback'){ hideStrip('fb'); renderFeedbackPage(); loadBoard(); window.scrollTo(0,0); }
+  else if(v==='install'){ hideStrip('in'); renderInstall(); window.scrollTo(0,0); }
+  else if(location.hash.length>1){ var el=document.getElementById(location.hash.slice(1)); if(el) setTimeout(function(){ el.scrollIntoView(); },0); }
+  renderBar(calc());
+}
+window.addEventListener('hashchange', route);
+
+/* ---------- Install as app (real website only) ---------- */
+var deferredPrompt=null;
+window.addEventListener('beforeinstallprompt', function(e){ if(!ON_SITE) return; e.preventDefault(); deferredPrompt=e; if(currentView()==='install') renderInstall(); });
+window.addEventListener('appinstalled', function(){ deferredPrompt=null; try{ localStorage.setItem('tk_installed','1'); }catch(e){} hideStrip('in'); $('footInstall').hidden=true; if(currentView()==='install') renderInstall(); });
+function platform(){ var ua=navigator.userAgent; if(/iPhone|iPad|iPod/.test(ua)||(/Macintosh/.test(ua)&&navigator.maxTouchPoints>1)) return 'ios'; if(/Android/.test(ua)) return 'android'; return 'desktop'; }
+function isStandalone(){ return (window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true; }
+function isInstalled(){ var m=false; try{ m=localStorage.getItem('tk_installed')==='1'; }catch(e){} return isStandalone()||m; }
+var ICO_SHARE='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M8 7l4-4 4 4M6 11H5v10h14V11h-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var ICO_PLUS='<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+function guide(id, title, steps, open){
+  return '<details'+(open?' open':'')+' id="guide-'+id+'"><summary>'+esc(title)+'</summary><ol>'+steps.map(function(st){
+    return '<li><div><b>'+st[0]+'</b>'+(st[1]?'<span>'+esc(st[1])+'</span>':'')+'</div></li>';
+  }).join('')+'</ol></details>';
+}
+function renderInstall(){
+  var pf=platform(), html='';
+  if(isInstalled()) html+='<div class="sent"><p>'+esc(t('in_done'))+'</p></div>';
+  else if(deferredPrompt) html+='<div class="install-go"><button type="button" class="btn btn-primary" id="inOneTap">'+esc(t('in_one_tap'))+'</button></div>';
+  var g={
+    ios:guide('ios', t('in_iphone'), [[esc(t('in_ios1'))+' '+ICO_SHARE, t('in_ios1_hint')],[esc(t('in_ios2'))+' '+ICO_PLUS, t('in_ios2_hint')],[esc(t('in_ios3')),''],[esc(t('in_open')),'']], pf==='ios'),
+    android:guide('android', t('in_android'), [[esc(t('in_and1')),''],[esc(t('in_and2')),''],[esc(t('in_and3')),''],[esc(t('in_open')),'']], pf==='android'),
+    desktop:guide('desktop', t('in_computer'), [[esc(t('in_pc1')), t('in_pc1_hint')],[esc(t('in_pc2')),''],[esc(t('in_open')),'']], pf==='desktop')
+  };
+  var order=[pf].concat(['ios','android','desktop'].filter(function(x){return x!==pf}));
+  html+='<div class="guide">'+order.map(function(k){ return g[k]; }).join('')+'</div>';
+  $('inBody').innerHTML=html;
+  var b=$('inOneTap');
+  if(b) b.addEventListener('click', function(){
+    var e=deferredPrompt; if(!e) return; deferredPrompt=null;
+    e.prompt(); e.userChoice.then(function(c){ if(c&&c.outcome==='accepted'){ try{ localStorage.setItem('tk_installed','1'); }catch(err){} } renderInstall(); }, function(){ renderInstall(); });
   });
 }
-function maybeShowPill(){
-  if(!comments || fbShown) return;
-  var last=0; try{ last=parseInt(sessionStorage.getItem('tk_fb_last')||'0',10)||0; }catch(e){}
-  if(Date.now()-last < 15*60*1000) return;
-  fbShown=true; $('fbPill').hidden=false;
-  try{ sessionStorage.setItem('tk_fb_last', String(Date.now())); }catch(e){}
+
+/* ---------- Strips: feedback now and then (top), install (bottom) ---------- */
+var stripTimers={};
+function stripEl(k){ return $(k==='fb'?'fbStrip':'inStrip'); }
+function showStrip(k, ms){ var el=stripEl(k); el.hidden=false; clearTimeout(stripTimers[k]); stripTimers[k]=setTimeout(function(){ el.hidden=true; }, ms); }
+function hideStrip(k){ clearTimeout(stripTimers[k]); stripEl(k).hidden=true; }
+function mutedUntil(key){ try{ return Number(localStorage.getItem(key)||0); }catch(e){ return 0; } }
+function muteFor(key, ms){ try{ localStorage.setItem(key, String(Date.now()+ms)); }catch(e){} }
+var nudgeIdx=0;
+function feedbackNudge(){
+  if(currentView()==='feedback' || Date.now()<mutedUntil('tk_fb_muted')) return;
+  $('fbStripText').textContent = t('nudge'+((nudgeIdx++%4)+1));
+  showStrip('fb', FAST?4000:10000);
 }
-$('fbGo').addEventListener('click', openFeedback);
-$('fbFooter').addEventListener('click', openFeedback);
-$('fbX').addEventListener('click', function(){ $('fbPill').hidden=true; });
-(function initFeedback(){
-  if(!(window.claude && typeof window.claude.use==='function')) return;
-  window.claude.use('comments').then(function(ns){
-    if(!ns) return;
-    comments=ns; $('fbFooter').hidden=false;
-    setTimeout(maybeShowPill, 40000);
-    window.addEventListener('scroll', function onS(){
-      if(window.scrollY + window.innerHeight > document.body.scrollHeight*0.7){ window.removeEventListener('scroll', onS); maybeShowPill(); }
-    }, {passive:true});
-  }, function(){});
+function installNudge(){
+  if(!ON_SITE || isInstalled() || currentView()!=='home' || Date.now()<mutedUntil('tk_in_muted')) return;
+  showStrip('in', FAST?4000:12000);
+}
+$('fbStripLink').addEventListener('click', function(){ hideStrip('fb'); });
+$('fbStripX').addEventListener('click', function(){ muteFor('tk_fb_muted', 24*3600*1000); hideStrip('fb'); });
+$('inStripX').addEventListener('click', function(){ muteFor('tk_in_muted', 3*24*3600*1000); hideStrip('in'); });
+$('inStripGo').addEventListener('click', function(){
+  hideStrip('in');
+  if(deferredPrompt){ var e=deferredPrompt; deferredPrompt=null; e.prompt(); e.userChoice.then(function(c){ if(c&&c.outcome==='accepted'){ try{ localStorage.setItem('tk_installed','1'); }catch(err){} } }, function(){}); }
+  else location.hash='installera';
+});
+setTimeout(feedbackNudge, FAST?1200:25000); setInterval(feedbackNudge, FAST?6000:4*60*1000);
+setTimeout(installNudge, FAST?800:12000); setInterval(installNudge, FAST?6000:10*60*1000);
+
+/* ---------- Feedback: storage ---------- */
+var KINDS=['bug','idea','design','other'], AREAS=['menu','order','packages','mobile','other'], STATUSES=['new','todo','in_progress','done','declined'];
+function sbBase(){ return CFG.supabaseUrl.replace(/\/+$/,''); }
+function sb(path, opts){
+  opts=opts||{};
+  var h={apikey:CFG.anonKey};
+  if(CFG.anonKey.indexOf('sb_')!==0) h.Authorization='Bearer '+CFG.anonKey; // classic key; newer publishable keys go in apikey only
+  if(opts.headers) Object.keys(opts.headers).forEach(function(k){ h[k]=opts.headers[k]; });
+  return fetch(sbBase()+path,{method:opts.method||'GET',headers:h,body:opts.body}).then(function(r){
+    if(!r.ok) return r.text().then(function(tx){ var e=new Error(tx||String(r.status)); e.status=r.status; throw e; });
+    if(r.status===204) return null;
+    return (r.headers.get('content-type')||'').indexOf('json')>-1 ? r.json() : r.text();
+  });
+}
+function rpc(name, args){ return sb('/rest/v1/rpc/'+name,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(args)}); }
+function localList(){ try{ var l=JSON.parse(localStorage.getItem('tk_feedback_local')||'[]'); return Array.isArray(l)?l:[]; }catch(e){ return []; } }
+function localSave(l){ try{ localStorage.setItem('tk_feedback_local', JSON.stringify(l.slice(0,40))); }catch(e){} }
+function uid(){ return (window.crypto&&crypto.randomUUID) ? crypto.randomUUID() : Date.now().toString(36)+Math.random().toString(36).slice(2,10); }
+var fbStore = {
+  list: function(){ return DB ? sb('/rest/v1/feedback?select=*&order=created_at.desc&limit=300') : Promise.resolve(localList()); },
+  send: function(row){
+    if(DB) return sb('/rest/v1/feedback?select=*',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=representation'},body:JSON.stringify(row)}).then(function(r){ return r&&r[0]; });
+    var now=new Date().toISOString(), item={id:'local-'+uid(),status:'new',reply:'',created_at:now,updated_at:now};
+    Object.keys(row).forEach(function(k){ item[k]=row[k]; });
+    var l=localList(); l.unshift(item); localSave(l); return Promise.resolve(item);
+  },
+  upload: function(blob){
+    if(!DB) return new Promise(function(res,rej){ var fr=new FileReader(); fr.onload=function(){ res(fr.result); }; fr.onerror=rej; fr.readAsDataURL(blob); });
+    var path=uid()+'.jpg';
+    return sb('/storage/v1/object/feedback-shots/'+path,{method:'POST',headers:{'Content-Type':blob.type||'image/jpeg','x-upsert':'false'},body:blob})
+      .then(function(){ return sbBase()+'/storage/v1/object/public/feedback-shots/'+path; });
+  },
+  watch: function(id, sub){ return rpc('watch_feedback',{f:id,sub_endpoint:sub.endpoint,sub_p256dh:sub.p256dh,sub_auth:sub.auth}); },
+  ownerDevice: function(sub){ return rpc('register_owner_device',{code:OWNER,sub_endpoint:sub.endpoint,sub_p256dh:sub.p256dh,sub_auth:sub.auth}); },
+  ownerReply: function(id, status, reply){ return rpc('owner_reply',{code:OWNER,f:id,new_status:status,new_reply:reply}); }
+};
+// Only show pictures that live in our own storage (or were made in this browser).
+function safeImg(u){ return typeof u==='string' && ((DB && u.indexOf(sbBase()+'/storage/v1/object/public/feedback-shots/')===0) || /^data:image\/(png|jpeg|webp);base64,/.test(u)); }
+function shrinkImage(file){
+  return new Promise(function(res,rej){
+    if(!/^image\//.test(file.type||'image/')) return rej(new Error('type'));
+    var url=URL.createObjectURL(file), img=new Image();
+    img.onload=function(){
+      var max=DB?1600:900, w=img.naturalWidth, h=img.naturalHeight, k=Math.min(1,max/Math.max(w,h));
+      var c=document.createElement('canvas'); c.width=Math.max(1,Math.round(w*k)); c.height=Math.max(1,Math.round(h*k));
+      var g=c.getContext('2d'); g.fillStyle='#ffffff'; g.fillRect(0,0,c.width,c.height); g.drawImage(img,0,0,c.width,c.height);
+      URL.revokeObjectURL(url);
+      c.toBlob(function(b){ b?res(b):rej(new Error('encode')); },'image/jpeg',DB?0.85:0.7);
+    };
+    img.onerror=function(){ URL.revokeObjectURL(url); rej(new Error('decode')); };
+    img.src=url;
+  });
+}
+
+/* ---------- Feedback: notifications ---------- */
+function pushReady(){ return ON_SITE && DB && !!CFG.vapidPublicKey && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; }
+function b64u(str){ var pad='='.repeat((4-str.length%4)%4), raw=atob((str+pad).replace(/-/g,'+').replace(/_/g,'/')), a=new Uint8Array(raw.length); for(var i=0;i<raw.length;i++) a[i]=raw.charCodeAt(i); return a; }
+function subscribePush(){
+  return Notification.requestPermission().then(function(p){ if(p!=='granted'){ var e=new Error('denied'); e.denied=true; throw e; } return navigator.serviceWorker.ready; })
+    .then(function(reg){ return reg.pushManager.getSubscription().then(function(s){ return s || reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u(CFG.vapidPublicKey)}); }); })
+    .then(function(s){ var j=s.toJSON(); return {endpoint:j.endpoint,p256dh:j.keys.p256dh,auth:j.keys.auth}; });
+}
+
+/* ---------- Feedback: owner (link #agare-<code>) ---------- */
+var OWNER=null; try{ OWNER=localStorage.getItem('tk_owner_code'); }catch(e){}
+function checkOwnerHash(){
+  var m=/^#agare-([A-Za-z0-9]{12,64})$/.exec(location.hash);
+  if(!m) return;
+  OWNER=m[1]; try{ localStorage.setItem('tk_owner_code',OWNER); }catch(e){}
+  try{ history.replaceState(null,'',location.pathname+location.search+'#feedback'); }catch(e){ location.hash='feedback'; }
+}
+function renderOwner(){
+  var box=$('fbOwner');
+  if(!(OWNER && DB)){ box.hidden=true; return; }
+  box.hidden=false;
+  var on=false; try{ on=localStorage.getItem('tk_owner_push')==='1'; }catch(e){}
+  box.innerHTML='<h2 class="card-h">'+esc(t('owner_h'))+'</h2><p>'+esc(t('owner_p'))+'</p>'+
+    (on ? '<p class="hint">'+esc(t('owner_on'))+'</p>' :
+      (pushReady() ? (platform()==='ios'&&!isStandalone() ? '<p class="hint">'+esc(t('fb_watch_install'))+'</p>' : '<button type="button" class="btn btn-primary btn-sm" id="ownerPush">'+esc(t('owner_btn'))+'</button>') : ''))+
+    '<p class="err" id="ownerErr" hidden></p>';
+  var b=$('ownerPush');
+  if(b) b.addEventListener('click', function(){
+    b.disabled=true;
+    subscribePush().then(fbStore.ownerDevice).then(function(){ try{ localStorage.setItem('tk_owner_push','1'); }catch(e){} renderOwner(); })
+      .catch(function(e){ b.disabled=false; var er=$('ownerErr'); er.textContent = e&&e.denied ? t('fb_watch_denied') : t('owner_fail'); er.hidden=false; });
+  });
+}
+
+/* ---------- Feedback: compose ---------- */
+var F = {kind:'idea', area:'other', rating:0, images:[], busy:0, more:false, sending:false, sent:null};
+function chipRow(id, values, prefix, current){
+  return '<div class="chips" id="'+id+'">'+values.map(function(v){ return '<button type="button" class="chip" data-v="'+v+'" aria-pressed="'+(v===current)+'">'+esc(t(prefix+v))+'</button>'; }).join('')+'</div>';
+}
+function renderCompose(){
+  var box=$('fbCompose'), msg=$('fb-msg'), nm=$('fb-name');
+  var keepMsg = msg ? msg.value : '', keepName = nm ? nm.value : '';
+  var html='<h2 class="card-h">'+esc(t('fb_compose'))+'</h2>';
+  if(F.sent){
+    html+='<div class="sent"><p>'+esc(t('fb_sent'))+'</p><div id="fbAfter"></div></div><button type="button" class="linkbtn" id="fbAnother">'+esc(t('fb_another'))+'</button>';
+    box.innerHTML=html; renderAfterSend();
+    $('fbAnother').addEventListener('click', function(){ F.sent=null; renderCompose(); var m=$('fb-msg'); if(m) m.focus(); });
+    return;
+  }
+  html+='<form id="fbForm" novalidate>'+
+    '<fieldset class="field"><legend>'+esc(t('fb_kind'))+'</legend>'+chipRow('fbKinds',KINDS,'k_',F.kind)+'</fieldset>'+
+    '<div class="field"><label for="fb-msg">'+esc(t('fb_message'))+'</label><textarea id="fb-msg" maxlength="3000" rows="5" placeholder="'+esc(t('fb_message_ph'))+'"></textarea></div>'+
+    '<div class="shots" id="fbShots"></div>'+
+    '<label class="btn btn-ghost btn-sm shot-btn" id="fbShotBtn"><input type="file" id="fb-file" class="sr" accept="image/png,image/jpeg,image/webp,image/*" multiple>'+
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.8" fill="currentColor"/><path d="m5 17 5-5 4 4 2-2 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'+
+      '<span>'+esc(t('fb_add_shot'))+'</span></label>'+
+    '<div class="field"><label for="fb-name">'+esc(t('fb_name'))+' <span>('+esc(t('fb_name_hint'))+')</span></label><input id="fb-name" type="text" maxlength="80" autocomplete="name"></div>'+
+    '<button type="button" class="more-btn" id="fbMoreBtn" aria-expanded="'+F.more+'" aria-controls="fbMore">'+esc(F.more?t('fb_less'):t('fb_more'))+'</button>'+
+    '<div id="fbMore" class="block"'+(F.more?'':' hidden')+'>'+
+      '<fieldset class="field"><legend>'+esc(t('fb_area'))+'</legend>'+chipRow('fbAreas',AREAS,'a_',F.area)+'</fieldset>'+
+      '<fieldset class="field"><legend>'+esc(t('fb_rating'))+'</legend><div class="stars" id="fbStars">'+[1,2,3,4,5].map(function(n){
+        return '<button type="button" class="star'+(n<=F.rating?' on':'')+'" data-n="'+n+'" aria-pressed="'+(n===F.rating)+'" aria-label="'+esc(t('fb_rating_label',{n:n}))+'">★</button>'; }).join('')+'</div></fieldset>'+
+    '</div>'+
+    '<p class="hint">'+esc(t('fb_public'))+'</p>'+
+    '<p class="err" id="fbErr" hidden></p>'+
+    '<button type="submit" class="btn btn-primary btn-block" id="fbSend">'+esc(t('fb_send'))+'</button>'+
+  '</form>';
+  box.innerHTML=html;
+  $('fb-msg').value=keepMsg; $('fb-name').value=keepName;
+  renderShots();
+}
+function renderShots(){
+  var el=$('fbShots'); if(!el) return;
+  el.innerHTML=F.images.map(function(src,i){ return '<div class="shot"><img src="'+esc(src)+'" alt="'+esc(t('fb_shot'))+' '+(i+1)+'"><button type="button" data-rm="'+i+'" aria-label="'+esc(t('fb_shot_remove'))+'">×</button></div>'; }).join('')+
+    (F.busy?'<div class="shot busy" aria-hidden="true"></div>':'');
+  var btn=$('fbShotBtn'); if(btn) btn.hidden = F.images.length+F.busy>=3;
+}
+function fbError(msg){ var e=$('fbErr'); if(!e) return; e.textContent=msg; e.hidden=!msg; }
+function feedbackText(item){
+  var head=t('k_'+item.kind)+(item.area&&item.area!=='other'?' · '+t('a_'+item.area):'')+(item.rating?' · '+'★'.repeat(item.rating):'');
+  return head+'\n'+item.message+(item.name?'\n– '+item.name:'');
+}
+var comments=null;
+function renderAfterSend(){
+  var box=$('fbAfter'); if(!box || !F.sent) return;
+  var html='';
+  if(DB && pushReady()){
+    var watched=false; try{ watched=localStorage.getItem('tk_watch_'+F.sent.id)==='1'; }catch(e){}
+    if(watched) html+='<p class="hint">'+esc(t('fb_watching'))+'</p>';
+    else if(platform()==='ios' && !isStandalone()) html+='<p class="hint">'+esc(t('fb_watch_install'))+'</p>';
+    else html+='<button type="button" class="btn btn-ghost btn-sm" id="fbWatch">'+esc(t('fb_watch'))+'</button><p class="err" id="fbWatchErr" hidden></p>';
+  }
+  if(!DB && comments){
+    html+='<p><b>'+esc(t('fb_comment_title'))+'</b></p><p class="hint">'+esc(t('fb_comment_body'))+'</p>'+
+      '<blockquote class="quote" id="fbQuote">'+esc(feedbackText(F.sent))+'</blockquote>'+
+      '<button type="button" class="btn btn-ghost btn-sm" id="fbComment">'+esc(t('fb_comment_btn'))+'</button>';
+  }
+  box.innerHTML=html;
+  var w=$('fbWatch');
+  if(w) w.addEventListener('click', function(){
+    w.disabled=true;
+    subscribePush().then(function(sub){ return fbStore.watch(F.sent.id, sub); }).then(function(){ try{ localStorage.setItem('tk_watch_'+F.sent.id,'1'); }catch(e){} renderAfterSend(); })
+      .catch(function(e){ w.disabled=false; var er=$('fbWatchErr'); er.textContent = e&&e.denied ? t('fb_watch_denied') : t('fb_watch_fail'); er.hidden=false; });
+  });
+  var c=$('fbComment');
+  if(c) c.addEventListener('click', function(){
+    var q=$('fbQuote'), r=document.createRange(); r.selectNodeContents(q);
+    comments.openComposer({range:r}).catch(function(){ c.hidden=true; });
+  });
+}
+$('fbCompose').addEventListener('click', function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  if(b.parentNode.id==='fbKinds'){ F.kind=b.getAttribute('data-v'); b.parentNode.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); }); }
+  else if(b.parentNode.id==='fbAreas'){ F.area=b.getAttribute('data-v'); b.parentNode.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); }); }
+  else if(b.parentNode.id==='fbStars'){ var n=+b.getAttribute('data-n'); F.rating = F.rating===n ? 0 : n; b.parentNode.querySelectorAll('.star').forEach(function(x){ var k=+x.getAttribute('data-n'); x.classList.toggle('on', k<=F.rating); x.setAttribute('aria-pressed', String(k===F.rating)); }); }
+  else if(b.id==='fbMoreBtn'){ F.more=!F.more; $('fbMore').hidden=!F.more; b.setAttribute('aria-expanded', String(F.more)); b.textContent = F.more?t('fb_less'):t('fb_more'); }
+  else if(b.hasAttribute('data-rm')){ F.images.splice(+b.getAttribute('data-rm'),1); renderShots(); }
+});
+$('fbCompose').addEventListener('change', function(e){
+  if(e.target.id!=='fb-file') return;
+  var files=[].slice.call(e.target.files||[]); e.target.value='';
+  fbError('');
+  files.forEach(function(file){
+    if(F.images.length+F.busy>=3){ fbError(t('fb_shot_max')); return; }
+    F.busy++; renderShots();
+    shrinkImage(file).then(function(blob){ return fbStore.upload(blob); })
+      .then(function(url){ F.busy--; if(F.images.length<3) F.images.push(url); renderShots(); })
+      .catch(function(err){ F.busy--; renderShots(); fbError(err&&/type|decode|encode/.test(err.message)?t('fb_shot_bad'):t('fb_shot_fail')); });
+  });
+});
+$('fbCompose').addEventListener('submit', function(e){
+  if(e.target.id!=='fbForm') return;
+  e.preventDefault();
+  if(F.sending || F.busy) return;
+  var message=$('fb-msg').value.trim(), name=$('fb-name').value.trim();
+  if(message.length<3){ fbError(t('fb_missing')); $('fb-msg').focus(); return; }
+  fbError('');
+  var row={kind:F.kind, area:F.area, rating:F.rating||null, message:message, name:name, images:F.images.slice(0,3),
+    context:{lang:S.lang, width:window.innerWidth, app:isStandalone(), page:'catering'}};
+  F.sending=true; var btn=$('fbSend'); btn.disabled=true; btn.textContent=t('fb_sending');
+  fbStore.send(row).then(function(item){
+    F.sending=false; F.sent=item||row; F.images=[]; F.rating=0;
+    $('fb-msg').value=''; renderCompose();
+    loadBoard();
+  }).catch(function(){ F.sending=false; btn.disabled=false; btn.textContent=t('fb_send'); fbError(t('fb_error')); });
+});
+
+/* ---------- Feedback: board ---------- */
+var B = {items:[], loaded:false, error:false, loading:false, filter:'all', reviewing:null};
+function loadBoard(){
+  if(B.loading) return;
+  B.loading=true; B.error=false; renderBoard();
+  fbStore.list().then(function(items){ B.items=Array.isArray(items)?items:[]; B.loaded=true; B.loading=false; renderBoard(); })
+    .catch(function(){ B.loading=false; B.error=true; renderBoard(); });
+}
+function renderFeedbackPage(){
+  $('fbLocalNote').hidden = DB;
+  renderCompose(); renderOwner(); renderBoard();
+}
+function entryHtml(it){
+  var st=STATUSES.indexOf(it.status)>-1?it.status:'new';
+  var imgs=(Array.isArray(it.images)?it.images:[]).filter(safeImg);
+  var h='<article class="fb-item" id="fb-'+esc(it.id)+'">'+
+    '<div class="fb-top"><span class="who">'+esc(it.name||t('fb_anon'))+'</span><time datetime="'+esc(it.created_at||'')+'">'+esc(fmtDate(it.created_at,true))+'</time><span class="pill st-'+st+'">'+esc(t('s_'+st))+'</span></div>'+
+    '<div class="badges"><span class="badge'+(it.kind==='bug'?' bug':'')+'">'+esc(t('k_'+(KINDS.indexOf(it.kind)>-1?it.kind:'other')))+'</span>'+
+      (it.area&&it.area!=='other'&&AREAS.indexOf(it.area)>-1?'<span class="badge">'+esc(t('a_'+it.area))+'</span>':'')+
+      (it.rating?'<span class="stars-ro" aria-label="'+esc(t('fb_rating_label',{n:it.rating}))+'">'+'★'.repeat(it.rating)+'☆'.repeat(5-it.rating)+'</span>':'')+'</div>'+
+    '<p class="fb-msg">'+esc(it.message||'')+'</p>'+
+    (imgs.length?'<div class="fb-shots">'+imgs.map(function(u,i){ return '<a href="'+esc(u)+'" target="_blank" rel="noopener"><img src="'+esc(u)+'" alt="'+esc(t('fb_shot'))+' '+(i+1)+'" loading="lazy"></a>'; }).join('')+'</div>':'')+
+    (it.reply ? '<div class="fb-reply"><b>'+esc(t('fb_reply'))+'</b><p>'+esc(it.reply)+'</p></div>' : '<p class="fb-wait">'+esc(t('fb_waiting'))+'</p>');
+  if(OWNER && DB){
+    if(B.reviewing===it.id){
+      h+='<div class="review"><fieldset class="field"><legend>'+esc(t('fb_review'))+'</legend>'+chipRow('rvStatus',STATUSES,'s_',st).replace('id="rvStatus"','id="rvStatus" data-id="'+esc(it.id)+'"')+'</fieldset>'+
+        '<textarea id="rvText" maxlength="3000" placeholder="'+esc(t('fb_reply_ph'))+'">'+esc(it.reply||'')+'</textarea>'+
+        '<div class="chips"><button type="button" class="btn btn-primary btn-sm" data-save="'+esc(it.id)+'">'+esc(t('fb_save_reply'))+'</button><button type="button" class="btn btn-ghost btn-sm" data-cancel="1">'+esc(t('fb_cancel'))+'</button></div><p class="err" id="rvErr" hidden></p></div>';
+    } else h+='<button type="button" class="linkbtn" data-review="'+esc(it.id)+'">'+esc(t('fb_review'))+'</button>';
+  }
+  return h+'</article>';
+}
+function renderBoard(){
+  var items=B.items, n=items.length;
+  $('boardTitle').textContent = t('fb_board')+(n?' ('+n+')':'');
+  var counts={}; STATUSES.forEach(function(s2){ counts[s2]=items.filter(function(x){ return (x.status||'new')===s2; }).length; });
+  $('fbFilters').setAttribute('aria-label', t('fb_board'));
+  $('fbFilters').innerHTML = ['all'].concat(STATUSES).map(function(s2){
+    var label = s2==='all' ? t('fb_all') : t('s_'+s2)+' ('+counts[s2]+')';
+    return '<button type="button" class="fchip" data-f="'+s2+'" aria-pressed="'+(B.filter===s2)+'">'+esc(label)+'</button>';
+  }).join('');
+  var list=$('fbList');
+  if(B.error){ list.innerHTML='<div class="empty"><p>'+esc(t('fb_load_error'))+'</p><button type="button" class="btn btn-ghost btn-sm" data-retry="1" style="margin-top:10px">'+esc(t('fb_retry'))+'</button></div>'; return; }
+  if(!B.loaded){ list.innerHTML='<div class="empty">'+esc(t('fb_loading'))+'</div>'; return; }
+  var shown = B.filter==='all' ? items : items.filter(function(x){ return (x.status||'new')===B.filter; });
+  list.innerHTML = shown.length ? shown.map(entryHtml).join('') : '<div class="empty">'+esc(n?t('fb_filter_empty'):t('fb_empty'))+'</div>';
+}
+$('fbFilters').addEventListener('click', function(e){ var b=e.target.closest('[data-f]'); if(!b) return; B.filter=b.getAttribute('data-f'); renderBoard(); });
+$('fbList').addEventListener('click', function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  if(b.hasAttribute('data-retry')) loadBoard();
+  else if(b.hasAttribute('data-review')){ B.reviewing=b.getAttribute('data-review'); renderBoard(); var tx=$('rvText'); if(tx) tx.focus(); }
+  else if(b.hasAttribute('data-cancel')){ B.reviewing=null; renderBoard(); }
+  else if(b.parentNode.id==='rvStatus'){ b.parentNode.querySelectorAll('.chip').forEach(function(x){ x.setAttribute('aria-pressed', String(x===b)); }); }
+  else if(b.hasAttribute('data-save')){
+    var id=b.getAttribute('data-save'), pressed=document.querySelector('#rvStatus [aria-pressed="true"]');
+    var status=pressed?pressed.getAttribute('data-v'):'new', reply=$('rvText').value.trim();
+    b.disabled=true;
+    fbStore.ownerReply(id,status,reply).then(function(){ B.reviewing=null; toast(t('fb_saved')); B.loading=false; loadBoard(); })
+      .catch(function(){ b.disabled=false; var er=$('rvErr'); er.textContent=t('fb_error'); er.hidden=false; });
+  }
+});
+
+(function initComments(){
+  if(ON_SITE || !(window.claude && typeof window.claude.use==='function')) return;
+  window.claude.use('comments').then(function(ns){ if(!ns) return; comments=ns; if(currentView()==='feedback') renderAfterSend(); }, function(){});
 })();
+if(ON_SITE && !isInstalled()) $('footInstall').hidden=false;
 
 /* ---------- Hero illustration ---------- */
 function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
@@ -1021,42 +1677,28 @@ function renderAll(){
   if(S.step==='details') renderForm();
   if(S.step==='done') renderDone();
   renderTicket();
+  if(typeof currentView==='function' && currentView()==='feedback') renderFeedbackPage();
+  if(typeof currentView==='function' && currentView()==='install') renderInstall();
 }
 buildArt();
 renderAll();
+route();
 })();
 </script>
 <script>
-/* Only on the public website (not on the claude.ai link): app install and self-update. */
+/* Only on the public website (not on the claude.ai link): service worker and self-update.
+   Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '0dd0f1411';
+  var BUILD = '0dd28527b';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
   function fresh(v) { return location.pathname + '?v=' + encodeURIComponent(v) + location.hash; }
 
-  // Installable app
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
   }
-  var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
-  var deferred = null;
-  window.addEventListener('beforeinstallprompt', function (e) {
-    e.preventDefault(); deferred = e;
-    if (!standalone) $('installBtn').hidden = false;
-  });
-  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  if (ios && !standalone) $('installBtn').hidden = false;
-  $('installBtn').addEventListener('click', function () {
-    if (deferred) {
-      deferred.prompt();
-      deferred.userChoice.then(function () { deferred = null; $('installBtn').hidden = true; }, function () {});
-    } else {
-      $('iosHint').hidden = false;
-    }
-  });
-  window.addEventListener('appinstalled', function () { $('installBtn').hidden = true; $('iosHint').hidden = true; });
 
   // Self-update: an outdated page reloads right after opening; later it offers a button,
   // so nothing a customer is typing gets lost. One automatic reload per version at most.
