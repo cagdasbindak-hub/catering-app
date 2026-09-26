@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tre Kök Catering</title>
+<meta name="description" content="Catering med italienskt, pokebowls och wok. Välj rätter, paket och tillval och se priset direkt. Från 10 personer.">
+<meta name="theme-color" content="#F3F5F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1511" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tre Kök">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tre Kök Catering">
+<meta property="og:description" content="Catering med italienskt, pokebowls och wok. Välj rätter, paket och tillval och se priset direkt. Från 10 personer.">
+<meta property="og:image" content="https://cagdasbindak-hub.github.io/catering-app/share.png">
+<meta property="og:url" content="https://cagdasbindak-hub.github.io/catering-app/">
+<link rel="canonical" href="https://cagdasbindak-hub.github.io/catering-app/">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F3F5F0; --surface:#FFFFFF; --sunk:#E7ECE4; --ink:#15221A; --ink-2:#4B5B51; --ink-3:#6E7D73; --line:#D3DBD0;
+  --accent:#D63F1C; --accent-hover:#BA3212; --on-accent:#FFFFFF; --accent-soft:#FBE4DC;
+  --basil:#3B7A33; --salmon:#E46F55; --ginger:#D29A1A;
+  --basil-soft:#E1EEDC; --salmon-soft:#FBE5DF; --ginger-soft:#F6EACB;
+  --plate:#FFFFFF; --plate-rim:#D6DDD2; --rice:#F8F7F1; --bowl:#1F2B23; --bowl-in:#3A2B1D;
+  --ticket:#FFFFFF; --bar:#15221A; --on-bar:#F3F5F0;
+  --shadow:0 1px 2px rgba(21,34,26,.06),0 10px 28px rgba(21,34,26,.10);
+  --f-display:'Big Shoulders Display','Barlow Condensed','Arial Narrow','Helvetica Neue',sans-serif;
+  --f-body:'Instrument Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1511; --surface:#16201A; --sunk:#1D2921; --ink:#ECF1EA; --ink-2:#AAB7AD; --ink-3:#8A988E; --line:#2B3A31;
+    --accent:#FF6B47; --accent-hover:#FF8768; --on-accent:#1A0B06; --accent-soft:#3A1D14;
+    --basil:#86C877; --salmon:#FF9B82; --ginger:#F0BE4C;
+    --basil-soft:#1C2E1B; --salmon-soft:#35201A; --ginger-soft:#2F2714;
+    --plate:#202C25; --plate-rim:#34443A; --rice:#E4E2D8; --bowl:#070B08; --bowl-in:#2A1F15;
+    --ticket:#18241D; --bar:#ECF1EA; --on-bar:#0E1511;
+    --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1511; --surface:#16201A; --sunk:#1D2921; --ink:#ECF1EA; --ink-2:#AAB7AD; --ink-3:#8A988E; --line:#2B3A31;
+  --accent:#FF6B47; --accent-hover:#FF8768; --on-accent:#1A0B06; --accent-soft:#3A1D14;
+  --basil:#86C877; --salmon:#FF9B82; --ginger:#F0BE4C;
+  --basil-soft:#1C2E1B; --salmon-soft:#35201A; --ginger-soft:#2F2714;
+  --plate:#202C25; --plate-rim:#34443A; --rice:#E4E2D8; --bowl:#070B08; --bowl-in:#2A1F15;
+  --ticket:#18241D; --bar:#ECF1EA; --on-bar:#0E1511;
+  --shadow:0 1px 2px rgba(0,0,0,.35),0 12px 32px rgba(0,0,0,.45);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.has-bar{padding-bottom:84px}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.display{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.005em;line-height:.92}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:16px;text-decoration:none;transition:background .15s,border-color .15s,transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-primary:disabled{background:var(--sunk);color:var(--ink-3);cursor:not-allowed}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink-2)}
+.btn-block{width:100%}
+.icon-btn{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:var(--f-mono);font-size:13px;font-weight:600;letter-spacing:.04em}
+.icon-btn:hover{border-color:var(--ink-2)}
+.icon-btn svg{width:18px;height:18px}
+
+/* Header */
+.testbar{background:var(--sunk);color:var(--ink-2);font-size:13px;text-align:center;padding:7px 16px}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:10px;height:62px}
+.logo{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;flex:none;text-decoration:none;font-family:var(--f-display);font-weight:900;font-size:27px;letter-spacing:.03em;text-transform:uppercase;line-height:1}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:8px;height:8px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:var(--basil)}.dots i:nth-child(2){background:var(--salmon)}.dots i:nth-child(3){background:var(--ginger)}
+.nav{display:none;gap:24px;margin-left:28px}
+.nav a{text-decoration:none;font-weight:500;color:var(--ink-2)}
+.nav a:hover{color:var(--ink)}
+.hdr-tools{margin-left:auto;display:flex;align-items:center;gap:8px}
+.hdr .btn{min-height:40px;padding:0 16px;font-size:15px}
+@media (min-width:900px){.nav{display:flex}}
+@media (max-width:380px){.hdr .btn-order{display:none}}
+
+/* Hero */
+.hero{padding-block:clamp(28px,6vw,72px) clamp(32px,6vw,64px)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}}
+.hero h1{display:flex;flex-direction:column;gap:6px}
+.hero h1 .l1{font-size:clamp(30px,6.4vw,52px);color:var(--ink-2)}
+.hero-grid > *{min-width:0}
+.hero h1 .l2{font-size:clamp(88px,26vw,200px);line-height:.9;letter-spacing:-.01em;overflow-wrap:break-word}
+:root[lang="en"] .hero h1 .l2{font-size:clamp(62px,16.5vw,140px)}
+.kitchens{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.kchip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;font-weight:600;font-size:15px}
+.kchip i{width:10px;height:10px;border-radius:50%;display:block}
+.k-it{background:var(--basil-soft)}.k-it i{background:var(--basil)}
+.k-poke{background:var(--salmon-soft)}.k-poke i{background:var(--salmon)}
+.k-wok{background:var(--ginger-soft)}.k-wok i{background:var(--ginger)}
+.hero-sub{margin-top:20px;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--ink-2);max-width:34em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;padding:0;list-style:none}
+.facts li{font-family:var(--f-mono);font-size:13px;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+.facts li::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--ink-3)}
+.art{width:100%;max-width:560px;justify-self:center;display:block;height:auto}
+@media (max-width:899px){.art{max-width:440px}}
+.art .spin{transform-box:fill-box;transform-origin:center;animation:spinin 1.4s cubic-bezier(.2,.75,.2,1) both}
+.art .spin.d2{animation-delay:.12s}.art .spin.d3{animation-delay:.24s}
+@keyframes spinin{from{transform:rotate(-28deg)}to{transform:rotate(0)}}
+
+/* Sections */
+.section{padding-block:clamp(44px,7vw,88px)}
+.section-head{display:grid;gap:10px;margin-bottom:28px;max-width:44em}
+.section-head h2{font-size:clamp(44px,8vw,76px)}
+.section-head p{color:var(--ink-2);font-size:17px}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+
+/* Order layout */
+.order-grid{display:grid;gap:36px}
+@media (min-width:1000px){.order-grid{grid-template-columns:minmax(0,1fr) 380px;gap:44px;align-items:start}}
+.block{display:grid;gap:16px}
+.block + .block{margin-top:40px}
+.block-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
+.block-head h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:32px;line-height:1}
+.block-head p{color:var(--ink-2);font-size:15px}
+
+.filters{display:flex;gap:8px;overflow-x:auto;padding:2px;margin:-2px;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.fchip{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-weight:600;font-size:15px;color:var(--ink-2)}
+.fchip i{width:9px;height:9px;border-radius:50%;display:block}
+.fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+.dishes{display:grid;gap:12px;grid-template-columns:1fr}
+@media (min-width:640px){.dishes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dish{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,box-shadow .15s}
+.dish.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.dish-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px}
+.ktag{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.ktag i{width:8px;height:8px;border-radius:50%;display:block}
+.pick{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
+.dish h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:.95;text-wrap:balance}
+.dish p{color:var(--ink-2);font-size:15px;line-height:1.45}
+.allergens{display:flex;flex-wrap:wrap;gap:5px;padding:0;margin:0;list-style:none}
+.allergens li{font-family:var(--f-mono);font-size:11px;padding:2px 7px;border-radius:5px;border:1px solid var(--line);color:var(--ink-2)}
+.allergens li.vegan{border-color:transparent;background:var(--basil-soft);color:var(--ink)}
+.dish-foot{margin-top:auto;padding-top:6px;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:46px}
+.price{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:18px;white-space:nowrap}
+.price small{font-weight:400;font-size:12px;color:var(--ink-2);margin-left:2px}
+.add{min-height:42px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;font-weight:600}
+.add:hover{background:var(--ink);color:var(--paper)}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:999px;height:42px;overflow:hidden}
+.stepper button{width:42px;height:100%;border:0;background:transparent;font-size:20px;line-height:1;font-weight:600}
+.stepper button:hover{background:var(--sunk)}
+.stepper input{width:3.2ch;border:0;background:transparent;text-align:center;font-family:var(--f-mono);font-weight:600;font-size:16px;padding:0;-moz-appearance:textfield;appearance:textfield}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stepper .unit{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);padding-right:4px}
+
+/* Option cards (package, delivery) */
+.opts{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:600px){.opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.opt{position:relative;display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:var(--r);border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--ink-3)}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.opt:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.opt-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.opt-name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:1}
+.opt-price{font-family:var(--f-mono);font-weight:600;font-size:15px;white-space:nowrap}
+.opt-desc{color:var(--ink-2);font-size:14px;line-height:1.4}
+.opt-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:var(--basil-soft);color:var(--ink)}
+.tag.hot{background:var(--accent);color:var(--on-accent)}
+.radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
+.opt:has(input:checked) .radio{border-color:var(--ink)}
+.opt:has(input:checked) .radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--ink)}
+
+/* Add-ons */
+.addon-groups{display:grid;gap:18px}
+@media (min-width:720px){.addon-groups{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.agroup{display:grid;gap:6px;align-content:start}
+.agroup h5{margin:0 0 4px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.addon{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer}
+.addon:hover{border-color:var(--ink-3)}
+.addon input{position:absolute;opacity:0;pointer-events:none}
+.check{width:20px;height:20px;border-radius:6px;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
+.check svg{width:12px;height:12px;opacity:0}
+.addon:has(input:checked){border-color:var(--ink)}
+.addon:has(input:checked) .check{background:var(--ink);border-color:var(--ink)}
+.addon:has(input:checked) .check svg{opacity:1;color:var(--paper)}
+.addon:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.addon.inc{cursor:default;background:var(--sunk);border-color:transparent}
+.addon.inc .check{background:var(--basil);border-color:var(--basil)}
+.addon.inc .check svg{opacity:1;color:var(--surface)}
+.addon-name{flex:1;min-width:0;font-size:15px;line-height:1.3}
+.addon-price{font-family:var(--f-mono);font-size:13px;font-weight:600;white-space:nowrap;color:var(--ink-2)}
+.addon.inc .addon-price{color:var(--basil)}
+
+/* Ticket */
+.ticket-col{position:relative}
+@media (min-width:1000px){.ticket-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px)}}
+.ticket-shadow{filter:drop-shadow(0 1px 1px rgba(0,0,0,.08)) drop-shadow(0 10px 22px rgba(21,34,26,.12))}
+.ticket{position:relative;background:var(--ticket);border-radius:14px 14px 0 0;padding:22px 22px 26px;margin-bottom:12px}
+.ticket::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:12px;background:radial-gradient(circle at 10px 0,var(--ticket) 9px,transparent 9.5px) 0 0/20px 12px repeat-x}
+.t-head{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.t-head h3{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:34px;line-height:.9}
+.t-meta{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);text-align:right}
+.rule{border:0;border-top:1.5px dashed var(--line);margin:16px 0}
+.t-empty{color:var(--ink-2);font-size:15px;padding:6px 0;display:grid;gap:12px}
+.t-empty .plates{display:flex;gap:6px}
+.t-empty .plates i{width:28px;height:28px;border-radius:50%;border:2px dashed var(--line);display:block}
+.t-lines{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-family:var(--f-mono);font-size:14px;font-variant-numeric:tabular-nums}
+.t-lines li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:baseline}
+.t-lines .sub{color:var(--ink-2);font-size:12px;display:block;margin-top:1px}
+.t-lines .free{color:var(--basil);font-weight:600}
+.t-total{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.t-total .lbl{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:30px;line-height:1}
+.t-total .amt{font-family:var(--f-mono);font-weight:600;font-size:26px;font-variant-numeric:tabular-nums}
+.t-sub{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-top:4px}
+.nudge{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--accent-soft);font-size:14px;line-height:1.4;display:flex;gap:10px;align-items:flex-start}
+.nudge b{font-weight:600}
+.nudge button{margin-left:auto;flex:none;border:0;background:transparent;font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:0;font-size:14px}
+.t-actions{margin-top:18px;display:grid;gap:10px}
+.t-note{font-size:13px;color:var(--ink-2);text-align:center}
+
+/* Form */
+.form{display:grid;gap:14px}
+.form h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:1}
+.field{display:grid;gap:6px}
+.field label{font-size:14px;font-weight:600}
+.field label span{font-weight:400;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;min-height:46px;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);font-size:16px}
+.field textarea{min-height:88px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.row2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.hint{font-size:13px;color:var(--ink-2)}
+.err{font-size:14px;color:var(--accent);font-weight:600}
+.done{display:grid;gap:14px}
+.done h4{margin:0;font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:32px;line-height:1}
+.done pre{margin:0;white-space:pre-wrap;font-family:var(--f-mono);font-size:12.5px;line-height:1.5;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;max-height:280px;overflow:auto;user-select:text}
+
+/* How it works, good for */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+@media (min-width:800px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}}
+.steps li{display:grid;gap:8px;align-content:start;padding-top:18px;border-top:2px solid var(--ink)}
+.steps .n{font-family:var(--f-display);font-weight:900;font-size:56px;line-height:.8}
+.steps li:nth-child(1) .n{color:var(--basil)}.steps li:nth-child(2) .n{color:var(--salmon)}.steps li:nth-child(3) .n{color:var(--ginger)}
+.steps h3{font-size:20px;font-weight:700}
+.steps p{color:var(--ink-2)}
+.goodfor{list-style:none;margin:40px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.goodfor li{padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);font-weight:500}
+
+/* FAQ */
+.faq{display:grid;gap:0;max-width:760px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 2px;font-weight:600;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--f-mono);font-size:22px;font-weight:400;color:var(--ink-2);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 2px 20px;color:var(--ink-2);max-width:60ch}
+
+/* Updates + footer */
+.updates{list-style:none;margin:0;padding:0;display:grid;gap:14px;max-width:760px}
+.updates li{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:baseline}
+.updates time{font-family:var(--f-mono);font-size:13px;color:var(--ink-2);white-space:nowrap}
+@media (max-width:520px){.updates li{grid-template-columns:1fr}}
+.foot{padding-block:36px 48px;border-top:1px solid var(--line);color:var(--ink-2);font-size:14px}
+.foot-in{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.linkbtn{border:0;background:none;padding:0;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* Mobile order bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--bar);color:var(--on-bar);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+.bar .sum{display:grid;line-height:1.2}
+.bar .sum b{font-family:var(--f-mono);font-size:17px;font-variant-numeric:tabular-nums}
+.bar .sum span{font-size:13px;opacity:.8}
+.bar .btn{margin-left:auto;background:var(--accent);color:var(--on-accent);min-height:44px}
+@media (min-width:1000px){.bar{display:none!important}}
+
+/* Feedback pill */
+.fb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:14px;max-width:calc(100vw - 32px);animation:rise .35s ease-out both}
+body.has-bar .fb{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.fb span{min-width:0}
+.fb .btn{min-height:36px;padding:0 14px;font-size:14px}
+.fb .x{width:32px;height:32px;border:0;border-radius:50%;background:transparent;color:var(--ink-2);font-size:18px;line-height:1}
+.fb .x:hover{background:var(--sunk)}
+@keyframes rise{from{transform:translateY(12px)}to{transform:none}}
+
+.foot-actions{display:flex;flex-wrap:wrap;gap:12px 20px}
+.foot-in .hint{flex-basis:100%}
+.upd{position:fixed;left:16px;right:16px;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:46;max-width:460px;margin-inline:auto;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:14px;font-weight:500;animation:rise .35s ease-out both}
+.upd span{flex:1;min-width:0}
+.upd .btn{min-height:38px;padding:0 16px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:50;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-size:14px;font-weight:600;box-shadow:var(--shadow)}
+body.has-bar .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="testbar" data-i18n="test_banner">Testversion. Beställningar skickas inte på riktigt än.</div>
+
+<header class="hdr">
+  <div class="wrap hdr-in">
+    <a class="logo" href="#top" aria-label="Tre Kök"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Tre Kök</a>
+    <nav class="nav" aria-label="Meny">
+      <a href="#bestall" data-i18n="nav_menu">Meny</a>
+      <a href="#sa-funkar-det" data-i18n="nav_how">Så funkar det</a>
+      <a href="#fragor" data-i18n="nav_faq">Frågor</a>
+    </nav>
+    <div class="hdr-tools">
+      <button class="icon-btn" id="langBtn" type="button">EN</button>
+      <button class="icon-btn" id="themeBtn" type="button"></button>
+      <a class="btn btn-primary btn-order" href="#bestall" data-i18n="cta_order">Beställ</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-section="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="hero_kicker">Catering · från 10 personer</p>
+        <h1 class="display" style="margin-top:14px">
+          <span class="l1" data-i18n="hero_l1">Catering från</span>
+          <span class="l2" data-i18n="hero_l2">tre kök</span>
+        </h1>
+        <div class="kitchens" id="heroKitchens"></div>
+        <p class="hero-sub" data-i18n="hero_sub">Italienskt, pokebowls och wok. Välj rätter, lägg till det lilla extra och se totalpriset direkt.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#bestall" data-i18n="hero_cta">Bygg din beställning</a>
+          <a class="btn btn-ghost" href="#sa-funkar-det" data-i18n="hero_cta2">Så funkar det</a>
+        </div>
+        <ul class="facts" id="facts"></ul>
+      </div>
+      <svg class="art" id="art" viewBox="0 0 600 470" role="img" aria-label="Pokebowl, pasta och nudlar sedda ovanifrån"></svg>
+    </div>
+  </section>
+
+  <section class="section band" id="bestall" data-section="order">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="menu_kicker">Meny och pris</p>
+        <h2 class="display" data-i18n="menu_h">Bygg din beställning</h2>
+        <p data-i18n="menu_p">Priser per kuvert inklusive moms. Blanda gärna rätter från olika kök.</p>
+      </div>
+
+      <div class="order-grid">
+        <div>
+          <div class="block">
+            <div class="block-head"><h3 data-i18n="dishes_h">Rätter</h3></div>
+            <div class="filters" id="filters" role="group"></div>
+            <div class="dishes" id="dishes"></div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3 data-i18n="pkg_h">Gör det till ett paket</h3><p data-i18n="pkg_p">Ett paket kostar mindre än samma saker var för sig.</p></div>
+            <div class="opts three" id="packages" role="radiogroup"></div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per kuvert.</p></div>
+            <div class="addon-groups" id="addons"></div>
+          </div>
+
+          <div class="block">
+            <div class="block-head"><h3 data-i18n="deliv_h">Leverans</h3></div>
+            <div class="opts two" role="radiogroup" id="delivery">
+              <label class="opt"><input type="radio" name="delivery" value="deliver" id="dv-deliver" checked>
+                <span class="opt-top"><span class="opt-name" data-i18n="dv_deliver">Leverans</span><span class="radio" aria-hidden="true"></span></span>
+                <span class="opt-desc" id="dvDeliverDesc"></span></label>
+              <label class="opt"><input type="radio" name="delivery" value="pickup" id="dv-pickup">
+                <span class="opt-top"><span class="opt-name" data-i18n="dv_pickup">Hämta själv</span><span class="radio" aria-hidden="true"></span></span>
+                <span class="opt-desc" data-i18n="dv_pickup_d">Kostnadsfritt. Vi har allt färdigpackat.</span></label>
+            </div>
+          </div>
+        </div>
+
+        <aside class="ticket-col" id="biljett" aria-labelledby="ticketTitle" data-section="ticket">
+          <div class="ticket-shadow">
+            <div class="ticket" aria-live="polite">
+              <div class="t-head">
+                <h3 id="ticketTitle" data-i18n="t_h">Din beställning</h3>
+                <div class="t-meta" id="tMeta"></div>
+              </div>
+              <hr class="rule">
+              <div id="tBody"></div>
+              <div id="tForm" hidden></div>
+              <div id="tDone" hidden></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sa-funkar-det" data-section="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="how_kicker">Tre steg</p>
+        <h2 class="display" data-i18n="how_h">Så funkar det</h2>
+      </div>
+      <ol class="steps">
+        <li><span class="n">1</span><h3 data-i18n="s1_h">Välj och se priset</h3><p data-i18n="s1_p">Rätter, paket och tillval. Totalen räknas ut medan du väljer.</p></li>
+        <li><span class="n">2</span><h3 data-i18n="s2_h">Skicka en förfrågan</h3><p data-i18n="s2_p">Vi bekräftar datum, tid och allergier inom 24 timmar.</p></li>
+        <li><span class="n">3</span><h3 data-i18n="s3_h">Vi levererar</h3><p data-i18n="s3_p">Varmt eller kylt, på utsatt tid, med servetter och bestick.</p></li>
+      </ol>
+      <ul class="goodfor" id="goodfor"></ul>
+    </div>
+  </section>
+
+  <section class="section band" id="fragor" data-section="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="faq_kicker">Innan du beställer</p>
+        <h2 class="display" data-i18n="faq_h">Vanliga frågor</h2>
+      </div>
+      <div class="faq" id="faq"></div>
+    </div>
+  </section>
+
+  <section class="section" id="uppdateringar" data-section="updates">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow" data-i18n="upd_kicker">Vad som är nytt</p>
+        <h2 class="display" data-i18n="upd_h">Senaste uppdateringar</h2>
+      </div>
+      <ul class="updates" id="updates"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span data-i18n="foot">Tre Kök är ett arbetsnamn. Testversion 0.1.</span>
+    <span class="foot-actions">
+      <button class="linkbtn" type="button" id="installBtn" hidden data-i18n="install">Installera som app</button>
+      <button class="linkbtn" type="button" id="fbFooter" hidden data-i18n="fb_btn">Tyck till</button>
+    </span>
+    <p class="hint" id="iosHint" hidden data-i18n="ios_hint">På iPhone: tryck på Dela och välj Lägg till på hemskärmen.</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar" hidden>
+  <div class="sum"><b id="barTotal"></b><span id="barCount"></span></div>
+  <a class="btn" href="#biljett" data-i18n="bar_see">Se beställning</a>
+</div>
+
+<div class="fb" id="fbPill" hidden role="complementary">
+  <span data-i18n="fb_q">Vad tycker du om sidan?</span>
+  <button class="btn btn-primary" type="button" id="fbGo" data-i18n="fb_btn">Tyck till</button>
+  <button class="x" type="button" id="fbX">×</button>
+</div>
+
+<div class="toast" id="toast" hidden role="status"></div>
+
+<div class="upd" id="updBar" hidden role="status">
+  <span data-i18n="upd_text">Det finns en ny version av sidan.</span>
+  <button class="btn btn-primary" type="button" id="updBtn" data-i18n="upd_btn">Uppdatera</button>
+</div>
+
+<script>
+(function(){
+'use strict';
+
+/* ---------- Data ---------- */
+var KITCHENS = {
+  it:{sv:'Italienskt',en:'Italian',cls:'k-it',color:'var(--basil)'},
+  poke:{sv:'Pokebowls',en:'Poke bowls',cls:'k-poke',color:'var(--salmon)'},
+  wok:{sv:'Wok & nudlar',en:'Wok & noodles',cls:'k-wok',color:'var(--ginger)'}
+};
+var ALLERGENS = {
+  g:{sv:'Gluten',en:'Gluten'}, l:{sv:'Laktos',en:'Lactose'}, n:{sv:'Nötter',en:'Nuts'},
+  e:{sv:'Ägg',en:'Egg'}, f:{sv:'Fisk',en:'Fish'}, s:{sv:'Soja',en:'Soy'},
+  se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}
+};
+var DISHES = [
+  {id:'lasagne',k:'it',price:149,pick:true,a:['g','l'],sv:['Lasagne al forno','Långkokt köttfärsragu, béchamel och parmesan.'],en:['Lasagne al forno','Slow-cooked beef ragù, béchamel and parmesan.']},
+  {id:'pesto',k:'it',price:139,a:['g','l','n'],sv:['Pasta pesto med kyckling','Penne, basilikapesto, kyckling och soltorkade tomater.'],en:['Chicken pesto pasta','Penne, basil pesto, chicken and sun-dried tomatoes.']},
+  {id:'arrabbiata',k:'it',price:119,a:['g','v'],sv:['Penne arrabbiata','Tomat, vitlök och chili.'],en:['Penne arrabbiata','Tomato, garlic and chili.']},
+  {id:'laxpoke',k:'poke',price:159,pick:true,a:['f','s','se'],sv:['Laxpoke','Sushiris, lax, avokado, mango, edamame och sesam.'],en:['Salmon poke','Sushi rice, salmon, avocado, mango, edamame and sesame.']},
+  {id:'teriyaki',k:'poke',price:145,a:['g','s','se'],sv:['Kyckling teriyaki','Sushiris, kyckling, gurka, rödkål och rostad lök.'],en:['Chicken teriyaki','Sushi rice, chicken, cucumber, red cabbage and crispy onion.']},
+  {id:'tofupoke',k:'poke',price:135,a:['s','se','v'],sv:['Tofupoke','Sushiris, marinerad tofu, sjögrässallad och avokado.'],en:['Tofu poke','Sushi rice, marinated tofu, seaweed salad and avocado.']},
+  {id:'padthai',k:'wok',price:145,pick:true,a:['e','n','f'],sv:['Pad thai med kyckling','Risnudlar, ägg, böngroddar, jordnötter och lime.'],en:['Chicken pad thai','Rice noodles, egg, bean sprouts, peanuts and lime.']},
+  {id:'yakisoba',k:'wok',price:149,a:['g','s'],sv:['Yakisoba med biff','Vetenudlar, biff, vitkål och yakisobasås.'],en:['Beef yakisoba','Wheat noodles, beef, cabbage and yakisoba sauce.']},
+  {id:'gronwok',k:'wok',price:125,a:['g','s','v'],sv:['Grönsakswok med tofu','Vetenudlar, tofu, broccoli, sockerärtor och ingefära.'],en:['Vegetable wok with tofu','Wheat noodles, tofu, broccoli, sugar snaps and ginger.']}
+];
+var ADDONS = [
+  {id:'spicymayo',g:'sauce',price:12,sv:'Spicy mayo',en:'Spicy mayo'},
+  {id:'pestosas',g:'sauce',price:12,sv:'Extra pesto',en:'Extra pesto'},
+  {id:'teriyakisas',g:'sauce',price:12,sv:'Teriyakisås',en:'Teriyaki sauce'},
+  {id:'sallad',g:'side',price:25,sv:'Grönsallad med vinägrett',en:'Green salad with vinaigrette'},
+  {id:'focaccia',g:'side',price:19,sv:'Focaccia med olivolja',en:'Focaccia with olive oil'},
+  {id:'oliver',g:'side',price:22,sv:'Oliver och marinerade grönsaker',en:'Olives and marinated vegetables'},
+  {id:'edamame',g:'side',price:19,sv:'Edamame med flingsalt',en:'Edamame with sea salt'},
+  {id:'ostkex',g:'side',price:35,sv:'Ostbricka med kex',en:'Cheese board with crackers'},
+  {id:'dryck',g:'sweet',price:22,sv:'Dryck, läsk eller vatten',en:'Drink, soda or water'},
+  {id:'tiramisu',g:'sweet',price:39,sv:'Tiramisu',en:'Tiramisu'},
+  {id:'mochi',g:'sweet',price:35,sv:'Mochi, 2 st',en:'Mochi, 2 pcs'}
+];
+var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
+var PACKAGES = [
+  {id:'bas',price:0,inc:[],sv:['Bas','Bara huvudrätten.'],en:['Basic','Just the main dish.']},
+  {id:'plus',price:49,inc:['sallad','focaccia','dryck'],best:true,sv:['Plus','Grönsallad, focaccia och dryck.'],en:['Plus','Green salad, focaccia and a drink.']},
+  {id:'fest',price:85,inc:['sallad','focaccia','dryck','tiramisu'],sv:['Fest','Allt i Plus och tiramisu.'],en:['Party','Everything in Plus and tiramisu.']}
+];
+var MIN = 10, FEE = 295, FREE_FROM = 3000, MAX_QTY = 500;
+var UPDATES = [
+  {d:'2026-09-26',sv:'Första versionen: meny från tre kök, beställning med paket och tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: menu from three kitchens, ordering with combos and extras, Swedish and English, light and dark mode.'}
+];
+var GOODFOR = {sv:['Kontorslunch och möten','Födelsedagar och fester','Idrottslag och cuper','Mingel och bröllop'],en:['Office lunches and meetings','Birthdays and parties','Sports teams and tournaments','Receptions and weddings']};
+var FAQ = [
+  {sv:['Hur långt i förväg behöver jag beställa?','Senast två dagar innan. Beställningar över 50 kuvert gärna en vecka innan.'],en:['How far ahead do I need to order?','At least two days before. For more than 50 servings, a week ahead is best.']},
+  {sv:['Kan ni hantera allergier?','Ja. Varje rätt visar sina allergener. Skriv dina önskemål i förfrågan så anpassar vi.'],en:['Can you handle allergies?','Yes. Every dish lists its allergens. Add your needs to the request and we adjust.']},
+  {sv:['Vad är minsta beställning?','10 kuvert. Du kan blanda rätter från alla tre kök.'],en:['What is the minimum order?','10 servings. You can mix dishes from all three kitchens.']},
+  {sv:['Vad kostar leveransen?','295 kr. Leveransen är fri när beställningen är över 3 000 kr. Du kan också hämta själv.'],en:['What does delivery cost?','SEK 295. Delivery is free for orders over SEK 3,000. You can also pick up yourself.']},
+  {sv:['Hur betalar jag?','Företag får faktura. Privatpersoner betalar när vi bekräftar beställningen.'],en:['How do I pay?','Companies get an invoice. Private customers pay when we confirm the order.']}
+];
+
+/* ---------- Text ---------- */
+var T = {
+  sv:{
+    test_banner:'Testversion. Beställningar skickas inte på riktigt än.',
+    nav_menu:'Meny',nav_how:'Så funkar det',nav_faq:'Frågor',cta_order:'Beställ',
+    hero_kicker:'Catering · från 10 personer',hero_l1:'Catering från',hero_l2:'tre kök',
+    hero_sub:'Italienskt, pokebowls och wok. Välj rätter, lägg till det lilla extra och se totalpriset direkt.',
+    hero_cta:'Bygg din beställning',hero_cta2:'Så funkar det',
+    fact_from:'Från {p}/kuvert',fact_min:'Minst 10 kuvert',fact_lead:'Beställ 2 dagar innan',
+    menu_kicker:'Meny och pris',menu_h:'Bygg din beställning',menu_p:'Priser per kuvert inklusive moms. Blanda gärna rätter från olika kök.',
+    dishes_h:'Rätter',filter_all:'Allt',add:'Lägg till',pick:'Kockens val',per:'/kuvert',servings:'kuvert',
+    less:'Ta bort ett kuvert av {d}',more:'Lägg till ett kuvert av {d}',qty:'Antal kuvert av {d}',
+    pkg_h:'Gör det till ett paket',pkg_p:'Ett paket kostar mindre än samma saker var för sig.',
+    save:'Spara {x}/kuvert',best:'Bäst värde',plus_price:'+{x}/kuvert',no_extra:'Ingen extra kostnad',
+    addons_h:'Tillval',addons_p:'Priset gäller per kuvert.',included:'Ingår',
+    deliv_h:'Leverans',dv_deliver:'Leverans',dv_deliver_d:'{fee}. Fri leverans över {free}.',dv_pickup:'Hämta själv',dv_pickup_d:'Kostnadsfritt. Vi har allt färdigpackat.',
+    t_h:'Din beställning',t_empty:'Välj en rätt för att börja. Priset räknas ut här medan du väljer.',
+    t_pkg:'{name}-paket',t_delivery:'Leverans',t_pickup:'Hämtning',free:'Fri',t_total:'Totalt',t_per:'≈ {x} per kuvert',t_vat:'Inkl. moms',
+    nudge_min:'Lägg till <b>{n} kuvert</b> till. Minsta beställning är 10.',
+    nudge_free:'<b>{x}</b> kvar till fri leverans.',
+    nudge_pkg:'Tips: <b>Plus</b> ger sallad, focaccia och dryck för {x} per kuvert.',nudge_pkg_btn:'Välj Plus',
+    continue:'Fortsätt',t_note:'Du betalar inget nu.',
+    d_h:'Dina uppgifter',f_name:'Namn',f_phone:'Telefon',f_email:'E-post',f_company:'Företag',opt:'valfritt',
+    f_address:'Leveransadress',f_date:'Datum',f_time:'Tid',f_notes:'Allergier och önskemål',
+    f_notes_ph:'Till exempel: 3 glutenfria, en nötallergi',contact_hint:'Telefon eller e-post räcker.',
+    err_contact:'Fyll i telefon eller e-post så att vi kan nå dig.',err_min:'Minsta beställning är 10 kuvert.',
+    send:'Skicka förfrågan',back:'Tillbaka',
+    done_h:'Förfrågan klar',done_p:'Det här är en testversion, så inget skickades. När sidan är klar går förfrågan direkt till oss och vi svarar inom 24 timmar.',
+    copy:'Kopiera sammanfattning',copied:'Kopierat',copy_fail:'Markera texten och kopiera själv.',edit:'Ändra beställning',
+    bar_see:'Se beställning',bar_count:'{n} kuvert',
+    how_kicker:'Tre steg',how_h:'Så funkar det',
+    s1_h:'Välj och se priset',s1_p:'Rätter, paket och tillval. Totalen räknas ut medan du väljer.',
+    s2_h:'Skicka en förfrågan',s2_p:'Vi bekräftar datum, tid och allergier inom 24 timmar.',
+    s3_h:'Vi levererar',s3_p:'Varmt eller kylt, på utsatt tid, med servetter och bestick.',
+    faq_kicker:'Innan du beställer',faq_h:'Vanliga frågor',
+    upd_kicker:'Vad som är nytt',upd_h:'Senaste uppdateringar',
+    foot:'Tre Kök är ett arbetsnamn. Testversion 0.1.',
+    fb_q:'Vad tycker du om sidan?',fb_btn:'Tyck till',fb_close:'Stäng',
+    to_en:'Switch to English',theme_dark:'Byt till mörkt läge',theme_light:'Byt till ljust läge',
+    sum_title:'Förfrågan, Tre Kök Catering',sum_delivery:'Leverans',sum_pickup:'Hämtar själv',
+    art_label:'Pokebowl, pasta och nudlar sedda ovanifrån',
+    install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
+    upd_text:'Det finns en ny version av sidan.',upd_btn:'Uppdatera'
+  },
+  en:{
+    test_banner:'Test version. Orders are not sent for real yet.',
+    nav_menu:'Menu',nav_how:'How it works',nav_faq:'FAQ',cta_order:'Order',
+    hero_kicker:'Catering · from 10 people',hero_l1:'Catering from',hero_l2:'three kitchens',
+    hero_sub:'Italian, poke bowls and wok. Pick your dishes, add the extras and see the total price right away.',
+    hero_cta:'Build your order',hero_cta2:'How it works',
+    fact_from:'From {p}/serving',fact_min:'Minimum 10 servings',fact_lead:'Order 2 days ahead',
+    menu_kicker:'Menu and prices',menu_h:'Build your order',menu_p:'Prices per serving, VAT included. Feel free to mix dishes from different kitchens.',
+    dishes_h:'Dishes',filter_all:'All',add:'Add',pick:"Chef's pick",per:'/serving',servings:'servings',
+    less:'Remove one serving of {d}',more:'Add one serving of {d}',qty:'Servings of {d}',
+    pkg_h:'Make it a combo',pkg_p:'A combo costs less than the same items one by one.',
+    save:'Save {x}/serving',best:'Best value',plus_price:'+{x}/serving',no_extra:'No extra cost',
+    addons_h:'Extras',addons_p:'Prices are per serving.',included:'Included',
+    deliv_h:'Delivery',dv_deliver:'Delivery',dv_deliver_d:'{fee}. Free delivery over {free}.',dv_pickup:'Pick up',dv_pickup_d:'Free. Everything is packed and ready.',
+    t_h:'Your order',t_empty:'Pick a dish to start. The price adds up here as you choose.',
+    t_pkg:'{name} combo',t_delivery:'Delivery',t_pickup:'Pickup',free:'Free',t_total:'Total',t_per:'≈ {x} per serving',t_vat:'VAT incl.',
+    nudge_min:'Add <b>{n} more servings</b>. The minimum order is 10.',
+    nudge_free:'<b>{x}</b> left for free delivery.',
+    nudge_pkg:'Tip: <b>Plus</b> adds salad, focaccia and a drink for {x} per serving.',nudge_pkg_btn:'Choose Plus',
+    continue:'Continue',t_note:'You pay nothing now.',
+    d_h:'Your details',f_name:'Name',f_phone:'Phone',f_email:'Email',f_company:'Company',opt:'optional',
+    f_address:'Delivery address',f_date:'Date',f_time:'Time',f_notes:'Allergies and requests',
+    f_notes_ph:'For example: 3 gluten-free, one nut allergy',contact_hint:'Phone or email is enough.',
+    err_contact:'Add a phone number or email so we can reach you.',err_min:'The minimum order is 10 servings.',
+    send:'Send request',back:'Back',
+    done_h:'Request ready',done_p:'This is a test version, so nothing was sent. When the site is live, requests go straight to us and we reply within 24 hours.',
+    copy:'Copy summary',copied:'Copied',copy_fail:'Select the text and copy it yourself.',edit:'Edit order',
+    bar_see:'View order',bar_count:'{n} servings',
+    how_kicker:'Three steps',how_h:'How it works',
+    s1_h:'Choose and see the price',s1_p:'Dishes, combos and extras. The total adds up as you choose.',
+    s2_h:'Send a request',s2_p:'We confirm date, time and allergies within 24 hours.',
+    s3_h:'We deliver',s3_p:'Hot or chilled, on time, with napkins and cutlery.',
+    faq_kicker:'Before you order',faq_h:'Common questions',
+    upd_kicker:"What's new",upd_h:'Latest updates',
+    foot:'Tre Kök is a working name. Test version 0.1.',
+    fb_q:'What do you think of the site?',fb_btn:'Feedback',fb_close:'Close',
+    to_en:'Byt till svenska',theme_dark:'Switch to dark mode',theme_light:'Switch to light mode',
+    sum_title:'Request, Tre Kök Catering',sum_delivery:'Delivery',sum_pickup:'Pickup',
+    art_label:'Poke bowl, pasta and noodles seen from above',
+    install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
+    upd_text:'A new version of the site is available.',upd_btn:'Update'
+  }
+};
+
+/* ---------- State ---------- */
+var S = {lang:'sv', filter:'all', qty:{}, pkg:'bas', addons:{}, delivery:'deliver', step:'build'};
+function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+(function restore(){
+  var l = load('tk_lang'); if(l==='sv'||l==='en') S.lang = l;
+  var raw = load('tk_cart');
+  if(raw){ try{
+    var c = JSON.parse(raw);
+    if(c && typeof c==='object'){
+      if(c.qty) DISHES.forEach(function(d){ var n=parseInt(c.qty[d.id],10); if(n>0) S.qty[d.id]=Math.min(n,MAX_QTY); });
+      if(PACKAGES.some(function(p){return p.id===c.pkg})) S.pkg=c.pkg;
+      if(c.addons) ADDONS.forEach(function(a){ if(c.addons[a.id]) S.addons[a.id]=true; });
+      if(c.delivery==='pickup') S.delivery='pickup';
+    }
+  }catch(e){} }
+})();
+function saveCart(){ store('tk_cart', JSON.stringify({qty:S.qty,pkg:S.pkg,addons:S.addons,delivery:S.delivery})); }
+
+/* ---------- Helpers ---------- */
+function t(k,vars){ var s=(T[S.lang]&&T[S.lang][k]); if(s==null) s=T.sv[k]||k; if(vars) Object.keys(vars).forEach(function(v){ s=s.split('{'+v+'}').join(vars[v]); }); return s; }
+var fmtCache={};
+function kr(n){ var key=S.lang; if(!fmtCache[key]) fmtCache[key]=new Intl.NumberFormat(S.lang==='sv'?'sv-SE':'en-GB',{style:'currency',currency:'SEK',maximumFractionDigits:0,minimumFractionDigits:0}); return fmtCache[key].format(n); }
+function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
+function $(id){ return document.getElementById(id); }
+function L(o){ return o[S.lang]||o.sv; }
+function pkgById(id){ for(var i=0;i<PACKAGES.length;i++) if(PACKAGES[i].id===id) return PACKAGES[i]; return PACKAGES[0]; }
+function included(id){ return pkgById(S.pkg).inc.indexOf(id)>-1; }
+function pkgValue(p){ return p.inc.reduce(function(s,id){ var a=ADDONS.filter(function(x){return x.id===id})[0]; return s+(a?a.price:0); },0); }
+var CHECK='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function calc(){
+  var portions=0, dishes=0, lines=[];
+  DISHES.forEach(function(d){ var q=S.qty[d.id]||0; if(q>0){ portions+=q; dishes+=q*d.price; lines.push({d:d,q:q,sum:q*d.price}); } });
+  var p=pkgById(S.pkg), pkgSum=portions*p.price;
+  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id] && !included(a.id)) extras.push({a:a,sum:portions*a.price}); });
+  var extrasSum=extras.reduce(function(s,e){return s+e.sum},0);
+  var sub=dishes+pkgSum+extrasSum;
+  var fee = S.delivery==='deliver' ? (sub>=FREE_FROM ? 0 : FEE) : 0;
+  return {portions:portions,lines:lines,pkg:p,pkgSum:pkgSum,extras:extras,sub:sub,fee:fee,total:sub+(portions?fee:0)};
+}
+
+/* ---------- Render: static bits ---------- */
+function applyText(){
+  document.documentElement.lang = S.lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = t(el.getAttribute('data-i18n')); });
+  $('langBtn').textContent = S.lang==='sv' ? 'EN' : 'SV';
+  $('langBtn').setAttribute('aria-label', t('to_en'));
+  $('fbX').setAttribute('aria-label', t('fb_close'));
+  $('art').setAttribute('aria-label', t('art_label'));
+  $('heroKitchens').innerHTML = Object.keys(KITCHENS).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
+  var min = Math.min.apply(null, DISHES.map(function(d){return d.price}));
+  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+  $('dvDeliverDesc').textContent = t('dv_deliver_d',{fee:kr(FEE),free:kr(FREE_FROM)});
+  $('goodfor').innerHTML = GOODFOR[S.lang].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+  $('faq').innerHTML = FAQ.map(function(f){ var q=L(f); return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join('');
+  $('updates').innerHTML = UPDATES.map(function(u){
+    var d = new Date(u.d+'T12:00:00');
+    var ds = d.toLocaleDateString(S.lang==='sv'?'sv-SE':'en-GB',{day:'numeric',month:'short',year:'numeric'});
+    return '<li><time datetime="'+u.d+'">'+esc(ds)+'</time><span>'+esc(L(u))+'</span></li>';
+  }).join('');
+  $('tMeta').innerHTML = esc(new Date().toLocaleDateString(S.lang==='sv'?'sv-SE':'en-GB',{weekday:'short',day:'numeric',month:'short'}));
+  updateThemeBtn();
+}
+
+function renderFilters(){
+  var items=[{id:'all',label:t('filter_all')}].concat(Object.keys(KITCHENS).map(function(k){return {id:k,label:L(KITCHENS[k]),color:KITCHENS[k].color}}));
+  $('filters').setAttribute('aria-label', t('dishes_h'));
+  $('filters').innerHTML = items.map(function(it){
+    return '<button type="button" class="fchip" data-filter="'+it.id+'" aria-pressed="'+(S.filter===it.id)+'">'+(it.color?'<i style="background:'+it.color+'"></i>':'')+esc(it.label)+'</button>';
+  }).join('');
+}
+
+function dishControl(d){
+  var q=S.qty[d.id]||0, name=L(d)[0];
+  if(!q) return '<button type="button" class="add" data-add="'+d.id+'">'+esc(t('add'))+'</button>';
+  return '<span class="stepper"><button type="button" data-dec="'+d.id+'" aria-label="'+esc(t('less',{d:name}))+'">−</button>'+
+    '<input type="number" inputmode="numeric" min="0" max="'+MAX_QTY+'" id="q-'+d.id+'" data-qty="'+d.id+'" value="'+q+'" aria-label="'+esc(t('qty',{d:name}))+'">'+
+    '<button type="button" data-inc="'+d.id+'" aria-label="'+esc(t('more',{d:name}))+'">+</button></span>';
+}
+function renderDishes(){
+  var list = DISHES.filter(function(d){ return S.filter==='all' || d.k===S.filter; });
+  $('dishes').innerHTML = list.map(function(d){
+    var K=KITCHENS[d.k], txt=L(d), q=S.qty[d.id]||0;
+    return '<article class="dish'+(q?' on':'')+'" id="dish-'+d.id+'">'+
+      '<div class="dish-top"><span class="ktag"><i style="background:'+K.color+'"></i>'+esc(L(K))+'</span>'+(d.pick?'<span class="pick">'+esc(t('pick'))+'</span>':'')+'</div>'+
+      '<h4>'+esc(txt[0])+'</h4><p>'+esc(txt[1])+'</p>'+
+      '<ul class="allergens">'+d.a.map(function(a){ return '<li'+(a==='v'?' class="vegan"':'')+'>'+esc(L(ALLERGENS[a]))+'</li>'; }).join('')+'</ul>'+
+      '<div class="dish-foot"><span class="price">'+esc(kr(d.price))+'<small>'+esc(t('per'))+'</small></span><span class="ctl" id="ctl-'+d.id+'">'+dishControl(d)+'</span></div>'+
+    '</article>';
+  }).join('');
+}
+function refreshDish(id, focus){
+  var d = DISHES.filter(function(x){return x.id===id})[0]; if(!d) return;
+  var card=$('dish-'+id), ctl=$('ctl-'+id); if(!card||!ctl) return;
+  card.classList.toggle('on', !!S.qty[id]);
+  var input = ctl.querySelector('input');
+  if(input && S.qty[id]) { input.value = S.qty[id]; }
+  else { ctl.innerHTML = dishControl(d); }
+  if(focus){ var el = ctl.querySelector(focus); if(el) el.focus(); }
+}
+
+function renderPackages(){
+  $('packages').setAttribute('aria-label', t('pkg_h'));
+  $('packages').innerHTML = PACKAGES.map(function(p){
+    var txt=L(p), save=pkgValue(p)-p.price;
+    return '<label class="opt"><input type="radio" name="pkg" id="pkg-'+p.id+'" value="'+p.id+'"'+(S.pkg===p.id?' checked':'')+'>'+
+      '<span class="opt-top"><span class="opt-name">'+esc(txt[0])+'</span><span class="radio" aria-hidden="true"></span></span>'+
+      '<span class="opt-price">'+esc(p.price?t('plus_price',{x:kr(p.price)}):t('no_extra'))+'</span>'+
+      '<span class="opt-desc">'+esc(txt[1])+'</span>'+
+      ((p.best||save>0)?'<span class="opt-tags">'+(p.best?'<span class="tag hot">'+esc(t('best'))+'</span>':'')+(save>0?'<span class="tag">'+esc(t('save',{x:kr(save)}))+'</span>':'')+'</span>':'')+
+    '</label>';
+  }).join('');
+}
+
+function renderAddons(){
+  $('addons').innerHTML = GROUPS.map(function(g){
+    return '<div class="agroup"><h5>'+esc(L(g))+'</h5>'+ADDONS.filter(function(a){return a.g===g.id}).map(function(a){
+      var inc=included(a.id), on=inc||!!S.addons[a.id];
+      return '<label class="addon'+(inc?' inc':'')+'"><input type="checkbox" id="ad-'+a.id+'" data-addon="'+a.id+'"'+(on?' checked':'')+(inc?' disabled':'')+'>'+
+        '<span class="check" aria-hidden="true">'+CHECK+'</span><span class="addon-name">'+esc(L(a))+'</span>'+
+        '<span class="addon-price">'+esc(inc?t('included'):'+'+kr(a.price))+'</span></label>';
+    }).join('')+'</div>';
+  }).join('');
+}
+
+/* ---------- Ticket ---------- */
+function renderTicket(){
+  var c = calc();
+  var body = $('tBody');
+  if(!c.portions){
+    body.innerHTML = '<div class="t-empty"><span class="plates" aria-hidden="true"><i></i><i></i><i></i></span><p>'+esc(t('t_empty'))+'</p></div>';
+  } else {
+    var rows = c.lines.map(function(l){ return '<li><span>'+l.q+' × '+esc(L(l.d)[0])+'</span><span>'+esc(kr(l.sum))+'</span></li>'; });
+    if(c.pkg.price) rows.push('<li><span>'+esc(t('t_pkg',{name:L(c.pkg)[0]}))+'<span class="sub">'+c.portions+' × '+esc(kr(c.pkg.price))+'</span></span><span>'+esc(kr(c.pkgSum))+'</span></li>');
+    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+c.portions+' × '+esc(kr(e.a.price))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
+    rows.push('<li><span>'+esc(S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'</span><span'+(c.fee?'':' class="free"')+'>'+esc(c.fee?kr(c.fee):t('free'))+'</span></li>');
+    var nudge='';
+    if(c.portions<MIN) nudge='<div class="nudge"><span>'+t('nudge_min',{n:MIN-c.portions})+'</span></div>';
+    else if(S.delivery==='deliver' && c.sub<FREE_FROM) nudge='<div class="nudge"><span>'+t('nudge_free',{x:esc(kr(FREE_FROM-c.sub))})+'</span></div>';
+    else if(S.pkg==='bas') nudge='<div class="nudge"><span>'+t('nudge_pkg',{x:esc(kr(pkgById('plus').price))})+'</span><button type="button" data-pick-plus>'+esc(t('nudge_pkg_btn'))+'</button></div>';
+    body.innerHTML =
+      '<ul class="t-lines">'+rows.join('')+'</ul><hr class="rule">'+
+      '<div class="t-total"><span class="lbl">'+esc(t('t_total'))+'</span><span class="amt">'+esc(kr(c.total))+'</span></div>'+
+      '<div class="t-sub"><span>'+esc(t('t_per',{x:kr(Math.round(c.total/c.portions))}))+'</span><span>'+esc(t('t_vat'))+'</span></div>'+
+      nudge+
+      (S.step==='build' ? '<div class="t-actions"><button type="button" class="btn btn-primary btn-block" id="toDetails"'+(c.portions<MIN?' disabled':'')+'>'+esc(t('continue'))+'</button><p class="t-note">'+esc(t('t_note'))+'</p></div>' : '');
+  }
+  renderBar(c);
+}
+
+function renderBar(c){
+  var bar=$('bar'), show = c.portions>0 && !ticketVisible && S.step!=='done';
+  bar.hidden = !show;
+  document.body.classList.toggle('has-bar', show && window.innerWidth<1000);
+  $('barTotal').textContent = kr(c.total);
+  $('barCount').textContent = t('bar_count',{n:c.portions});
+}
+
+/* ---------- Details form ---------- */
+function minDate(){ var d=new Date(); d.setDate(d.getDate()+2); function p(n){return (n<10?'0':'')+n} return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); }
+var formDraft = {};
+function renderForm(){
+  var times=[]; for(var h=10;h<20;h++) times.push((h<10?'0':'')+h+':00–'+(h+1)+':00');
+  var f=formDraft, deliver=S.delivery==='deliver';
+  $('tForm').innerHTML =
+    '<hr class="rule"><form class="form" id="detailsForm" novalidate>'+
+    '<h4 id="dH" tabindex="-1">'+esc(t('d_h'))+'</h4>'+
+    field('f-name','name',t('f_name'),'text','name',true)+
+    '<div class="row2">'+field('f-phone','phone',t('f_phone'),'tel','tel',false)+field('f-email','email',t('f_email'),'email','email',false)+'</div>'+
+    '<p class="hint">'+esc(t('contact_hint'))+'</p>'+
+    field('f-company','company',t('f_company')+' <span>('+esc(t('opt'))+')</span>','text','organization',false,true)+
+    (deliver?field('f-address','address',t('f_address'),'text','street-address',true):'')+
+    '<div class="row2"><div class="field"><label for="f-date">'+esc(t('f_date'))+'</label><input id="f-date" name="date" type="date" required min="'+minDate()+'" value="'+esc(f.date||'')+'"></div>'+
+    '<div class="field"><label for="f-time">'+esc(t('f_time'))+'</label><select id="f-time" name="time" required>'+times.map(function(x){return '<option'+(f.time===x?' selected':'')+'>'+x+'</option>'}).join('')+'</select></div></div>'+
+    '<div class="field"><label for="f-notes">'+esc(t('f_notes'))+' <span>('+esc(t('opt'))+')</span></label><textarea id="f-notes" name="notes" maxlength="800" placeholder="'+esc(t('f_notes_ph'))+'">'+esc(f.notes||'')+'</textarea></div>'+
+    '<p class="err" id="fErr" hidden></p>'+
+    '<button type="submit" class="btn btn-primary btn-block">'+esc(t('send'))+'</button>'+
+    '<button type="button" class="btn btn-ghost btn-block" id="backBtn">'+esc(t('back'))+'</button>'+
+    '</form>';
+  function field(id,name,label,type,ac,req,rawLabel){
+    return '<div class="field"><label for="'+id+'">'+(rawLabel?label:esc(label))+'</label><input id="'+id+'" name="'+name+'" type="'+type+'" autocomplete="'+ac+'"'+(req?' required':'')+' value="'+esc(f[name]||'')+'"></div>';
+  }
+}
+function collectDraft(){ var form=$('detailsForm'); if(!form) return; ['name','phone','email','company','address','date','time','notes'].forEach(function(n){ if(form.elements[n]) formDraft[n]=form.elements[n].value.trim(); }); }
+
+function summaryText(){
+  var c=calc(), lines=[t('sum_title'),''];
+  c.lines.forEach(function(l){ lines.push(l.q+' × '+L(l.d)[0]+'  '+kr(l.sum)); });
+  if(c.pkg.price) lines.push(t('t_pkg',{name:L(c.pkg)[0]})+' ('+c.portions+' × '+kr(c.pkg.price)+')  '+kr(c.pkgSum));
+  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+c.portions+' × '+kr(e.a.price)+')  '+kr(e.sum)); });
+  lines.push((S.delivery==='deliver'?t('t_delivery'):t('t_pickup'))+'  '+(c.fee?kr(c.fee):t('free')));
+  lines.push(t('t_total')+': '+kr(c.total)+' ('+t('t_vat')+')','');
+  var f=formDraft;
+  [['f_name',f.name],['f_phone',f.phone],['f_email',f.email],['f_company',f.company],['f_address',f.address],['f_date',f.date],['f_time',f.time],['f_notes',f.notes]].forEach(function(p){ if(p[1]) lines.push(t(p[0])+': '+p[1]); });
+  if(S.delivery!=='deliver') lines.push(t('sum_pickup'));
+  return lines.join('\n');
+}
+function renderDone(){
+  $('tDone').innerHTML = '<hr class="rule"><div class="done"><h4 id="doneH" tabindex="-1">'+esc(t('done_h'))+'</h4><p>'+esc(t('done_p'))+'</p><pre id="sumText">'+esc(summaryText())+'</pre>'+
+    '<button type="button" class="btn btn-primary btn-block" id="copyBtn">'+esc(t('copy'))+'</button>'+
+    '<button type="button" class="btn btn-ghost btn-block" id="editBtn">'+esc(t('edit'))+'</button></div>';
+}
+
+function setStep(step){
+  if(S.step==='details') collectDraft();
+  S.step = step;
+  $('tForm').hidden = step!=='details';
+  $('tDone').hidden = step!=='done';
+  if(step==='details'){ renderForm(); }
+  if(step==='done'){ renderDone(); }
+  renderTicket();
+}
+
+/* ---------- Toast ---------- */
+var toastTimer;
+function toast(msg){ var el=$('toast'); el.textContent=msg; el.hidden=false; clearTimeout(toastTimer); toastTimer=setTimeout(function(){el.hidden=true},2200); }
+
+/* ---------- Events ---------- */
+function setQty(id,n,focus){
+  n = Math.max(0, Math.min(MAX_QTY, n|0));
+  if(n) S.qty[id]=n; else delete S.qty[id];
+  saveCart(); refreshDish(id, focus); renderTicket();
+}
+$('dishes').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if(!b) return;
+  if(b.dataset.add){ var total=calc().portions; setQty(b.dataset.add, total>=MIN?5:MIN-total<5?5:MIN-total, '[data-inc]'); }
+  else if(b.dataset.inc){ setQty(b.dataset.inc,(S.qty[b.dataset.inc]||0)+1); }
+  else if(b.dataset.dec){ var id=b.dataset.dec, n=(S.qty[id]||0)-1; setQty(id,n, n<=0?'[data-add]':null); }
+});
+$('dishes').addEventListener('change', function(e){
+  var el=e.target; if(!el.dataset.qty) return;
+  var n=parseInt(el.value,10); if(isNaN(n)) n=0;
+  setQty(el.dataset.qty, n, n<=0?'[data-add]':null);
+});
+$('dishes').addEventListener('keydown', function(e){ if(e.key==='Enter' && e.target.dataset && e.target.dataset.qty){ e.target.blur(); } });
+$('filters').addEventListener('click', function(e){ var b=e.target.closest('[data-filter]'); if(!b) return; S.filter=b.dataset.filter; renderFilters(); renderDishes(); var nb=$('filters').querySelector('[data-filter="'+S.filter+'"]'); if(nb) nb.focus(); });
+$('packages').addEventListener('change', function(e){ if(e.target.name!=='pkg') return; S.pkg=e.target.value; saveCart(); renderAddons(); renderTicket(); });
+$('addons').addEventListener('change', function(e){ var id=e.target.dataset.addon; if(!id) return; if(e.target.checked) S.addons[id]=true; else delete S.addons[id]; saveCart(); renderTicket(); });
+$('delivery').addEventListener('change', function(e){ if(e.target.name!=='delivery') return; S.delivery=e.target.value; saveCart(); if(S.step==='details'){ collectDraft(); renderForm(); } renderTicket(); });
+
+document.querySelector('.ticket').addEventListener('click', function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  if(b.id==='toDetails'){ setStep('details'); var h=$('dH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'start',behavior:'smooth'}); } }
+  else if(b.id==='backBtn'){ setStep('build'); var tb=$('toDetails'); if(tb) tb.focus(); }
+  else if(b.id==='editBtn'){ setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
+  else if(b.hasAttribute('data-pick-plus')){ S.pkg='plus'; saveCart(); renderPackages(); renderAddons(); renderTicket(); toast('Plus ✓'); }
+  else if(b.id==='copyBtn'){
+    var txt=$('sumText').textContent;
+    var fallback=function(){ var r=document.createRange(); r.selectNodeContents($('sumText')); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); toast(t('copy_fail')); };
+    try{ navigator.clipboard.writeText(txt).then(function(){ toast(t('copied')); }, fallback); }catch(err){ fallback(); }
+  }
+});
+document.querySelector('.ticket').addEventListener('submit', function(e){
+  if(e.target.id!=='detailsForm') return;
+  e.preventDefault();
+  var form=e.target, err=$('fErr'); err.hidden=true;
+  collectDraft();
+  if(calc().portions<MIN){ err.textContent=t('err_min'); err.hidden=false; return; }
+  if(!form.reportValidity()) return;
+  if(!formDraft.phone && !formDraft.email){ err.textContent=t('err_contact'); err.hidden=false; form.elements.phone.focus(); return; }
+  setStep('done');
+  var h=$('doneH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'center',behavior:'smooth'}); }
+});
+document.querySelector('.ticket').addEventListener('input', function(e){ if(e.target.form && e.target.form.id==='detailsForm') collectDraft(); });
+
+/* Language + theme */
+$('langBtn').addEventListener('click', function(){
+  if(S.step==='details') collectDraft();
+  S.lang = S.lang==='sv'?'en':'sv'; store('tk_lang',S.lang); fmtCache={};
+  renderAll();
+});
+function currentTheme(){ var a=document.documentElement.getAttribute('data-theme'); if(a==='dark'||a==='light') return a; return (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light'; }
+var SUN='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+var MOON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+function updateThemeBtn(){ var dark=currentTheme()==='dark'; $('themeBtn').innerHTML = dark?SUN:MOON; $('themeBtn').setAttribute('aria-label', dark?t('theme_light'):t('theme_dark')); }
+(function(){ var th=load('tk_theme'); if(th==='dark'||th==='light') document.documentElement.setAttribute('data-theme',th); })();
+$('themeBtn').addEventListener('click', function(){ var next=currentTheme()==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',next); store('tk_theme',next); updateThemeBtn(); });
+if(window.matchMedia){ try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateThemeBtn); }catch(e){} }
+try{ new MutationObserver(updateThemeBtn).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']}); }catch(e){}
+
+/* Show the bottom bar only while the ticket is out of view */
+var ticketVisible=false;
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(entries){ ticketVisible = entries[0].isIntersecting; renderBar(calc()); },{rootMargin:'0px 0px -30% 0px'}).observe($('biljett'));
+}
+window.addEventListener('resize', function(){ renderBar(calc()); });
+
+/* ---------- Feedback (comment composer) ---------- */
+var comments=null, fbShown=false;
+function sectionInView(){
+  var secs=document.querySelectorAll('[data-section]'), mid=window.innerHeight/2, best=null;
+  secs.forEach(function(s){ var r=s.getBoundingClientRect(); if(r.top<=mid && r.bottom>=mid) best=s; });
+  return best || document.querySelector('main');
+}
+function hideFeedback(){ $('fbPill').hidden=true; $('fbFooter').hidden=true; comments=null; }
+function openFeedback(){
+  if(!comments) return;
+  $('fbPill').hidden=true;
+  comments.openComposer({element:sectionInView()}).catch(function(err){
+    var code=err&&err.code;
+    if(code==='unavailable'||code==='not_granted'||code==='capability_disabled'||code==='capability_removed'||code==='forbidden') hideFeedback();
+    else if(code==='rate_limited') {}
+  });
+}
+function maybeShowPill(){
+  if(!comments || fbShown) return;
+  var last=0; try{ last=parseInt(sessionStorage.getItem('tk_fb_last')||'0',10)||0; }catch(e){}
+  if(Date.now()-last < 15*60*1000) return;
+  fbShown=true; $('fbPill').hidden=false;
+  try{ sessionStorage.setItem('tk_fb_last', String(Date.now())); }catch(e){}
+}
+$('fbGo').addEventListener('click', openFeedback);
+$('fbFooter').addEventListener('click', openFeedback);
+$('fbX').addEventListener('click', function(){ $('fbPill').hidden=true; });
+(function initFeedback(){
+  if(!(window.claude && typeof window.claude.use==='function')) return;
+  window.claude.use('comments').then(function(ns){
+    if(!ns) return;
+    comments=ns; $('fbFooter').hidden=false;
+    setTimeout(maybeShowPill, 40000);
+    window.addEventListener('scroll', function onS(){
+      if(window.scrollY + window.innerHeight > document.body.scrollHeight*0.7){ window.removeEventListener('scroll', onS); maybeShowPill(); }
+    }, {passive:true});
+  }, function(){});
+})();
+
+/* ---------- Hero illustration ---------- */
+function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
+function polar(cx,cy,r,deg){ var a=deg*Math.PI/180; return [cx+r*Math.cos(a), cy+r*Math.sin(a)]; }
+function f1(n){ return Math.round(n*10)/10; }
+function buildArt(){
+  var R=rng(7), out=[];
+  function scatter(cx,cy,a0,a1,r0,r1){ var a=a0+(a1-a0)*R(), r=r0+(r1-r0)*Math.sqrt(R()); return polar(cx,cy,r,a); }
+  out.push('<defs><clipPath id="clipPoke"><circle cx="205" cy="235" r="124"/></clipPath><clipPath id="clipPasta"><circle cx="468" cy="125" r="90"/></clipPath><clipPath id="clipNoodle"><circle cx="468" cy="362" r="76"/></clipPath></defs>');
+
+  // Poke bowl
+  var g=['<g class="spin">'];
+  g.push('<circle cx="205" cy="235" r="152" fill="var(--plate)" stroke="var(--plate-rim)" stroke-width="3"/>');
+  g.push('<circle cx="205" cy="235" r="136" fill="none" stroke="var(--plate-rim)" stroke-width="1.5"/>');
+  g.push('<circle cx="205" cy="235" r="124" fill="var(--rice)"/>');
+  g.push('<g clip-path="url(#clipPoke)">');
+  for(var i=0;i<26;i++){ var p=scatter(205,235,0,360,0,118); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="4" ry="2.4" fill="#E8E3D2" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  for(i=0;i<12;i++){ p=scatter(205,235,195,285,38,108); var rot=Math.round(R()*90);
+    g.push('<g transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+rot+')"><rect x="-13" y="-12" width="26" height="24" rx="5" fill="#EE7A5C" stroke="#D55E3E" stroke-width="1.5"/><path d="M-8 -4 L8 -9 M-9 5 L9 0" stroke="#FFD3C4" stroke-width="2" stroke-linecap="round"/></g>'); }
+  for(i=0;i<6;i++){ var ang=-58+i*15, c=polar(250,238,52,ang);
+    g.push('<ellipse cx="'+f1(c[0])+'" cy="'+f1(c[1])+'" rx="40" ry="11" fill="#A9CC6A" stroke="#6B9A3A" stroke-width="2" transform="rotate('+ang+' '+f1(c[0])+' '+f1(c[1])+')"/>'); }
+  for(i=0;i<9;i++){ p=scatter(205,235,20,95,50,110); g.push('<rect x="'+f1(p[0]-9)+'" y="'+f1(p[1]-9)+'" width="18" height="18" rx="4" fill="#F5B83D" stroke="#D99A1C" stroke-width="1.5" transform="rotate('+Math.round(R()*60)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  for(i=0;i<16;i++){ p=scatter(205,235,100,185,50,112); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="7.5" ry="5.5" fill="#7DB451" stroke="#57893A" stroke-width="1.2" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  for(i=0;i<34;i++){ p=scatter(205,235,0,360,0,116); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="2.4" ry="1.3" fill="'+(R()<.35?'#2B2B2B':'#F6EDCF')+'" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  g.push('</g></g>');
+  out.push(g.join(''));
+
+  // Pasta plate
+  g=['<g class="spin d2">'];
+  g.push('<circle cx="468" cy="125" r="112" fill="var(--plate)" stroke="var(--plate-rim)" stroke-width="3"/>');
+  g.push('<circle cx="468" cy="125" r="92" fill="none" stroke="var(--plate-rim)" stroke-width="1.5"/>');
+  g.push('<g clip-path="url(#clipPasta)">');
+  g.push('<circle cx="468" cy="125" r="70" fill="#C9432A"/>');
+  for(i=0;i<9;i++){ var e=polar(468,125,64,i*40+R()*14); g.push('<circle cx="'+f1(e[0])+'" cy="'+f1(e[1])+'" r="'+f1(12+R()*9)+'" fill="#C9432A"/>'); }
+  for(i=0;i<17;i++){ p=scatter(468,125,0,360,0,62); g.push('<g transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+Math.round(R()*180)+')"><path d="M-18 -6 L15 -6 L19 6 L-14 6 Z" fill="#F0C878" stroke="#C99A3C" stroke-width="1.5" stroke-linejoin="round"/><path d="M-9 -5 L-6 5 M0 -5 L3 5 M9 -5 L12 5" stroke="#D7AE5A" stroke-width="1.2"/></g>'); }
+  for(i=0;i<16;i++){ p=scatter(468,125,0,360,0,66); g.push('<rect x="'+f1(p[0])+'" y="'+f1(p[1])+'" width="5" height="3" rx="1" fill="#FFF3D1"/>'); }
+  for(i=0;i<3;i++){ p=scatter(468,125,0,360,10,48); g.push('<g transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+Math.round(R()*360)+')"><path d="M0 -16 C11 -9 11 9 0 16 C-11 9 -11 -9 0 -16 Z" fill="#3E8A36"/><path d="M0 -13 L0 13" stroke="#2C6326" stroke-width="1.5"/></g>'); }
+  g.push('</g></g>');
+  out.push(g.join(''));
+
+  // Noodle bowl
+  g=['<g class="spin d3">'];
+  g.push('<circle cx="468" cy="362" r="94" fill="var(--bowl)"/>');
+  g.push('<circle cx="468" cy="362" r="80" fill="var(--bowl-in)"/>');
+  g.push('<g clip-path="url(#clipNoodle)">');
+  for(i=0;i<26;i++){ var sx=392+R()*150, sy=290+R()*150, d='M'+f1(sx)+' '+f1(sy);
+    for(var k=0;k<5;k++){ d+=' q '+f1(10+R()*8)+' '+f1(-14+R()*28)+' '+f1(22+R()*10)+' '+f1(-6+R()*12); }
+    g.push('<path d="'+d+'" fill="none" stroke="#E8B65A" stroke-width="5" stroke-linecap="round" transform="rotate('+Math.round(R()*180)+' 468 362)"/>'); }
+  for(i=0;i<6;i++){ p=scatter(468,362,0,360,8,64); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="5.5" fill="none" stroke="#D6391C" stroke-width="3"/>'); }
+  for(i=0;i<12;i++){ p=scatter(468,362,0,360,0,68); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="4" fill="none" stroke="#7FBF55" stroke-width="2.5"/>'); }
+  g.push('</g>');
+  g.push('<g transform="rotate(-32 468 362)"><rect x="474" y="228" width="9" height="200" rx="4.5" fill="#C9A06E"/><rect x="490" y="232" width="9" height="200" rx="4.5" fill="#B88E5C"/></g>');
+  g.push('</g>');
+  out.push(g.join(''));
+  $('art').innerHTML = out.join('');
+}
+
+/* ---------- Boot ---------- */
+function renderAll(){
+  applyText(); renderFilters(); renderDishes(); renderPackages(); renderAddons();
+  $('dv-'+S.delivery).checked = true;
+  if(S.step==='details') renderForm();
+  if(S.step==='done') renderDone();
+  renderTicket();
+}
+buildArt();
+renderAll();
+})();
+</script>
+<script>
+/* Only on the public website (not on the claude.ai link): app install and self-update. */
+(function () {
+  'use strict';
+  var BUILD = '0dd0f1411';
+  var CHECK_EVERY_MS = 5 * 60 * 1000;
+  var opened = Date.now();
+  function $(id) { return document.getElementById(id); }
+  function fresh(v) { return location.pathname + '?v=' + encodeURIComponent(v) + location.hash; }
+
+  // Installable app
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+  }
+  var standalone = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferred = e;
+    if (!standalone) $('installBtn').hidden = false;
+  });
+  var ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (ios && !standalone) $('installBtn').hidden = false;
+  $('installBtn').addEventListener('click', function () {
+    if (deferred) {
+      deferred.prompt();
+      deferred.userChoice.then(function () { deferred = null; $('installBtn').hidden = true; }, function () {});
+    } else {
+      $('iosHint').hidden = false;
+    }
+  });
+  window.addEventListener('appinstalled', function () { $('installBtn').hidden = true; $('iosHint').hidden = true; });
+
+  // Self-update: an outdated page reloads right after opening; later it offers a button,
+  // so nothing a customer is typing gets lost. One automatic reload per version at most.
+  function latest() {
+    return fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return j && j.build; })
+      .catch(function () { return null; });
+  }
+  function reloadOnce(v) {
+    try {
+      if (sessionStorage.getItem('tk_reloadedFor') === v) return false;
+      sessionStorage.setItem('tk_reloadedFor', v);
+    } catch (e) {}
+    location.replace(fresh(v));
+    return true;
+  }
+  function check() {
+    latest().then(function (v) {
+      if (!v || v === BUILD) return;
+      if (Date.now() - opened < 15000 && reloadOnce(v)) return;
+      $('updBar').hidden = false;
+      $('updBtn').onclick = function () { location.replace(fresh(v)); };
+    });
+  }
+  check();
+  setInterval(check, CHECK_EVERY_MS);
+  document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') check(); });
+})();
+
+</script>
+</body>
+</html>
