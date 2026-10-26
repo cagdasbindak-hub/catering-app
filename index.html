@@ -647,40 +647,41 @@ var ALLERGENS = {
   se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}, veg:{sv:'Vegetariskt finns',en:'Vegetarian option'}
 };
 // Buffets (Tijani's rules, Cagdas OK 2026-09-26): served in large dishes, not packed portions.
-// Price per person, excluding VAT. c = what is included, shown as a list. All prices are examples.
+// Price per person, excluding VAT. c = what is included, shown as a list. The dishes come from the
+// restaurant's own menu (docs/restaurangen/meny.md); the buffet prices are still examples.
 // k = which kind of food, shown as a coloured tag on the card.
 var DISHES = [
   {id:'pizza',k:'pizza',price:129,a:['g','l','veg'],
-    sv:['Pizzabuffé','Pizzor skurna i bitar, att ta av.'],en:['Pizza buffet','Pizzas cut into slices, to help yourself to.'],
-    c:{sv:['Margherita (vegetarisk)','Vesuvio med skinka','Kebabpizza med kebabsås','Vegetarisk med grillade grönsaker','Pizzasallad'],
-       en:['Margherita (vegetarian)','Vesuvio with ham','Kebab pizza with kebab sauce','Vegetarian with grilled vegetables','Pizza salad (cabbage)']}},
+    sv:['Pizzabuffé','Pizzor från restaurangens meny, skurna i bitar.'],en:['Pizza buffet','Pizzas from the restaurant menu, cut into slices.'],
+    c:{sv:['Margherita (vegetarisk)','Vesuvio med skinka','Kebabpizza med kebabkött, feferoni och sås','Vegetarisk med champinjoner, paprika, oliver och kronärtskocka','Pizzasallad'],
+       en:['Margherita (vegetarian)','Vesuvio with ham','Kebab pizza with kebab meat, pickled peppers and sauce','Vegetarian with mushrooms, peppers, olives and artichoke','Pizza salad (cabbage)']}},
   {id:'pasta',k:'pasta',price:139,a:['g','l','e','veg'],
     sv:['Pastabuffé','Tre pastarätter att ta av.'],en:['Pasta buffet','Three pasta dishes to help yourself to.'],
-    c:{sv:['Lasagne med köttfärs','Pasta med kyckling i gräddsås','Penne pomodoro (vegansk)','Riven parmesan och vitlöksbröd'],
-       en:['Beef lasagne','Pasta with chicken in cream sauce','Penne pomodoro (vegan)','Grated parmesan and garlic bread']}},
+    c:{sv:['Bolognese med köttfärs och tomatsås','Al pesto tagliatelle med kyckling','Vegetarisk pasta med champinjoner och gorgonzolasås','Vitlöksbröd'],
+       en:['Bolognese with minced beef and tomato sauce','Al pesto tagliatelle with chicken','Vegetarian pasta with mushrooms and gorgonzola sauce','Garlic bread']}},
   {id:'sallad',k:'sallad',price:125,a:['g','l','e','f','veg'],
     sv:['Salladsbuffé','Tre sallader att ta av.'],en:['Salad buffet','Three salads to help yourself to.'],
-    c:{sv:['Kycklingsallad med krutonger och parmesan','Grekisk sallad med fetaost (vegetarisk)','Tonfisksallad med ägg','Bröd, smör och dressingar'],
-       en:['Chicken salad with croutons and parmesan','Greek salad with feta (vegetarian)','Tuna salad with egg','Bread, butter and dressings']}},
+    c:{sv:['Caesar kycklingsallad med bacon och parmesan','Fetaostsallad med oliver och paprika (vegetarisk)','Tonfisksallad med majs och oliver','Nybakat vitlöksbröd och dressingar'],
+       en:['Chicken Caesar salad with bacon and parmesan','Feta salad with olives and peppers (vegetarian)','Tuna salad with sweetcorn and olives','Freshly baked garlic bread and dressings']}},
   {id:'mix',k:'mix',price:149,pick:true,a:['g','l','e','veg'],
     sv:['Mixbuffé','Lite av allt: pizza, pasta och sallad.'],en:['Mixed buffet','A bit of everything: pizza, pasta and salad.'],
-    c:{sv:['Två sorters pizza i bitar','Lasagne med köttfärs','Grekisk sallad med fetaost','Pizzasallad, bröd och smör'],
-       en:['Two kinds of pizza in slices','Beef lasagne','Greek salad with feta','Pizza salad, bread and butter']}}
+    c:{sv:['Vesuvio och Margherita i bitar','Bolognese','Fetaostsallad','Pizzasallad och vitlöksbröd'],
+       en:['Vesuvio and Margherita in slices','Bolognese','Feta salad','Pizza salad and garlic bread']}}
 ];
 var ADDONS = [
   {id:'vitlokssas',g:'sauce',price:12,sv:'Vitlökssås',en:'Garlic sauce'},
-  {id:'kebabsas',g:'sauce',price:12,sv:'Kebabsås, mild eller stark',en:'Kebab sauce, mild or hot'},
+  {id:'starksas',g:'sauce',price:12,sv:'Starksås',en:'Hot sauce'},
   {id:'bearnaise',g:'sauce',price:15,sv:'Bearnaisesås',en:'Béarnaise sauce'},
+  {id:'tzatziki',g:'sauce',price:15,sv:'Tzatziki',en:'Tzatziki'},
   {id:'vitloksbrod',g:'side',price:19,sv:'Vitlöksbröd',en:'Garlic bread'},
-  {id:'gronsallad',g:'side',price:25,sv:'Grönsallad med vinägrett',en:'Green salad with vinaigrette'},
-  {id:'oliver',g:'side',price:22,sv:'Oliver och marinerade grönsaker',en:'Olives and marinated vegetables'},
+  {id:'pizzasallad',g:'side',price:10,sv:'Extra pizzasallad',en:'Extra pizza salad'},
   {id:'dryck',g:'sweet',price:22,sv:'Dryck, läsk eller vatten',en:'Drink, soda or water'},
-  {id:'tiramisu',g:'sweet',price:39,sv:'Tiramisu',en:'Tiramisu'},
-  {id:'kladdkaka',g:'sweet',price:35,sv:'Kladdkaka med grädde',en:'Chocolate mud cake with cream'}
+  {id:'chokladtarta',g:'sweet',price:45,sv:'Fransk chokladtårta med färska bär',en:'French chocolate cake with fresh berries'}
 ];
 var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
 var MIN = 10, FEE = 395, MAX_QTY = 2000;  // delivery: always 395 kr excl. VAT, no pickup, no free delivery
 var UPDATES = [
+  {d:'2026-10-26',sv:'Bufféerna har nu rätter från restaurangens egen meny: Vesuvio, kebabpizza, bolognese, al pesto, caesarsallad med mera.',en:'The buffets now have dishes from the restaurant\'s own menu: Vesuvio, kebab pizza, Bolognese, al pesto, Caesar salad and more.'},
   {d:'2026-10-26',sv:'Sidan heter nu Hela Bordet.',en:'The site is now called Hela Bordet.'},
   {d:'2026-10-26',sv:'Ny meny: pizza-, pasta-, sallads- och mixbuffé. Vi levererar i Södertörn, och priserna är exempel tills vidare.',en:'New menu: pizza, pasta, salad and mixed buffets. We deliver in Södertörn, and prices are examples for now.'},
   {d:'2026-09-26',sv:'Nu beställer du buffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
@@ -1785,7 +1786,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '17a2f331a';
+  var BUILD = '17a46cfd6';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
