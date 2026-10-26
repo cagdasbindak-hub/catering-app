@@ -1,4 +1,4 @@
-// Tre Kök service worker: makes the site installable and shows notifications
+// Stora Fatet service worker: makes the site installable and shows notifications
 // ("Ny feedback", "Svar på din feedback"). No fetch handler on purpose: the page is
 // always loaded fresh from the network, so a new version shows up right away.
 self.addEventListener('install', () => self.skipWaiting());
@@ -12,7 +12,7 @@ self.addEventListener('push', (event) => {
     data = { body: event.data ? event.data.text() : '' };
   }
   event.waitUntil(
-    self.registration.showNotification(data.title || 'Tre Kök', {
+    self.registration.showNotification(data.title || 'Stora Fatet', {
       body: data.body || '',
       icon: 'icon-192.png',
       badge: 'icon-192.png',

@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Tre Kök Catering</title>
-<meta name="description" content="Catering med italienskt, pokebowls och wok. Välj rätter, paket och tillval och se priset direkt. Från 10 personer.">
+<title>Stora Fatet Catering</title>
+<meta name="description" content="Buffécatering i Södertörn: pizza, pasta och sallad till kontor, skolor, föreningar och fester. Välj buffé och tillval och se priset direkt. Från 10 personer.">
 <meta name="theme-color" content="#F3F5F0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1511" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Tre Kök">
+<meta name="apple-mobile-web-app-title" content="Stora Fatet">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tre Kök Catering">
-<meta property="og:description" content="Catering med italienskt, pokebowls och wok. Välj rätter, paket och tillval och se priset direkt. Från 10 personer.">
+<meta property="og:title" content="Stora Fatet Catering">
+<meta property="og:description" content="Buffécatering i Södertörn: pizza, pasta och sallad till kontor, skolor, föreningar och fester. Välj buffé och tillval och se priset direkt. Från 10 personer.">
 <meta property="og:image" content="https://cagdasbindak-hub.github.io/catering-app/share.png">
 <meta property="og:url" content="https://cagdasbindak-hub.github.io/catering-app/">
 <link rel="canonical" href="https://cagdasbindak-hub.github.io/catering-app/">
@@ -127,14 +127,15 @@ p{margin:0}
 .hero h1{display:flex;flex-direction:column;gap:6px}
 .hero h1 .l1{font-size:clamp(30px,6.4vw,52px);color:var(--ink-2)}
 .hero-grid > *{min-width:0}
-.hero h1 .l2{font-size:clamp(88px,26vw,200px);line-height:.9;letter-spacing:-.01em;overflow-wrap:break-word}
+.hero h1 .l2{font-size:clamp(88px,26vw,168px);line-height:.9;letter-spacing:-.01em;overflow-wrap:break-word}
 :root[lang="en"] .hero h1 .l2{font-size:clamp(62px,16.5vw,140px)}
 .kitchens{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .kchip{display:inline-flex;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;font-weight:600;font-size:15px}
 .kchip i{width:10px;height:10px;border-radius:50%;display:block}
-.k-it{background:var(--basil-soft)}.k-it i{background:var(--basil)}
-.k-poke{background:var(--salmon-soft)}.k-poke i{background:var(--salmon)}
-.k-wok{background:var(--ginger-soft)}.k-wok i{background:var(--ginger)}
+.k-pizza{background:var(--salmon-soft)}.k-pizza i{background:var(--salmon)}
+.k-pasta{background:var(--ginger-soft)}.k-pasta i{background:var(--ginger)}
+.k-sallad{background:var(--basil-soft)}.k-sallad i{background:var(--basil)}
+.k-mix{background:var(--accent-soft)}.k-mix i{background:var(--accent)}
 .hero-sub{margin-top:20px;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--ink-2);max-width:34em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;padding:0;list-style:none}
@@ -434,11 +435,11 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 </style>
 </head>
 <body>
-<div class="testbar" data-i18n="test_banner">Testversion. Beställningar skickas inte på riktigt än.</div>
+<div class="testbar" id="testbar" data-i18n="test_banner">Testversion. Beställningar skickas inte på riktigt än.</div>
 
 <header class="hdr">
   <div class="wrap hdr-in">
-    <a class="logo" href="#top" aria-label="Tre Kök"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Tre Kök</a>
+    <a class="logo" href="#top" aria-label="Stora Fatet"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Stora Fatet</a>
     <nav class="nav" aria-label="Meny">
       <a href="#bestall" data-i18n="nav_menu">Meny</a>
       <a href="#sa-funkar-det" data-i18n="nav_how">Så funkar det</a>
@@ -458,20 +459,20 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
   <section class="hero" data-section="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow" data-i18n="hero_kicker">Catering · från 10 personer</p>
+        <p class="eyebrow" data-i18n="hero_kicker">Buffécatering i Södertörn · från 10 personer</p>
         <h1 class="display" style="margin-top:14px">
-          <span class="l1" data-i18n="hero_l1">Catering från</span>
-          <span class="l2" data-i18n="hero_l2">tre kök</span>
+          <span class="l1" data-i18n="hero_l1">Pizza, pasta och sallad på</span>
+          <span class="l2" data-i18n="hero_l2">stora fat</span>
         </h1>
         <div class="kitchens" id="heroKitchens"></div>
-        <p class="hero-sub" data-i18n="hero_sub">Italienskt, pokebowls och wok. Välj rätter, lägg till det lilla extra och se totalpriset direkt.</p>
+        <p class="hero-sub" data-i18n="hero_sub">Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#bestall" data-i18n="hero_cta">Bygg din beställning</a>
           <a class="btn btn-ghost" href="#sa-funkar-det" data-i18n="hero_cta2">Så funkar det</a>
         </div>
         <ul class="facts" id="facts"></ul>
       </div>
-      <svg class="art" id="art" viewBox="0 0 600 470" role="img" aria-label="Pokebowl, pasta och nudlar sedda ovanifrån"></svg>
+      <svg class="art" id="art" viewBox="0 0 600 470" role="img" aria-label="Pizza, pasta och sallad sedda ovanifrån"></svg>
     </div>
   </section>
 
@@ -491,7 +492,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
           </div>
 
           <div class="block addons-block">
-            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per person, ostbrickorna per bricka.</p></div>
+            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per person.</p></div>
             <div class="addon-groups" id="addons"></div>
           </div>
 
@@ -526,9 +527,9 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
         <h2 class="display" data-i18n="how_h">Så funkar det</h2>
       </div>
       <ol class="steps">
-        <li><span class="n">1</span><h3 data-i18n="s1_h">Välj och se priset</h3><p data-i18n="s1_p">Rätter, paket och tillval. Totalen räknas ut medan du väljer.</p></li>
-        <li><span class="n">2</span><h3 data-i18n="s2_h">Skicka en förfrågan</h3><p data-i18n="s2_p">Vi bekräftar datum, tid och allergier inom 24 timmar.</p></li>
-        <li><span class="n">3</span><h3 data-i18n="s3_h">Vi levererar</h3><p data-i18n="s3_p">Varmt eller kylt, på utsatt tid, med servetter och bestick.</p></li>
+        <li><span class="n">1</span><h3 data-i18n="s1_h">Välj buffé och se priset</h3><p data-i18n="s1_p">Buffé, antal personer och tillval. Priset räknas ut medan du väljer.</p></li>
+        <li><span class="n">2</span><h3 data-i18n="s2_h">Skicka beställningen</h3><p data-i18n="s2_p">Vi bekräftar datum, tid och allergier inom 24 timmar.</p></li>
+        <li><span class="n">3</span><h3 data-i18n="s3_h">Vi levererar</h3><p data-i18n="s3_p">Buffén kommer i stora fat på utsatt tid, med servetter och bestick.</p></li>
       </ol>
       <ul class="goodfor" id="goodfor"></ul>
     </div>
@@ -579,7 +580,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
     <a class="back" href="#top" data-i18n="back_home">← Till sidan</a>
     <div class="section-head">
       <p class="eyebrow" data-i18n="in_kicker">Egen ikon på hemskärmen</p>
-      <h1 class="display view-h" id="inTitle" data-i18n="in_title">Installera Tre Kök</h1>
+      <h1 class="display view-h" id="inTitle" data-i18n="in_title">Installera Stora Fatet</h1>
       <p data-i18n="in_why">Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.</p>
     </div>
     <div id="inBody"></div>
@@ -599,7 +600,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span data-i18n="foot">Tre Kök är ett arbetsnamn. Testversion 0.1.</span>
+    <span data-i18n="foot">Stora Fatet är ett arbetsnamn. Version 0.3.</span>
     <span class="foot-actions">
       <a class="linkbtn" href="#feedback" data-i18n="foot_fb">Feedback och förslag</a>
       <a class="linkbtn" href="#installera" id="footInstall" hidden data-i18n="in_link">Installera som app</a>
@@ -617,7 +618,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
   <button class="strip-x" type="button" id="fbStripX">×</button>
 </div>
 <div class="strip strip-bottom" id="inStrip" hidden>
-  <button class="strip-main" type="button" id="inStripGo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="in_nudge">Installera Tre Kök som app 📲</span></button>
+  <button class="strip-main" type="button" id="inStripGo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="in_nudge">Installera Stora Fatet som app 📲</span></button>
   <button class="strip-x" type="button" id="inStripX">×</button>
 </div>
 
@@ -633,66 +634,70 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 'use strict';
 
 /* ---------- Data ---------- */
+// The kitchen's menu (Cagdas 2026-10-25): pizza, pasta and salad. One colour each.
 var KITCHENS = {
-  it:{sv:'Italienskt',en:'Italian',cls:'k-it',color:'var(--basil)'},
-  poke:{sv:'Pokebowls',en:'Poke bowls',cls:'k-poke',color:'var(--salmon)'},
-  wok:{sv:'Wok & nudlar',en:'Wok & noodles',cls:'k-wok',color:'var(--ginger)'}
+  pizza:{sv:'Pizza',en:'Pizza',cls:'k-pizza',color:'var(--salmon)'},
+  pasta:{sv:'Pasta',en:'Pasta',cls:'k-pasta',color:'var(--ginger)'},
+  sallad:{sv:'Sallad',en:'Salad',cls:'k-sallad',color:'var(--basil)'},
+  mix:{sv:'Lite av allt',en:'A bit of everything',cls:'k-mix',color:'var(--accent)',hero:false}
 };
 var ALLERGENS = {
   g:{sv:'Gluten',en:'Gluten'}, l:{sv:'Laktos',en:'Lactose'}, n:{sv:'Nötter',en:'Nuts'},
   e:{sv:'Ägg',en:'Egg'}, f:{sv:'Fisk',en:'Fish'}, s:{sv:'Soja',en:'Soy'},
-  se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}
+  se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}, veg:{sv:'Vegetariskt finns',en:'Vegetarian option'}
 };
-// Buffets (Cagdas/Tijani 2026-09-26): people order buffet, served in large dishes, not packed portions.
-// Price per person, excluding VAT. c = what is included, shown as a list. No sushi rice: rice noodles.
+// Buffets (Tijani's rules, Cagdas OK 2026-09-26): served in large dishes, not packed portions.
+// Price per person, excluding VAT. c = what is included, shown as a list. All prices are examples.
+// k = which kind of food, shown as a coloured tag on the card.
 var DISHES = [
-  {id:'italiensk',k:'it',price:145,pick:true,a:['g','l','n'],
-    sv:['Italiensk buffé','Tre pastarätter att ta av.'],en:['Italian buffet','Three pasta dishes to help yourself to.'],
-    c:{sv:['Lasagne al forno med köttfärsragu','Pasta pesto med kyckling och soltorkade tomater','Penne arrabbiata (vegansk)','Riven parmesan'],
-       en:['Lasagne al forno with beef ragù','Pesto pasta with chicken and sun-dried tomatoes','Penne arrabbiata (vegan)','Grated parmesan']}},
-  {id:'poke',k:'poke',price:155,pick:true,a:['f','g','e','s','se'],
-    sv:['Pokebuffé','Alla bygger sin egen bowl.'],en:['Poke buffet','Everyone builds their own bowl.'],
-    c:{sv:['Risnudlar','Lax och kyckling teriyaki','Marinerad tofu (vegansk)','Avokado, mango, edamame, gurka och rödkål','Sesamfrön, rostad lök, spicy mayo och sojasås'],
-       en:['Rice noodles','Salmon and chicken teriyaki','Marinated tofu (vegan)','Avocado, mango, edamame, cucumber and red cabbage','Sesame seeds, crispy onion, spicy mayo and soy sauce']}},
-  {id:'wok',k:'wok',price:145,pick:true,a:['g','e','n','f','s'],
-    sv:['Wokbuffé','Tre wokrätter att ta av.'],en:['Wok buffet','Three wok dishes to help yourself to.'],
-    c:{sv:['Pad thai med kyckling (risnudlar, ägg och jordnötter)','Yakisoba med biff (vetenudlar och vitkål)','Grönsakswok med tofu (vegansk)','Lime och färsk koriander'],
-       en:['Chicken pad thai (rice noodles, egg and peanuts)','Beef yakisoba (wheat noodles and cabbage)','Vegetable wok with tofu (vegan)','Lime and fresh coriander']}}
+  {id:'pizza',k:'pizza',price:129,a:['g','l','veg'],
+    sv:['Pizzabuffé','Pizzor skurna i bitar, att ta av.'],en:['Pizza buffet','Pizzas cut into slices, to help yourself to.'],
+    c:{sv:['Margherita (vegetarisk)','Vesuvio med skinka','Kebabpizza med kebabsås','Vegetarisk med grillade grönsaker','Pizzasallad'],
+       en:['Margherita (vegetarian)','Vesuvio with ham','Kebab pizza with kebab sauce','Vegetarian with grilled vegetables','Pizza salad (cabbage)']}},
+  {id:'pasta',k:'pasta',price:139,a:['g','l','e','veg'],
+    sv:['Pastabuffé','Tre pastarätter att ta av.'],en:['Pasta buffet','Three pasta dishes to help yourself to.'],
+    c:{sv:['Lasagne med köttfärs','Pasta med kyckling i gräddsås','Penne pomodoro (vegansk)','Riven parmesan och vitlöksbröd'],
+       en:['Beef lasagne','Pasta with chicken in cream sauce','Penne pomodoro (vegan)','Grated parmesan and garlic bread']}},
+  {id:'sallad',k:'sallad',price:125,a:['g','l','e','f','veg'],
+    sv:['Salladsbuffé','Tre sallader att ta av.'],en:['Salad buffet','Three salads to help yourself to.'],
+    c:{sv:['Kycklingsallad med krutonger och parmesan','Grekisk sallad med fetaost (vegetarisk)','Tonfisksallad med ägg','Bröd, smör och dressingar'],
+       en:['Chicken salad with croutons and parmesan','Greek salad with feta (vegetarian)','Tuna salad with egg','Bread, butter and dressings']}},
+  {id:'mix',k:'mix',price:149,pick:true,a:['g','l','e','veg'],
+    sv:['Mixbuffé','Lite av allt: pizza, pasta och sallad.'],en:['Mixed buffet','A bit of everything: pizza, pasta and salad.'],
+    c:{sv:['Två sorters pizza i bitar','Lasagne med köttfärs','Grekisk sallad med fetaost','Pizzasallad, bröd och smör'],
+       en:['Two kinds of pizza in slices','Beef lasagne','Greek salad with feta','Pizza salad, bread and butter']}}
 ];
 var ADDONS = [
-  {id:'spicymayo',g:'sauce',price:12,sv:'Spicy mayo',en:'Spicy mayo'},
-  {id:'pestosas',g:'sauce',price:12,sv:'Extra pesto',en:'Extra pesto'},
-  {id:'teriyakisas',g:'sauce',price:12,sv:'Teriyakisås',en:'Teriyaki sauce'},
-  {id:'sallad',g:'side',price:25,sv:'Grönsallad med vinägrett',en:'Green salad with vinaigrette'},
-  {id:'focaccia',g:'side',price:19,sv:'Focaccia med olivolja',en:'Focaccia with olive oil'},
+  {id:'vitlokssas',g:'sauce',price:12,sv:'Vitlökssås',en:'Garlic sauce'},
+  {id:'kebabsas',g:'sauce',price:12,sv:'Kebabsås, mild eller stark',en:'Kebab sauce, mild or hot'},
+  {id:'bearnaise',g:'sauce',price:15,sv:'Bearnaisesås',en:'Béarnaise sauce'},
+  {id:'vitloksbrod',g:'side',price:19,sv:'Vitlöksbröd',en:'Garlic bread'},
+  {id:'gronsallad',g:'side',price:25,sv:'Grönsallad med vinägrett',en:'Green salad with vinaigrette'},
   {id:'oliver',g:'side',price:22,sv:'Oliver och marinerade grönsaker',en:'Olives and marinated vegetables'},
-  {id:'edamame',g:'side',price:19,sv:'Edamame med flingsalt',en:'Edamame with sea salt'},
-  // tray: a fixed price per board for the whole group, not per serving (Tijani's tip, Cagdas OK 2026-09-26)
-  {id:'ostliten',g:'side',price:249,tray:true,sv:'Ostbricka, liten',en:'Cheese board, small',d:{sv:'Räcker till cirka 10 personer. Lagrad gouda, brie och blåmögelost med kex, druvor och fikonmarmelad.',en:'Serves about 10. Aged gouda, brie and blue cheese with crackers, grapes and fig jam.'}},
-  {id:'oststor',g:'side',price:449,tray:true,sv:'Ostbricka, stor',en:'Cheese board, large',d:{sv:'Räcker till cirka 20 personer. Samma ostar och tillbehör som den lilla.',en:'Serves about 20. Same cheeses and sides as the small one.'}},
   {id:'dryck',g:'sweet',price:22,sv:'Dryck, läsk eller vatten',en:'Drink, soda or water'},
   {id:'tiramisu',g:'sweet',price:39,sv:'Tiramisu',en:'Tiramisu'},
-  {id:'mochi',g:'sweet',price:35,sv:'Mochi, 2 st',en:'Mochi, 2 pcs'}
+  {id:'kladdkaka',g:'sweet',price:35,sv:'Kladdkaka med grädde',en:'Chocolate mud cake with cream'}
 ];
 var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
 var MIN = 10, FEE = 395, MAX_QTY = 2000;  // delivery: always 395 kr excl. VAT, no pickup, no free delivery
 var UPDATES = [
-  {d:'2026-09-26',sv:'Nu beställer du buffé: Italiensk buffé, Pokebuffé eller Wokbuffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets: Italian, Poke or Wok, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
-  {d:'2026-09-26',sv:'Ostbrickan har nu fast pris för hela sällskapet: liten (cirka 10 personer) 249 kr eller stor (cirka 20 personer) 449 kr.',en:'The cheese board now has a fixed price for the whole group: small (about 10 people) SEK 249 or large (about 20 people) SEK 449.'},
+  {d:'2026-10-26',sv:'Ny meny: pizza-, pasta-, sallads- och mixbuffé. Vi levererar i Södertörn, och sidan heter nu Stora Fatet (arbetsnamn). Priserna är exempel tills vidare.',en:'New menu: pizza, pasta, salad and mixed buffets. We deliver in Södertörn, and the site is now called Stora Fatet (working name). Prices are examples for now.'},
+  {d:'2026-09-26',sv:'Nu beställer du buffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
   {d:'2026-09-26',sv:'Länken "Installera appen" syns nu alltid bredvid Feedback, även i appen, så att du kan visa andra hur man installerar.',en:'The "Install the app" link is now always next to Feedback, even in the app, so you can show others how to install it.'},
-  {d:'2026-09-26',sv:'Ostbrickan visar nu vilka ostar och tillbehör som ingår (tack Tijani för tipset).',en:'The cheese board now shows which cheeses and sides are included (thanks Tijani for the tip).'},
   {d:'2026-09-26',sv:'Notiser: tryck "Få notis när vi svarar" efter ditt förslag, så hör vi av oss direkt när svaret finns.',en:'Notifications: tap "Get notified when we reply" after your suggestion and we will let you know as soon as there is an answer.'},
   {d:'2026-09-26',sv:'Feedbacktavlan är kopplad: alla förslag sparas nu och syns för alla besökare.',en:'The feedback board is connected: every suggestion is now saved and visible to all visitors.'},
   {d:'2026-09-26',sv:'Ny feedbacksida: alla kan lämna förslag med skärmbilder, och varje förslag får svar och status. Sidan kan installeras som app, och en kort länk finns: tinyurl.com/catering-app.',en:'New feedback page: anyone can leave suggestions with screenshots, and every suggestion gets a reply and a status. The site can be installed as an app, and there is a short link: tinyurl.com/catering-app.'},
   {d:'2026-09-26',sv:'Egen webbadress som uppdaterar sig själv när en ny version finns.',en:'Its own web address that updates itself when a new version is out.'},
-  {d:'2026-09-26',sv:'Första versionen: meny från tre kök, beställning med paket och tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: menu from three kitchens, ordering with combos and extras, Swedish and English, light and dark mode.'}
+  {d:'2026-09-26',sv:'Första versionen: beställning med tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: ordering with extras, Swedish and English, light and dark mode.'}
 ];
-var GOODFOR = {sv:['Skolor och förskolor','Idrottsföreningar och cuper','Kyrkor och församlingar','Kontor och möten','Fester och bröllop'],en:['Schools and preschools','Sports clubs and tournaments','Churches and parishes','Offices and meetings','Parties and weddings']};
+var GOODFOR = {sv:['Kontor och möten','Fredagspizza på jobbet','Skolor och förskolor','Idrottsföreningar och cuper','Kyrkor och församlingar','Studentfester och födelsedagar'],en:['Offices and meetings','Friday pizza at work','Schools and preschools','Sports clubs and tournaments','Churches and parishes','Graduation parties and birthdays']};
 var FAQ = [
+  {sv:['Var levererar ni?','I Södertörn: Botkyrka (Tumba, Tullinge, Grödinge), Södertälje, Huddinge (Flemingsberg), Salem och Nykvarn. Ligger du utanför? Skriv det i beställningen så svarar vi.'],en:['Where do you deliver?','In Södertörn: Botkyrka (Tumba, Tullinge, Grödinge), Södertälje, Huddinge (Flemingsberg), Salem and Nykvarn. Outside that area? Say so in your order and we will reply.']},
   {sv:['Hur serveras maten?','Som buffé i stora fat, så att alla tar själva. Maten packas inte i enskilda portioner.'],en:['How is the food served?','As a buffet in large dishes, so everyone helps themselves. The food is not packed in single portions.']},
   {sv:['Hur långt i förväg behöver jag beställa?','Senast två dagar innan. För fler än 50 personer gärna en vecka innan.'],en:['How far ahead do I need to order?','At least two days before. For more than 50 people, a week ahead is best.']},
-  {sv:['Kan ni hantera allergier?','Ja. Varje buffé visar vad den innehåller och vilka allergener som finns. Skriv dina önskemål i beställningen så anpassar vi.'],en:['Can you handle allergies?','Yes. Every buffet lists what it contains and its allergens. Add your needs to the order and we adjust.']},
-  {sv:['Vad är minsta beställning?','10 personer. Du kan blanda buffé från alla tre kök.'],en:['What is the minimum order?','10 people. You can mix buffets from all three kitchens.']},
+  {sv:['Finns det vegetariskt och glutenfritt?','Vegetariskt finns i alla bufféer. Behöver någon glutenfritt eller har allergier? Skriv antal och vad som gäller i beställningen, så bekräftar vi vad vi kan ordna.'],en:['Is there vegetarian and gluten-free food?','Every buffet has a vegetarian option. Does anyone need gluten-free food or have allergies? Write how many and what applies in your order, and we will confirm what we can do.']},
+  {sv:['Vad är minsta beställning?','10 personer. Du kan blanda flera bufféer i samma beställning.'],en:['What is the minimum order?','10 people. You can mix several buffets in one order.']},
+  {sv:['Kan vi få pizza varje fredag?','Ja, gärna. Skriv det i beställningen, till exempel "varje fredag kl 12", så hör vi av oss och gör ett upplägg.'],en:['Can we get pizza every Friday?','Yes, gladly. Say so in your order, for example "every Friday at noon", and we will get in touch to set it up.']},
   {sv:['Vad kostar leveransen?','395 kr exklusive moms, oavsett hur stor beställningen är. Vi levererar till adressen du anger.'],en:['What does delivery cost?','SEK 395 excluding VAT, whatever the size of the order. We deliver to the address you give.']},
   {sv:['Är priserna med moms?','Nej. Alla priser visas exklusive moms. Momsen kommer till på fakturan.'],en:['Do the prices include VAT?','No. All prices are shown excluding VAT. VAT is added on the invoice.']},
   {sv:['Hur betalar jag?','Företag, skolor och föreningar får faktura. Privatpersoner betalar när vi bekräftar beställningen.'],en:['How do I pay?','Companies, schools and clubs get an invoice. Private customers pay when we confirm the order.']}
@@ -702,16 +707,17 @@ var FAQ = [
 var T = {
   sv:{
     test_banner:'Testversion. Beställningar skickas inte på riktigt än.',
+    test_banner_site:'Testversion: priserna är exempel. Vi bekräftar varje beställning innan den gäller.',
     nav_menu:'Meny',nav_how:'Så funkar det',nav_faq:'Frågor',cta_order:'Beställ',
-    hero_kicker:'Buffécatering · från 10 personer',hero_l1:'Catering från',hero_l2:'tre kök',
-    hero_sub:'Buffé från tre kök: italienskt, poke och wok. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.',
+    hero_kicker:'Buffécatering i Södertörn · från 10 personer',hero_l1:'Pizza, pasta och sallad på',hero_l2:'stora fat',
+    hero_sub:'Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.',
     hero_cta:'Bygg din beställning',hero_cta2:'Så funkar det',
-    fact_from:'Från {p}/person exkl. moms',fact_min:'Minst 10 personer',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
+    fact_from:'Från {p}/person exkl. moms',fact_min:'Minst 10 personer',fact_area:'Leverans i Södertörn',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
     menu_kicker:'Buffé och pris',menu_h:'Bygg din beställning',menu_p:'Välj buffé och antal personer. Priser per person, exklusive moms.',
-    dishes_h:'Buffémenyer',dishes_p:'Allt serveras som buffé i stora fat.',contents_h:'Det här ingår',add:'Välj',pick:'Populär',per:'/person',
+    dishes_h:'Buffémenyer',dishes_p:'Allt serveras som buffé i stora fat.',contents_h:'Det här ingår',add:'Välj',pick:'Vårt tips',per:'/person',
     less:'En person färre för {d}',more:'En person till för {d}',qty:'Antal personer för {d}',unit:'pers.',
-    addons_h:'Tillval',addons_p:'Priset gäller per person, ostbrickorna per bricka.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
-    deliv_h:'Leverans',dv_note:'Vi levererar till adressen du anger. Leveransen kostar {fee} exklusive moms, oavsett hur stor beställningen är.',
+    addons_h:'Tillval',addons_p:'Priset gäller per person.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
+    deliv_h:'Leverans',dv_note:'Vi levererar i Södertörn: Botkyrka, Södertälje, Huddinge, Salem och Nykvarn. Leveransen kostar {fee} exklusive moms, oavsett hur stor beställningen är.',
     t_h:'Din beställning',t_empty:'Välj en buffé för att börja. Priset räknas ut här medan du väljer.',
     t_line:'{n} personer × {p}',t_delivery:'Leverans',t_total:'Totalt',t_per:'≈ {x} per person',t_vat:'Exkl. moms',
     nudge_min:'Lägg till <b>{n} personer</b> till. Minsta beställning är 10 personer.',
@@ -733,11 +739,11 @@ var T = {
     s3_h:'Vi levererar',s3_p:'Buffén kommer i stora fat på utsatt tid, med servetter och bestick.',
     faq_kicker:'Innan du beställer',faq_h:'Vanliga frågor',
     upd_kicker:'Vad som är nytt',upd_h:'Senaste uppdateringar',
-    foot:'Tre Kök är ett arbetsnamn. Version 0.2.',
+    foot:'Stora Fatet är ett arbetsnamn. Version 0.3.',
     fb_q:'Vad tycker du om sidan?',fb_btn:'Tyck till',fb_close:'Stäng',
     to_en:'Switch to English',theme_dark:'Byt till mörkt läge',theme_light:'Byt till ljust läge',
-    sum_title:'Beställning, Tre Kök Catering',sum_vat:'exkl. moms',
-    art_label:'Pokebowl, pasta och nudlar sedda ovanifrån',
+    sum_title:'Beställning, Stora Fatet Catering',sum_vat:'exkl. moms',
+    art_label:'Pizza, pasta och sallad sedda ovanifrån',
     install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
     nav_feedback:"Feedback",
     nav_install:"Installera appen",
@@ -834,20 +840,20 @@ var T = {
     nudge2:"Har du en idé? Skriv den här 💡",
     nudge3:"Vad tycker du om sidan? Tryck här",
     nudge4:"Något som krånglar? Berätta för oss",
-    in_nudge:"Installera Tre Kök som app 📲",
+    in_nudge:"Installera Stora Fatet som app 📲",
     in_link:"Installera som app",
     in_kicker:"Egen ikon på hemskärmen",
-    in_title:"Installera Tre Kök",
+    in_title:"Installera Stora Fatet",
     in_why:"Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.",
     in_one_tap:"Installera",
-    in_done:"Tre Kök är installerad. Öppna den från ikonen på hemskärmen.",
+    in_done:"Stora Fatet är installerad. Öppna den från ikonen på hemskärmen.",
     in_iphone:"Så gör du på iPhone",
     in_ios1:"Tryck på Dela-knappen",
     in_ios1_hint:"Längst ner i Safari (eller uppe till höger på iPad).",
     in_ios2:"Välj ”Lägg till på hemskärmen”",
     in_ios2_hint:"Scrolla ner i listan om du inte ser det direkt.",
     in_ios3:"Tryck på ”Lägg till”",
-    in_open:"Öppna Tre Kök från den nya ikonen",
+    in_open:"Öppna Stora Fatet från den nya ikonen",
     in_android:"Så gör du på Android",
     in_and1:"Tryck på ⋮ uppe till höger",
     in_and2:"Välj ”Installera app” eller ”Lägg till på startskärmen”",
@@ -861,16 +867,17 @@ var T = {
   },
   en:{
     test_banner:'Test version. Orders are not sent for real yet.',
+    test_banner_site:'Test version: prices are examples. We confirm every order before it applies.',
     nav_menu:'Menu',nav_how:'How it works',nav_faq:'FAQ',cta_order:'Order',
-    hero_kicker:'Buffet catering · from 10 people',hero_l1:'Catering from',hero_l2:'three kitchens',
-    hero_sub:'Buffets from three kitchens: Italian, poke and wok. Pick a buffet and the number of people, add the extras and see the price right away.',
+    hero_kicker:'Buffet catering in Södertörn · from 10 people',hero_l1:'Pizza, pasta and salad on',hero_l2:'big platters',
+    hero_sub:'Buffets for offices, schools, clubs and parties. Pick a buffet and the number of people, add the extras and see the price right away.',
     hero_cta:'Build your order',hero_cta2:'How it works',
-    fact_from:'From {p}/person excl. VAT',fact_min:'Minimum 10 people',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
+    fact_from:'From {p}/person excl. VAT',fact_min:'Minimum 10 people',fact_area:'Delivery in Södertörn',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
     menu_kicker:'Buffets and prices',menu_h:'Build your order',menu_p:'Pick a buffet and the number of people. Prices per person, excluding VAT.',
-    dishes_h:'Buffet menus',dishes_p:'Everything is served as a buffet in large dishes.',contents_h:'What is included',add:'Choose',pick:'Popular',per:'/person',
+    dishes_h:'Buffet menus',dishes_p:'Everything is served as a buffet in large dishes.',contents_h:'What is included',add:'Choose',pick:'Our pick',per:'/person',
     less:'One person less for {d}',more:'One more person for {d}',qty:'Number of people for {d}',unit:'ppl',
-    addons_h:'Extras',addons_p:'Prices are per person; cheese boards are per board.',included:'Included',per_tray:'/board',tray_one:'1 board',
-    deliv_h:'Delivery',dv_note:'We deliver to the address you give. Delivery is {fee} excluding VAT, whatever the size of the order.',
+    addons_h:'Extras',addons_p:'Prices are per person.',included:'Included',per_tray:'/board',tray_one:'1 board',
+    deliv_h:'Delivery',dv_note:'We deliver in Södertörn: Botkyrka, Södertälje, Huddinge, Salem and Nykvarn. Delivery is {fee} excluding VAT, whatever the size of the order.',
     t_h:'Your order',t_empty:'Pick a buffet to start. The price adds up here as you choose.',
     t_line:'{n} people × {p}',t_delivery:'Delivery',t_total:'Total',t_per:'≈ {x} per person',t_vat:'Excl. VAT',
     nudge_min:'Add <b>{n} more people</b>. The minimum order is 10 people.',
@@ -892,11 +899,11 @@ var T = {
     s3_h:'We deliver',s3_p:'The buffet arrives in large dishes on time, with napkins and cutlery.',
     faq_kicker:'Before you order',faq_h:'Common questions',
     upd_kicker:"What's new",upd_h:'Latest updates',
-    foot:'Tre Kök is a working name. Version 0.2.',
+    foot:'Stora Fatet is a working name. Version 0.3.',
     fb_q:'What do you think of the site?',fb_btn:'Feedback',fb_close:'Close',
     to_en:'Byt till svenska',theme_dark:'Switch to dark mode',theme_light:'Switch to light mode',
-    sum_title:'Order, Tre Kök Catering',sum_vat:'excl. VAT',
-    art_label:'Poke bowl, pasta and noodles seen from above',
+    sum_title:'Order, Stora Fatet Catering',sum_vat:'excl. VAT',
+    art_label:'Pizza, pasta and salad seen from above',
     install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
     nav_feedback:"Feedback",
     nav_install:"Install the app",
@@ -993,20 +1000,20 @@ var T = {
     nudge2:"Got an idea? Write it here 💡",
     nudge3:"What do you think of the site? Tap here",
     nudge4:"Something not working? Tell us",
-    in_nudge:"Install Tre Kök as an app 📲",
+    in_nudge:"Install Stora Fatet as an app 📲",
     in_link:"Install as app",
     in_kicker:"Your own icon on the home screen",
-    in_title:"Install Tre Kök",
+    in_title:"Install Stora Fatet",
     in_why:"As an app the site gets its own icon on the home screen, opens full screen and can send notifications, just like a regular app.",
     in_one_tap:"Install",
-    in_done:"Tre Kök is installed. Open it from the icon on your home screen.",
+    in_done:"Stora Fatet is installed. Open it from the icon on your home screen.",
     in_iphone:"On iPhone",
     in_ios1:"Tap the Share button",
     in_ios1_hint:"At the bottom of Safari (top right on iPad).",
     in_ios2:"Choose “Add to Home Screen”",
     in_ios2_hint:"Scroll down the list if you do not see it right away.",
     in_ios3:"Tap “Add”",
-    in_open:"Open Tre Kök from the new icon",
+    in_open:"Open Stora Fatet from the new icon",
     in_android:"On Android",
     in_and1:"Tap ⋮ at the top right",
     in_and2:"Choose “Install app” or “Add to Home screen”",
@@ -1046,7 +1053,7 @@ function $(id){ return document.getElementById(id); }
 function L(o){ return o[S.lang]||o.sv; }
 var CHECK='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-// Everything excludes VAT. Buffets and most extras are per person, cheese boards per board,
+// Everything excludes VAT. Buffets and extras are per person (an extra marked tray:true is per tray),
 // delivery is one fixed fee per order.
 function calc(){
   var persons=0, food=0, lines=[];
@@ -1066,9 +1073,9 @@ function applyText(){
   $('fbStripX').setAttribute('aria-label', t('close'));
   $('inStripX').setAttribute('aria-label', t('close'));
   $('art').setAttribute('aria-label', t('art_label'));
-  $('heroKitchens').innerHTML = Object.keys(KITCHENS).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
+  $('heroKitchens').innerHTML = Object.keys(KITCHENS).filter(function(k){ return KITCHENS[k].hero!==false; }).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
   var min = Math.min.apply(null, DISHES.map(function(d){return d.price}));
-  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_fee',{fee:kr(FEE)}),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_area'),t('fact_fee',{fee:kr(FEE)}),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('dvNote').textContent = t('dv_note',{fee:kr(FEE)});
   $('goodfor').innerHTML = GOODFOR[S.lang].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('faq').innerHTML = FAQ.map(function(f){ var q=L(f); return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join('');
@@ -1091,7 +1098,7 @@ function renderDishes(){
       '<div class="dish-top"><span class="ktag"><i style="background:'+K.color+'"></i>'+esc(L(K))+'</span>'+(d.pick?'<span class="pick">'+esc(t('pick'))+'</span>':'')+'</div>'+
       '<h4>'+esc(txt[0])+'</h4><p>'+esc(txt[1])+'</p>'+
       '<p class="contents-h">'+esc(t('contents_h'))+'</p><ul class="menu-contents">'+L(d.c).map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'+
-      '<ul class="allergens">'+d.a.map(function(a){ return '<li'+(a==='v'?' class="vegan"':'')+'>'+esc(L(ALLERGENS[a]))+'</li>'; }).join('')+'</ul>'+
+      '<ul class="allergens">'+d.a.map(function(a){ return '<li'+(a==='v'||a==='veg'?' class="vegan"':'')+'>'+esc(L(ALLERGENS[a]))+'</li>'; }).join('')+'</ul>'+
       '<div class="dish-foot"><span class="price">'+esc(kr(d.price))+'<small>'+esc(t('per'))+'</small></span><span class="ctl" id="ctl-'+d.id+'">'+dishControl(d)+'</span></div>'+
     '</article>';
   }).join('');
@@ -1699,7 +1706,7 @@ $('fbList').addEventListener('click', function(e){
   window.claude.use('comments').then(function(ns){ if(!ns) return; comments=ns; if(currentView()==='feedback') renderAfterSend(); }, function(){});
 })();
 if(ON_SITE){ $('footInstall').hidden=false; $('navInstall').hidden=false; } // always: the page also shows how to install on other devices
-if(DB) document.querySelector('.testbar').hidden=true;  // orders really are sent on the real site
+if(DB) $('testbar').setAttribute('data-i18n','test_banner_site');  // orders are sent, but prices are still examples
 
 /* ---------- Hero illustration ---------- */
 function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
@@ -1708,22 +1715,22 @@ function f1(n){ return Math.round(n*10)/10; }
 function buildArt(){
   var R=rng(7), out=[];
   function scatter(cx,cy,a0,a1,r0,r1){ var a=a0+(a1-a0)*R(), r=r0+(r1-r0)*Math.sqrt(R()); return polar(cx,cy,r,a); }
-  out.push('<defs><clipPath id="clipPoke"><circle cx="205" cy="235" r="124"/></clipPath><clipPath id="clipPasta"><circle cx="468" cy="125" r="90"/></clipPath><clipPath id="clipNoodle"><circle cx="468" cy="362" r="76"/></clipPath></defs>');
+  out.push('<defs><clipPath id="clipPizza"><circle cx="205" cy="235" r="124"/></clipPath><clipPath id="clipPasta"><circle cx="468" cy="125" r="90"/></clipPath><clipPath id="clipSalad"><circle cx="468" cy="362" r="78"/></clipPath></defs>');
 
-  // Poke bowl
+  // Pizza on a big plate
   var g=['<g class="spin">'];
   g.push('<circle cx="205" cy="235" r="152" fill="var(--plate)" stroke="var(--plate-rim)" stroke-width="3"/>');
   g.push('<circle cx="205" cy="235" r="136" fill="none" stroke="var(--plate-rim)" stroke-width="1.5"/>');
-  g.push('<circle cx="205" cy="235" r="124" fill="var(--rice)"/>');
-  g.push('<g clip-path="url(#clipPoke)">');
-  for(var i=0;i<26;i++){ var p=scatter(205,235,0,360,0,118); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="4" ry="2.4" fill="#E8E3D2" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
-  for(i=0;i<12;i++){ p=scatter(205,235,195,285,38,108); var rot=Math.round(R()*90);
-    g.push('<g transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+rot+')"><rect x="-13" y="-12" width="26" height="24" rx="5" fill="#EE7A5C" stroke="#D55E3E" stroke-width="1.5"/><path d="M-8 -4 L8 -9 M-9 5 L9 0" stroke="#FFD3C4" stroke-width="2" stroke-linecap="round"/></g>'); }
-  for(i=0;i<6;i++){ var ang=-58+i*15, c=polar(250,238,52,ang);
-    g.push('<ellipse cx="'+f1(c[0])+'" cy="'+f1(c[1])+'" rx="40" ry="11" fill="#A9CC6A" stroke="#6B9A3A" stroke-width="2" transform="rotate('+ang+' '+f1(c[0])+' '+f1(c[1])+')"/>'); }
-  for(i=0;i<9;i++){ p=scatter(205,235,20,95,50,110); g.push('<rect x="'+f1(p[0]-9)+'" y="'+f1(p[1]-9)+'" width="18" height="18" rx="4" fill="#F5B83D" stroke="#D99A1C" stroke-width="1.5" transform="rotate('+Math.round(R()*60)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
-  for(i=0;i<16;i++){ p=scatter(205,235,100,185,50,112); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="7.5" ry="5.5" fill="#7DB451" stroke="#57893A" stroke-width="1.2" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
-  for(i=0;i<34;i++){ p=scatter(205,235,0,360,0,116); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="2.4" ry="1.3" fill="'+(R()<.35?'#2B2B2B':'#F6EDCF')+'" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  g.push('<g clip-path="url(#clipPizza)">');
+  g.push('<circle cx="205" cy="235" r="122" fill="#DDA052" stroke="#B97B32" stroke-width="3"/>');
+  g.push('<circle cx="205" cy="235" r="104" fill="#C9432A"/>');
+  for(var i=0;i<34;i++){ var p=scatter(205,235,0,360,0,86); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="'+f1(13+R()*9)+'" fill="#F4D27E"/>'); }
+  for(i=0;i<22;i++){ p=scatter(205,235,0,360,0,92); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="'+f1(3+R()*4)+'" fill="#F9E4A8"/>'); }
+  for(i=0;i<11;i++){ var ang=i*33+R()*14, rr=i<4?34:74, c=polar(205,235,rr,ang);
+    g.push('<circle cx="'+f1(c[0])+'" cy="'+f1(c[1])+'" r="13" fill="#B4321D" stroke="#8F2412" stroke-width="1.5"/><circle cx="'+f1(c[0]-4)+'" cy="'+f1(c[1]-3)+'" r="1.6" fill="#7E1F10"/><circle cx="'+f1(c[0]+4)+'" cy="'+f1(c[1]+3)+'" r="1.4" fill="#7E1F10"/>'); }
+  for(i=0;i<7;i++){ p=scatter(205,235,0,360,20,90); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="5" ry="4" fill="#2B2B2B"/><ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="2" ry="1.5" fill="#F4D27E"/>'); }
+  for(i=0;i<5;i++){ p=scatter(205,235,0,360,15,80); g.push('<g transform="translate('+f1(p[0])+' '+f1(p[1])+') rotate('+Math.round(R()*360)+')"><path d="M0 -14 C10 -8 10 8 0 14 C-10 8 -10 -8 0 -14 Z" fill="#3E8A36"/><path d="M0 -11 L0 11" stroke="#2C6326" stroke-width="1.4"/></g>'); }
+  for(i=0;i<4;i++){ var e1=polar(205,235,124,i*45+8), e2=polar(205,235,124,i*45+188); g.push('<path d="M'+f1(e1[0])+' '+f1(e1[1])+' L'+f1(e2[0])+' '+f1(e2[1])+'" stroke="#7A3A12" stroke-opacity=".35" stroke-width="2"/>'); }
   g.push('</g></g>');
   out.push(g.join(''));
 
@@ -1740,19 +1747,19 @@ function buildArt(){
   g.push('</g></g>');
   out.push(g.join(''));
 
-  // Noodle bowl
+  // Salad bowl
   g=['<g class="spin d3">'];
   g.push('<circle cx="468" cy="362" r="94" fill="var(--bowl)"/>');
-  g.push('<circle cx="468" cy="362" r="80" fill="var(--bowl-in)"/>');
-  g.push('<g clip-path="url(#clipNoodle)">');
-  for(i=0;i<26;i++){ var sx=392+R()*150, sy=290+R()*150, d='M'+f1(sx)+' '+f1(sy);
-    for(var k=0;k<5;k++){ d+=' q '+f1(10+R()*8)+' '+f1(-14+R()*28)+' '+f1(22+R()*10)+' '+f1(-6+R()*12); }
-    g.push('<path d="'+d+'" fill="none" stroke="#E8B65A" stroke-width="5" stroke-linecap="round" transform="rotate('+Math.round(R()*180)+' 468 362)"/>'); }
-  for(i=0;i<6;i++){ p=scatter(468,362,0,360,8,64); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="5.5" fill="none" stroke="#D6391C" stroke-width="3"/>'); }
-  for(i=0;i<12;i++){ p=scatter(468,362,0,360,0,68); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="4" fill="none" stroke="#7FBF55" stroke-width="2.5"/>'); }
-  g.push('</g>');
-  g.push('<g transform="rotate(-32 468 362)"><rect x="474" y="228" width="9" height="200" rx="4.5" fill="#C9A06E"/><rect x="490" y="232" width="9" height="200" rx="4.5" fill="#B88E5C"/></g>');
-  g.push('</g>');
+  g.push('<circle cx="468" cy="362" r="80" fill="#4F7F33"/>');
+  g.push('<g clip-path="url(#clipSalad)">');
+  var greens=['#7DB451','#5E9B3A','#A9CC6A','#8BC25A'];
+  for(i=0;i<34;i++){ p=scatter(468,362,0,360,0,74); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="'+f1(14+R()*6)+'" ry="'+f1(8+R()*3)+'" fill="'+greens[i%4]+'" stroke="#477A2C" stroke-width="1" transform="rotate('+Math.round(R()*180)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  for(i=0;i<7;i++){ p=scatter(468,362,0,360,8,62); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="8.5" fill="#D6391C"/><circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="5" fill="#EE6A4C"/>'); }
+  for(i=0;i<6;i++){ p=scatter(468,362,0,360,8,64); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="7.5" fill="#D9ECB4" stroke="#3F7A24" stroke-width="2.2"/>'); }
+  for(i=0;i<8;i++){ p=scatter(468,362,0,360,0,60); g.push('<rect x="'+f1(p[0]-5)+'" y="'+f1(p[1]-5)+'" width="10" height="10" rx="2" fill="#F7F4EA" stroke="#DCD6C3" stroke-width="1" transform="rotate('+Math.round(R()*90)+' '+f1(p[0])+' '+f1(p[1])+')"/>'); }
+  for(i=0;i<6;i++){ p=scatter(468,362,0,360,6,62); g.push('<ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="5" ry="4" fill="#2B2B2B"/><ellipse cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" rx="1.8" ry="1.4" fill="#4F7F33"/>'); }
+  for(i=0;i<4;i++){ p=scatter(468,362,0,360,10,56); g.push('<circle cx="'+f1(p[0])+'" cy="'+f1(p[1])+'" r="'+f1(9+R()*4)+'" fill="none" stroke="#9C4A8B" stroke-width="2.4"/>'); }
+  g.push('</g></g>');
   out.push(g.join(''));
   $('art').innerHTML = out.join('');
 }
@@ -1777,7 +1784,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '0dd99dc42';
+  var BUILD = '17a2a8ba7';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
