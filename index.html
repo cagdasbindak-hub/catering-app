@@ -135,7 +135,7 @@ p{margin:0}
 .k-pizza{background:var(--salmon-soft)}.k-pizza i{background:var(--salmon)}
 .k-pasta{background:var(--ginger-soft)}.k-pasta i{background:var(--ginger)}
 .k-sallad{background:var(--basil-soft)}.k-sallad i{background:var(--basil)}
-.k-mix{background:var(--accent-soft)}.k-mix i{background:var(--accent)}
+.k-kebab{background:var(--accent-soft)}.k-kebab i{background:var(--accent)}
 .hero-sub{margin-top:20px;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--ink-2);max-width:34em}
 .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;padding:0;list-style:none}
@@ -169,24 +169,35 @@ p{margin:0}
 .fchip i{width:9px;height:9px;border-radius:50%;display:block}
 .fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
-.dishes{display:grid;gap:12px;grid-template-columns:1fr}
-.dishes{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
-.dish{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,box-shadow .15s}
-.dish.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.dish-top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px}
-.ktag{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.ktag i{width:8px;height:8px;border-radius:50%;display:block}
-.pick{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--accent-soft);color:var(--ink)}
-.dish h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;line-height:.95;text-wrap:balance}
-.dish p{color:var(--ink-2);font-size:15px;line-height:1.45}
-.contents-h{margin-top:4px;font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
-.menu-contents{margin:0 0 4px;padding:0;list-style:none;display:grid;gap:5px;font-size:15px;line-height:1.35}
-.menu-contents li{display:flex;gap:9px;align-items:baseline}
-.menu-contents li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--ink-3);transform:translateY(-2px)}
-.allergens{display:flex;flex-wrap:wrap;gap:5px;padding:0;margin:0;list-style:none}
-.allergens li{font-family:var(--f-mono);font-size:11px;padding:2px 7px;border-radius:5px;border:1px solid var(--line);color:var(--ink-2)}
-.allergens li.vegan{border-color:transparent;background:var(--basil-soft);color:var(--ink)}
-.dish-foot{margin-top:auto;padding-top:6px;display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:46px}
+/* Quick picks */
+.presets{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.preset{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.preset h4{margin:0;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:.95}
+.preset p{color:var(--ink-2);font-size:14px;line-height:1.4}
+.preset-foot{margin-top:auto;padding-top:4px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+
+/* Menu */
+/* The kind-of-food chips stay under the header while the long pizza list scrolls past. */
+.cats{position:sticky;top:calc(env(safe-area-inset-top,0px) + 62px);z-index:5;background:var(--surface);padding:8px 2px;margin:-8px -2px}
+.search{width:100%;min-height:46px;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-size:16px}
+.search:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.menu{display:grid;gap:22px}
+.mgroup{display:grid;gap:8px}
+.mgroup h4{margin:0;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.mgroup-note{color:var(--ink-2);font-size:14px;margin-top:-4px}
+.mlist{display:grid;gap:8px}
+.mi{display:flex;align-items:center;justify-content:space-between;gap:10px 14px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s,box-shadow .15s}
+.mi.on{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.mi-txt{flex:1;min-width:0}
+.mi-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-weight:700;font-size:16px;line-height:1.3}
+.mi-no{font-family:var(--f-mono);font-size:12px;font-weight:500;color:var(--ink-2);min-width:2ch}
+.mi-d{display:block;margin-top:2px;color:var(--ink-2);font-size:14px;line-height:1.35}
+.vtag{font-family:var(--f-mono);font-size:11px;font-weight:500;padding:2px 7px;border-radius:5px;background:var(--basil-soft);color:var(--ink)}
+.mi-act{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex:none}
+.mi .price{font-size:15px}
+.mi .add{min-height:40px;padding:0 16px}
+.size{min-height:40px;padding:0 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);font-family:var(--f-mono);font-size:14px;font-weight:600}
+@media (max-width:560px){.mi{flex-wrap:wrap;padding:10px 12px;gap:6px 12px}.mi-act{width:100%;justify-content:space-between}}
 .price{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:18px;white-space:nowrap}
 .price small{font-weight:400;font-size:12px;color:var(--ink-2);margin-left:2px}
 .add{min-height:42px;padding:0 18px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;font-weight:600}
@@ -197,53 +208,6 @@ p{margin:0}
 .stepper input{width:3.2ch;border:0;background:transparent;text-align:center;font-family:var(--f-mono);font-weight:600;font-size:16px;padding:0;-moz-appearance:textfield;appearance:textfield}
 .stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .stepper .unit{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);padding-right:4px}
-
-/* Option cards (package, delivery) */
-.opts{display:grid;gap:10px;grid-template-columns:1fr}
-@media (min-width:600px){.opts.three{grid-template-columns:repeat(3,minmax(0,1fr))}.opts.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.opt{position:relative;display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:var(--r);border:1.5px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .15s,background .15s}
-.opt:hover{border-color:var(--ink-3)}
-.opt input{position:absolute;opacity:0;pointer-events:none}
-.opt:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.opt:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
-.opt-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.opt-name{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:26px;line-height:1}
-.opt-price{font-family:var(--f-mono);font-weight:600;font-size:15px;white-space:nowrap}
-.opt-desc{color:var(--ink-2);font-size:14px;line-height:1.4}
-.opt-tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.04em;padding:3px 8px;border-radius:6px;background:var(--basil-soft);color:var(--ink)}
-.tag.hot{background:var(--accent);color:var(--on-accent)}
-.radio{width:20px;height:20px;border-radius:50%;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
-.opt:has(input:checked) .radio{border-color:var(--ink)}
-.opt:has(input:checked) .radio::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--ink)}
-
-/* Add-ons */
-.addon-groups{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
-/* Two columns: the long Sides list takes the right column, Sauces and Drinks stack on the left. */
-.addons-block{container-type:inline-size}
-@container (min-width:536px) and (max-width:811.98px){
-  .addon-groups{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto 1fr}
-  .addon-groups .agroup:nth-child(2){grid-column:2;grid-row:1 / span 2}
-}
-.agroup{display:grid;gap:6px;align-content:start;min-width:0}
-.agroup h5{margin:0 0 4px;font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
-.addon{display:flex;align-items:center;gap:12px;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer}
-.addon:hover{border-color:var(--ink-3)}
-.addon input{position:absolute;opacity:0;pointer-events:none}
-.check{width:20px;height:20px;border-radius:6px;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
-.check svg{width:12px;height:12px;opacity:0}
-.addon:has(input:checked){border-color:var(--ink)}
-.addon:has(input:checked) .check{background:var(--ink);border-color:var(--ink)}
-.addon:has(input:checked) .check svg{opacity:1;color:var(--paper)}
-.addon:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
-.addon.inc{cursor:default;background:var(--sunk);border-color:transparent}
-.addon.inc .check{background:var(--basil);border-color:var(--basil)}
-.addon.inc .check svg{opacity:1;color:var(--surface)}
-.addon-name{flex:1;min-width:0;font-size:15px;line-height:1.3}
-.addon-desc{display:block;margin-top:3px;font-size:13px;line-height:1.35;color:var(--ink-2)}
-.addon-price{font-family:var(--f-mono);font-size:13px;font-weight:600;white-space:nowrap;color:var(--ink-2);text-align:right}
-.addon-price .per{display:block;font-size:11px;font-weight:500}
-.addon.inc .addon-price{color:var(--basil)}
 
 /* Ticket */
 .ticket-col{position:relative}
@@ -459,13 +423,13 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
   <section class="hero" data-section="hero">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow" data-i18n="hero_kicker">Buffécatering i Södertörn · från 10 personer</p>
+        <p class="eyebrow" data-i18n="hero_kicker">Catering och after work i Södertörn</p>
         <h1 class="display" style="margin-top:14px">
           <span class="l1" data-i18n="hero_l1">Pizza, pasta och sallad till</span>
           <span class="l2" data-i18n="hero_l2">hela bordet</span>
         </h1>
         <div class="kitchens" id="heroKitchens"></div>
-        <p class="hero-sub" data-i18n="hero_sub">Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.</p>
+        <p class="hero-sub" data-i18n="hero_sub">Restaurangens pizza, pasta, sallad och kebab, levererat till jobbet, after worken, föreningen eller festen. Samma priser som i restaurangen.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#bestall" data-i18n="hero_cta">Bygg din beställning</a>
           <a class="btn btn-ghost" href="#sa-funkar-det" data-i18n="hero_cta2">Så funkar det</a>
@@ -487,13 +451,15 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
       <div class="order-grid">
         <div>
           <div class="block">
-            <div class="block-head"><h3 data-i18n="dishes_h">Buffémenyer</h3><p data-i18n="dishes_p">Allt serveras som buffé i stora fat.</p></div>
-            <div class="dishes" id="dishes"></div>
+            <div class="block-head"><h3 data-i18n="presets_h">Snabbval</h3><p data-i18n="presets_p">Färdiga förslag från menyn. Lägg till och ändra som du vill.</p></div>
+            <div class="presets" id="presets"></div>
           </div>
 
-          <div class="block addons-block">
-            <div class="block-head"><h3 data-i18n="addons_h">Tillval</h3><p data-i18n="addons_p">Priset gäller per person.</p></div>
-            <div class="addon-groups" id="addons"></div>
+          <div class="block">
+            <div class="block-head"><h3 data-i18n="dishes_h">Menyn</h3><p data-i18n="dishes_p">Restaurangens rätter som tål att levereras.</p></div>
+            <input class="search" id="menuSearch" type="search" autocomplete="off" enterkeyhint="search">
+            <div class="filters cats" id="cats" role="group"></div>
+            <div class="menu" id="menu"></div>
           </div>
 
           <div class="block">
@@ -527,9 +493,9 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
         <h2 class="display" data-i18n="how_h">Så funkar det</h2>
       </div>
       <ol class="steps">
-        <li><span class="n">1</span><h3 data-i18n="s1_h">Välj buffé och se priset</h3><p data-i18n="s1_p">Buffé, antal personer och tillval. Priset räknas ut medan du väljer.</p></li>
+        <li><span class="n">1</span><h3 data-i18n="s1_h">Välj rätter och se priset</h3><p data-i18n="s1_p">Från restaurangens meny eller ett färdigt snabbval. Priset räknas ut medan du väljer.</p></li>
         <li><span class="n">2</span><h3 data-i18n="s2_h">Skicka beställningen</h3><p data-i18n="s2_p">Vi bekräftar datum, tid och allergier inom 24 timmar.</p></li>
-        <li><span class="n">3</span><h3 data-i18n="s3_h">Vi levererar</h3><p data-i18n="s3_p">Buffén kommer i stora fat på utsatt tid, med servetter och bestick.</p></li>
+        <li><span class="n">3</span><h3 data-i18n="s3_h">Vi levererar</h3><p data-i18n="s3_p">Maten kommer varm på utsatt tid, med servetter och bestick.</p></li>
       </ol>
       <ul class="goodfor" id="goodfor"></ul>
     </div>
@@ -600,7 +566,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span data-i18n="foot">Hela Bordet · Version 0.4.</span>
+    <span data-i18n="foot">Hela Bordet · Version 0.5.</span>
     <span class="foot-actions">
       <a class="linkbtn" href="#feedback" data-i18n="foot_fb">Feedback och förslag</a>
       <a class="linkbtn" href="#installera" id="footInstall" hidden data-i18n="in_link">Installera som app</a>
@@ -634,57 +600,172 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 'use strict';
 
 /* ---------- Data ---------- */
-// The kitchen's menu (Cagdas 2026-10-25): pizza, pasta and salad. One colour each.
-var KITCHENS = {
-  pizza:{sv:'Pizza',en:'Pizza',cls:'k-pizza',color:'var(--salmon)'},
-  pasta:{sv:'Pasta',en:'Pasta',cls:'k-pasta',color:'var(--ginger)'},
-  sallad:{sv:'Sallad',en:'Salad',cls:'k-sallad',color:'var(--basil)'},
-  mix:{sv:'Lite av allt',en:'A bit of everything',cls:'k-mix',color:'var(--accent)',hero:false}
-};
-var ALLERGENS = {
-  g:{sv:'Gluten',en:'Gluten'}, l:{sv:'Laktos',en:'Lactose'}, n:{sv:'Nötter',en:'Nuts'},
-  e:{sv:'Ägg',en:'Egg'}, f:{sv:'Fisk',en:'Fish'}, s:{sv:'Soja',en:'Soy'},
-  se:{sv:'Sesam',en:'Sesame'}, v:{sv:'Vegansk',en:'Vegan'}, veg:{sv:'Vegetariskt finns',en:'Vegetarian option'}
-};
-// Buffets (Tijani's rules, Cagdas OK 2026-09-26): served in large dishes, not packed portions.
-// Price per person, excluding VAT. c = what is included, shown as a list. The dishes come from the
-// restaurant's own menu (docs/restaurangen/meny.md); the buffet prices are still examples.
-// k = which kind of food, shown as a coloured tag on the card.
-var DISHES = [
-  {id:'pizza',k:'pizza',price:129,a:['g','l','veg'],
-    sv:['Pizzabuffé','Pizzor från restaurangens meny, skurna i bitar.'],en:['Pizza buffet','Pizzas from the restaurant menu, cut into slices.'],
-    c:{sv:['Margherita (vegetarisk)','Vesuvio med skinka','Kebabpizza med kebabkött, feferoni och sås','Vegetarisk med champinjoner, paprika, oliver och kronärtskocka','Pizzasallad'],
-       en:['Margherita (vegetarian)','Vesuvio with ham','Kebab pizza with kebab meat, pickled peppers and sauce','Vegetarian with mushrooms, peppers, olives and artichoke','Pizza salad (cabbage)']}},
-  {id:'pasta',k:'pasta',price:139,a:['g','l','e','veg'],
-    sv:['Pastabuffé','Tre pastarätter att ta av.'],en:['Pasta buffet','Three pasta dishes to help yourself to.'],
-    c:{sv:['Bolognese med köttfärs och tomatsås','Al pesto tagliatelle med kyckling','Vegetarisk pasta med champinjoner och gorgonzolasås','Vitlöksbröd'],
-       en:['Bolognese with minced beef and tomato sauce','Al pesto tagliatelle with chicken','Vegetarian pasta with mushrooms and gorgonzola sauce','Garlic bread']}},
-  {id:'sallad',k:'sallad',price:125,a:['g','l','e','f','veg'],
-    sv:['Salladsbuffé','Tre sallader att ta av.'],en:['Salad buffet','Three salads to help yourself to.'],
-    c:{sv:['Caesar kycklingsallad med bacon och parmesan','Fetaostsallad med oliver och paprika (vegetarisk)','Tonfisksallad med majs och oliver','Nybakat vitlöksbröd och dressingar'],
-       en:['Chicken Caesar salad with bacon and parmesan','Feta salad with olives and peppers (vegetarian)','Tuna salad with sweetcorn and olives','Freshly baked garlic bread and dressings']}},
-  {id:'mix',k:'mix',price:149,pick:true,a:['g','l','e','veg'],
-    sv:['Mixbuffé','Lite av allt: pizza, pasta och sallad.'],en:['Mixed buffet','A bit of everything: pizza, pasta and salad.'],
-    c:{sv:['Vesuvio och Margherita i bitar','Bolognese','Fetaostsallad','Pizzasallad och vitlöksbröd'],
-       en:['Vesuvio and Margherita in slices','Bolognese','Feta salad','Pizza salad and garlic bread']}}
+// Kinds of food: chips above the menu. main = counts towards the minimum order. hero = shown at the top.
+var CATS = [
+  {id:'pizza',sv:'Pizza',en:'Pizza',color:'var(--salmon)',main:true,hero:true},
+  {id:'pasta',sv:'Pasta',en:'Pasta',color:'var(--ginger)',main:true,hero:true},
+  {id:'sallad',sv:'Sallader',en:'Salads',color:'var(--basil)',main:true,hero:true},
+  {id:'kebab',sv:'Kebab och gyros',en:'Kebab and gyros',color:'var(--accent)',main:true,hero:true},
+  {id:'falafel',sv:'Falafel',en:'Falafel',color:'var(--basil)',main:true},
+  {id:'forratt',sv:'Förrätter',en:'Starters',color:'var(--ink-3)'},
+  {id:'dessert',sv:'Efterrätt',en:'Dessert',color:'var(--ink-3)'},
+  {id:'extra',sv:'Tillbehör',en:'Extras',color:'var(--ink-3)'}
 ];
-var ADDONS = [
-  {id:'vitlokssas',g:'sauce',price:12,sv:'Vitlökssås',en:'Garlic sauce'},
-  {id:'starksas',g:'sauce',price:12,sv:'Starksås',en:'Hot sauce'},
-  {id:'bearnaise',g:'sauce',price:15,sv:'Bearnaisesås',en:'Béarnaise sauce'},
-  {id:'tzatziki',g:'sauce',price:15,sv:'Tzatziki',en:'Tzatziki'},
-  {id:'vitloksbrod',g:'side',price:19,sv:'Vitlöksbröd',en:'Garlic bread'},
-  {id:'pizzasallad',g:'side',price:10,sv:'Extra pizzasallad',en:'Extra pizza salad'},
-  {id:'dryck',g:'sweet',price:22,sv:'Dryck, läsk eller vatten',en:'Drink, soda or water'},
-  {id:'chokladtarta',g:'sweet',price:45,sv:'Fransk chokladtårta med färska bär',en:'French chocolate cake with fresh berries'}
+var CAT = {}; CATS.forEach(function(c){ CAT[c.id]=c; });
+// Headings inside the menu (a group, or the kind of food when the dish has no group).
+var HEADS = {
+  pz:{sv:'Pizzor',en:'Pizzas',note:{sv:'Tomatsås och ost ingår.',en:'Tomato sauce and cheese included.'}},
+  sp:{sv:'Specialpizzor',en:'Special pizzas',note:{sv:'Tomatsås och ost ingår.',en:'Tomato sauce and cheese included.'}},
+  mz:{sv:'Mozzarellapizzor',en:'Mozzarella pizzas',note:{sv:'Mozzarella och tomatsås ingår.',en:'Mozzarella and tomato sauce included.'}},
+  pan:{sv:'American pan pizza',en:'American pan pizza',note:{sv:'Välj storlek: liten (S) eller mellan (M).',en:'Choose a size: small (S) or medium (M).'}},
+  pasta:{sv:'Pasta',en:'Pasta'},
+  sallad:{sv:'Sallader',en:'Salads',note:{sv:'Nybakat vitlöksbröd, isbergssallad, gurka, tomat och dressing ingår. Skriv vilken dressing ni vill ha: Rhode Island, vitlökssås, olja och vinäger eller caesar.',en:'Freshly baked garlic bread, iceberg lettuce, cucumber, tomato and dressing included. Say which dressing you want: Thousand Island, garlic sauce, oil and vinegar or Caesar.'}},
+  kebab:{sv:'Kebab och gyros',en:'Kebab and gyros',note:{sv:'Sallad, lök och tomat ingår.',en:'Lettuce, onion and tomato included.'}},
+  falafel:{sv:'Falafel',en:'Falafel',note:{sv:'Sallad, lök och tomat ingår.',en:'Lettuce, onion and tomato included.'}},
+  forratt:{sv:'Förrätter',en:'Starters'},
+  dessert:{sv:'Efterrätt',en:'Dessert'},
+  extra:{sv:'Tillbehör',en:'Extras'}
+};
+// The restaurant's own menu (docs/restaurangen/meny.md), only dishes that travel well (Cagdas 2026-10-26:
+// no plank steak, fries or burgers). Same prices as in the restaurant, including VAT.
+// Each row: [id, number, name, Swedish contents, English contents, price, vegetarian, English name].
+var MENU = [];
+function addMenu(c, g, rows, sizes){
+  rows.forEach(function(r){ MENU.push({c:c, g:g, id:r[0], no:r[1], n:r[2], d:r[3]?[r[3],r[4]]:null, p:r[5], veg:!!r[6], ne:r[7]||'', sizes:sizes||null}); });
+}
+addMenu('pizza','pz',[
+  ['p1','1','Margherita','Tomatsås och ost','Tomato sauce and cheese',130,1],
+  ['p2','2','Vesuvio','Skinka','Ham',130],
+  ['p3','3','Capricciosa','Skinka, champinjoner','Ham, mushrooms',130],
+  ['p4','4','Funghi','Champinjoner','Mushrooms',130,1],
+  ['p5','5','Bussola','Skinka, räkor','Ham, prawns',135],
+  ['p6','6','Marinara','Räkor, musslor','Prawns, mussels',135],
+  ['p7','7','Hawaii','Skinka, ananas','Ham, pineapple',135],
+  ['p8','8','Al Tonno','Tonfisk, lök','Tuna, onion',135],
+  ['p9','9','Calzone','Skinka (inbakad)','Ham (folded)',135],
+  ['p10','10','Bolognese','Köttfärs, lök','Minced beef, onion',135],
+  ['p11','11','Salami','Salami, bacon, lök','Salami, bacon, onion',135],
+  ['p12','12','Riviera','Räkor, champinjoner','Prawns, mushrooms',135],
+  ['p13','13','Opera','Skinka, tonfisk','Ham, tuna',135],
+  ['p14','14','Peperoni','Korv, ost, oliver','Sausage, cheese, olives',135],
+  ['p15','15','Verona','Skinka, bacon, curry','Ham, bacon, curry',139],
+  ['p16','16','Vårsta special','Skinka, räkor, champinjoner, färsk paprika','Ham, prawns, mushrooms, fresh peppers',142],
+  ['p17','17','Bagarens special','Räkor, banan, ananas, curry','Prawns, banana, pineapple, curry',140],
+  ['p18','18','Quattro stagioni','Skinka, räkor, musslor, champinjoner, oliver, kronärtskocka','Ham, prawns, mussels, mushrooms, olives, artichoke',142],
+  ['p19','19','Vegetarisk','Champinjoner, paprika, lök, oliver, färsk paprika, kronärtskocka','Mushrooms, peppers, onion, olives, fresh peppers, artichoke',140,1,'Vegetarian'],
+  ['p20','20','Calzone special','Skinka, räkor, champinjoner (inbakad)','Ham, prawns, mushrooms (folded)',142],
+  ['p21','21','Ciao ciao','Skinka, räkor, bearnaisesås (inbakad)','Ham, prawns, béarnaise sauce (folded)',140],
+  ['p22','22','Mexicana','Köttfärs, lök, tacosås, jalapeño','Minced beef, onion, taco sauce, jalapeño',140],
+  ['p23','23','Kycklingpizza','Kyckling, banan, ananas, curry','Chicken, banana, pineapple, curry',140,0,'Chicken pizza'],
+  ['p24','24','Azteka','Skinka, tacosås, tacokrydda, jalapeños, vitlökssås','Ham, taco sauce, taco spice, jalapeños, garlic sauce',142],
+  ['p25','25','Florya','Tomat, ost, bacon, lök, ägg, paprika','Tomato, cheese, bacon, onion, egg, peppers',140],
+  ['p26','26','Brolin','Skinka, pommes','Ham, fries',140]
+]);
+addMenu('pizza','sp',[
+  ['p27','27','Mamma Mia','Oxfilé, lök, färska champinjoner, bearnaisesås','Beef tenderloin, onion, fresh mushrooms, béarnaise sauce',145],
+  ['p28','28','Acapulco','Oxfilé, lök, tacosås, jalapeño, tacokrydda','Beef tenderloin, onion, taco sauce, jalapeño, taco spice',145],
+  ['p29','29','Oscar','Fläskfilé, skinka, bearnaisesås','Pork tenderloin, ham, béarnaise sauce',145],
+  ['p30','30','Kebabpizza','Kebabkött, lök, sallad, tomat, feferoni, sås','Kebab meat, onion, lettuce, tomato, pickled peppers, sauce',145,0,'Kebab pizza'],
+  ['p31','31','Margo','Fläskfilé, gorgonzola, färska champinjoner, sparris','Pork tenderloin, gorgonzola, fresh mushrooms, asparagus',145],
+  ['p32','32','Viking','Kebab, sallad, feferoni, lök, färsk tomat, vitlökssås (inbakad)','Kebab, lettuce, pickled peppers, onion, fresh tomato, garlic sauce (folded)',145],
+  ['p33','33','Tefal','Skinka, räkor, champinjoner (dubbelinbakad)','Ham, prawns, mushrooms (double folded)',145],
+  ['p34','34','Jägaren','Fläskfilé, färsk tomat, paprika, bearnaisesås','Pork tenderloin, fresh tomato, peppers, béarnaise sauce',145],
+  ['p36','36','Mezzaluna','Halv inbakad med ost och skinka, halv med parmaskinka, ruccola och parmesan','Half folded with cheese and ham, half with Parma ham, rocket and parmesan',145],
+  ['p37','37','Ediz','Oxfilé, färska champinjoner, gorgonzola, färsk tomat, paprika','Beef tenderloin, fresh mushrooms, gorgonzola, fresh tomato, peppers',145],
+  ['p38','38','Pizza Elmander','Kebab, lök, isberg, pommes, färsk tomat, feferoni','Kebab, onion, iceberg lettuce, fries, fresh tomato, pickled peppers',145],
+  ['p39','39','Gyrospizza','Gyros, tomat, isberg, pommes, vitlökssås','Gyros, tomato, iceberg lettuce, fries, garlic sauce',145,0,'Gyros pizza'],
+  ['p40','40','Scampi','Scampi, färsk vitlök, färsk basilika, oliver','Scampi, fresh garlic, fresh basil, olives',149],
+  ['p41','41','HIF','Oxfilé, paprika, färska champinjoner, gorgonzola','Beef tenderloin, peppers, fresh mushrooms, gorgonzola',149],
+  ['p42','42','DIF','Oxfilé, feta, paprika, oliver, färska champinjoner','Beef tenderloin, feta, peppers, olives, fresh mushrooms',149],
+  ['p43','43','AIK','Oxfilé, parmesan, soltorkade tomater, jalapeños, ruccola','Beef tenderloin, parmesan, sun-dried tomatoes, jalapeños, rocket',149]
+]);
+addMenu('pizza','mz',[
+  ['p44','44','La Chef','Prosciutto, cocktailtomater, ruccola, färsk parmesan','Prosciutto, cherry tomatoes, rocket, fresh parmesan',149],
+  ['p45','45','Quattro formaggi','Fetaost, gorgonzola, Arla-ost, kronärtskocka','Feta, gorgonzola, Arla cheese, artichoke',149,1],
+  ['p46','46','Husets','Oxfilé, färska champinjoner, basilikacrème, ruccola','Beef tenderloin, fresh mushrooms, basil cream, rocket',149,0,'House pizza'],
+  ['p47','47','Portabello','Salami, bacon, färska tomater, pesto, cayennepeppar, ruccola','Salami, bacon, fresh tomatoes, pesto, cayenne pepper, rocket',149],
+  ['p48','48','La Feta','Fetaost, lök, paprika, oliver, färska champinjoner, ruccola','Feta, onion, peppers, olives, fresh mushrooms, rocket',149,1],
+  ['p49','49','Grödinge','Oxfilé, lök, färska champinjoner, färsk tomat, räkor, bearnaisesås','Beef tenderloin, onion, fresh mushrooms, fresh tomato, prawns, béarnaise sauce',149],
+  ['p50','50','Antipasto','Ventricinasalami, soltorkade tomater, färsk vitlök, färska champinjoner, ruccola','Ventricina salami, sun-dried tomatoes, fresh garlic, fresh mushrooms, rocket',149],
+  ['p51','51','Spenat','Spenat, fetaost, soltorkade tomater, oliver, paprika','Spinach, feta, sun-dried tomatoes, olives, peppers',149,1,'Spinach'],
+  ['p52','52','Parma','Prosciutto, färsk paprika, vitlök, gorgonzola, ruccola','Prosciutto, fresh peppers, garlic, gorgonzola, rocket',149]
+]);
+// Two sizes, so the price comes from sizes (the restaurant gives two pan pizzas no number of their own).
+addMenu('pizza','pan',[
+  ['pan53','53','Miami','Fläskfilé, ananas, färsk tomat, banan, curry, bearnaisesås','Pork tenderloin, pineapple, fresh tomato, banana, curry, béarnaise sauce'],
+  ['pan54','54','Arizona','Oxfilé, champinjoner, färsk tomat, bearnaisesås','Beef tenderloin, mushrooms, fresh tomato, béarnaise sauce'],
+  ['pan55','55','Kansas','Skinka, färska champinjoner, räkor, paprika','Ham, fresh mushrooms, prawns, peppers'],
+  ['pan56','56','Pizza Russe','Kebabkött, lök, gorgonzola, jalapeños, valfri sås','Kebab meat, onion, gorgonzola, jalapeños, sauce of your choice'],
+  ['pan57','57','San Francisco','Skinka, champinjoner, salami, lök, paprika','Ham, mushrooms, salami, onion, peppers'],
+  ['pan58','58','Washington','Kyckling, paprika, ananas, lök, curry','Chicken, peppers, pineapple, onion, curry'],
+  ['pan59','59','Colorado','Salami, köttfärs, lök, feta, färsk tomat, vitlök','Salami, minced beef, onion, feta, fresh tomato, garlic'],
+  ['pan60','60','Alaska','Fläskfilé, champinjoner, salami, vitlök, färsk tomat','Pork tenderloin, mushrooms, salami, garlic, fresh tomato'],
+  ['panfl','','Florida','Oxfilé, färska champinjoner, färsk tomat, lök, bearnaisesås, gorgonzola','Beef tenderloin, fresh mushrooms, fresh tomato, onion, béarnaise sauce, gorgonzola'],
+  ['panga','','Galatasaray','Tonfisk, räkor, färsk tomat, jalapeños, paprika, mozzarella, färska champinjoner','Tuna, prawns, fresh tomato, jalapeños, peppers, mozzarella, fresh mushrooms']
+], [{k:'S',p:169},{k:'M',p:189}]);
+addMenu('pasta','',[
+  ['pa1','','Carbonara','Spaghetti, bacon, lök, béchamelsås, äggula','Spaghetti, bacon, onion, béchamel sauce, egg yolk',145],
+  ['pa2','','Bolognese','Spaghetti, köttfärs, tomatsås','Spaghetti, minced beef, tomato sauce',145],
+  ['pa3','','Penne broccoli','Broccoli, lök, cocktailtomater, majs, gorgonzola, béchamelsås','Broccoli, onion, cherry tomatoes, sweetcorn, gorgonzola, béchamel sauce',149,1],
+  ['pa4','','Avokado tagliatelle','Avokado, räkor, lök, cocktailtomater, pesto, béchamelsås','Avocado, prawns, onion, cherry tomatoes, pesto, béchamel sauce',149,0,'Avocado tagliatelle'],
+  ['pa5','','Scampipasta','Spaghetti, scampi, färsk basilika, cocktailtomater, tomatsås, vitt vin','Spaghetti, scampi, fresh basil, cherry tomatoes, tomato sauce, white wine',149,0,'Scampi pasta'],
+  ['pa6','','Fläskfilépasta','Penne, fläskfilé, paprika, lök, kantarellsås','Penne, pork tenderloin, peppers, onion, chanterelle sauce',155,0,'Pork tenderloin pasta'],
+  ['pa7','','Oxfilépasta','Casarecce, oxfilé, paprika, champinjoner, rödlök, vitlök, béchamelsås','Casarecce, beef tenderloin, peppers, mushrooms, red onion, garlic, béchamel sauce',155,0,'Beef tenderloin pasta'],
+  ['pa8','','Frutti di mare tagliatelle','Scampi, räkor, musslor, tomatsås','Scampi, prawns, mussels, tomato sauce',155],
+  ['pa9','','Al pesto tagliatelle','Kycklingfilé, paprika, lök, cocktailtomater, grädde, pesto','Chicken breast, peppers, onion, cherry tomatoes, cream, pesto',145],
+  ['pa10','','Vegetarisk pasta','Spaghetti, lök, paprika, champinjoner, cocktailtomater, tomatsås, gorgonzolasås','Spaghetti, onion, peppers, mushrooms, cherry tomatoes, tomato sauce, gorgonzola sauce',149,1,'Vegetarian pasta'],
+  ['pa11','','Lo pollo tagliatelle','Kycklingfilé, paprika, lök, spenat, tomatsås','Chicken breast, peppers, onion, spinach, tomato sauce',149]
+]);
+addMenu('sallad','',[
+  ['s1','','Räksallad deluxe','Handskalade räkor, cocktailtomater, gurka, paprika, rödlök, avokado, ägg, sparris','Hand-peeled prawns, cherry tomatoes, cucumber, peppers, red onion, avocado, egg, asparagus',169,0,'Prawn salad deluxe'],
+  ['s2','','Caesar kycklingsallad','Kyckling, krutonger, knaperstekt bacon, ruccola, hyvlad parmesan','Chicken, croutons, crispy bacon, rocket, shaved parmesan',159,0,'Chicken Caesar salad'],
+  ['s3','','Caesar scampisallad','Scampi, krutonger, knaperstekt bacon, ruccola, lime','Scampi, croutons, crispy bacon, rocket, lime',169,0,'Scampi Caesar salad'],
+  ['s4','','Fetaostsallad','Fetaost, oliver, paprika, majs, ruccola','Feta, olives, peppers, sweetcorn, rocket',145,1,'Feta salad'],
+  ['s5','','Ost- och skinksallad','Ost, skinka, majs, ananas, lök','Cheese, ham, sweetcorn, pineapple, onion',139,0,'Cheese and ham salad'],
+  ['s6','','Tonfisksallad','Tonfisk, lök, oliver, majs, paprika, citron','Tuna, onion, olives, sweetcorn, peppers, lemon',139,0,'Tuna salad'],
+  ['s7','','Halloumisallad','Halloumi, blandsallad, bulgur, tomat, gurka, ägg, paprika, oliver','Halloumi, mixed leaves, bulgur, tomato, cucumber, egg, peppers, olives',145,1,'Halloumi salad'],
+  ['s8','','Chèvresallad','Chèvre, blandsallad, bulgur, tomat, gurka, pinjenötter, honung','Goat cheese, mixed leaves, bulgur, tomato, cucumber, pine nuts, honey',149,1,'Goat cheese salad'],
+  ['s9','','Bremorasallad','Avokado, fetaost, mozzarella, kyckling, majs, blandsallad, tomat, gurka, bulgur','Avocado, feta, mozzarella, chicken, sweetcorn, mixed leaves, tomato, cucumber, bulgur',149,0,'Bremora salad'],
+  ['s10','','Falafelsallad','Bulgur, tomat, gurka, ägg, ruccola, pizzaost','Bulgur, tomato, cucumber, egg, rocket, pizza cheese',139,1,'Falafel salad'],
+  ['s11','','Gyrossallad','Gyros, isbergssallad, tomat, gurka, bulgur, lök, paprika','Gyros, iceberg lettuce, tomato, cucumber, bulgur, onion, peppers',149,0,'Gyros salad']
+]);
+addMenu('kebab','',[
+  ['k1','','Kebab med bröd','Nybakat bröd, feferoni, vitlökssås, starksås','Freshly baked bread, pickled peppers, garlic sauce, hot sauce',109,0,'Kebab in bread'],
+  ['k2','','Kebabrulle','Nybakat bröd, feferoni, vitlökssås, starksås','Freshly baked bread, pickled peppers, garlic sauce, hot sauce',135,0,'Kebab wrap'],
+  ['k3','','Kebabtallrik','Ris eller pommes, feferoni, vitlökssås, starksås','Rice or fries, pickled peppers, garlic sauce, hot sauce',139,0,'Kebab plate'],
+  ['k4','','Gyrosrulle','Nybakat bröd, gurka, gyrossås','Freshly baked bread, cucumber, gyros sauce',139,0,'Gyros wrap'],
+  ['k5','','Gyrostallrik','Ris eller pommes, gurka, gyrossås','Rice or fries, cucumber, gyros sauce',139,0,'Gyros plate']
+]);
+addMenu('falafel','',[
+  ['f1','','Falafel med bröd','Nybakat bröd, feferoni, vitlökssås, starksås','Freshly baked bread, pickled peppers, garlic sauce, hot sauce',109,1,'Falafel in bread'],
+  ['f2','','Falafelrulle','Nybakat bröd, feferoni, vitlökssås, starksås','Freshly baked bread, pickled peppers, garlic sauce, hot sauce',135,1,'Falafel wrap'],
+  ['f3','','Falafeltallrik','Ris eller pommes, feferoni, vitlökssås, starksås','Rice or fries, pickled peppers, garlic sauce, hot sauce',135,1,'Falafel plate']
+]);
+addMenu('forratt','',[
+  ['fr1','','Vitlöksbröd med tzatziki','','',75,1,'Garlic bread with tzatziki'],
+  ['fr2','','Toast Skagen','Med tillbehör','With sides',99],
+  ['fr3','','Pankopanerad scampi','Med tacosås','With taco sauce',105,0,'Panko-breaded scampi']
+]);
+addMenu('dessert','',[
+  ['d1','','Fransk chokladtårta','Med färska bär och glass','With fresh berries and ice cream',105,0,'French chocolate cake']
+]);
+// "Övrigt 15–20 kr" on the restaurant menu: the sauce uses the top of that range until they say otherwise.
+addMenu('extra','',[
+  ['x1','','Pizzasallad','','',10,0,'Pizza salad'],
+  ['x2','','Extra sås','Vitlökssås, starksås eller bearnaisesås','Garlic sauce, hot sauce or béarnaise sauce',20,0,'Extra sauce']
+]);
+var ITEMS = {}; MENU.forEach(function(m){ ITEMS[m.id]=m; });
+// Ready-made orders from the menu; the price is worked out from the dishes.
+var PRESETS = [
+  {id:'aw',sv:'After work för 10',en:'After work for 10',items:{p30:2,p2:2,p1:1,s2:2,s4:1,pa9:1,pa7:1,fr1:3}},
+  {id:'fredag',sv:'Fredagspizza för 10',en:'Friday pizza for 10',items:{p2:3,p1:2,p30:2,p3:1,p7:1,p19:1,x1:10}},
+  {id:'forening',sv:'Föreningen, 20 personer',en:'The club, 20 people',items:{p2:5,p1:4,p7:3,pa2:4,s4:2,p19:2,x1:14}}
 ];
-var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
-var MIN = 10, FEE = 395, MAX_QTY = 2000;  // delivery: always 395 kr excl. VAT, no pickup, no free delivery
+var MIN = 10, FEE = 395, MAX_QTY = 2000;  // at least 10 main dishes; delivery always 395 kr incl. VAT, no pickup
 var UPDATES = [
-  {d:'2026-10-26',sv:'Bufféerna har nu rätter från restaurangens egen meny: Vesuvio, kebabpizza, bolognese, al pesto, caesarsallad med mera.',en:'The buffets now have dishes from the restaurant\'s own menu: Vesuvio, kebab pizza, Bolognese, al pesto, Caesar salad and more.'},
+  {d:'2026-10-26',sv:'Hela menyn från restaurangen till samma priser, inklusive moms: pizza, pasta, sallad, kebab, gyros och falafel. Nytt: snabbval som "After work för 10" och sök bland rätterna.',en:'The whole restaurant menu at the same prices, VAT included: pizza, pasta, salad, kebab, gyros and falafel. New: ready-made choices like "After work for 10" and a search.'},
   {d:'2026-10-26',sv:'Sidan heter nu Hela Bordet.',en:'The site is now called Hela Bordet.'},
-  {d:'2026-10-26',sv:'Ny meny: pizza-, pasta-, sallads- och mixbuffé. Vi levererar i Södertörn, och priserna är exempel tills vidare.',en:'New menu: pizza, pasta, salad and mixed buffets. We deliver in Södertörn, and prices are examples for now.'},
-  {d:'2026-09-26',sv:'Nu beställer du buffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
+  {d:'2026-10-26',sv:'Ny meny med pizza, pasta och sallad. Vi levererar i Södertörn.',en:'New menu with pizza, pasta and salad. We deliver in Södertörn.'},
   {d:'2026-09-26',sv:'Länken "Installera appen" syns nu alltid bredvid Feedback, även i appen, så att du kan visa andra hur man installerar.',en:'The "Install the app" link is now always next to Feedback, even in the app, so you can show others how to install it.'},
   {d:'2026-09-26',sv:'Notiser: tryck "Få notis när vi svarar" efter ditt förslag, så hör vi av oss direkt när svaret finns.',en:'Notifications: tap "Get notified when we reply" after your suggestion and we will let you know as soon as there is an answer.'},
   {d:'2026-09-26',sv:'Feedbacktavlan är kopplad: alla förslag sparas nu och syns för alla besökare.',en:'The feedback board is connected: every suggestion is now saved and visible to all visitors.'},
@@ -692,16 +773,18 @@ var UPDATES = [
   {d:'2026-09-26',sv:'Egen webbadress som uppdaterar sig själv när en ny version finns.',en:'Its own web address that updates itself when a new version is out.'},
   {d:'2026-09-26',sv:'Första versionen: beställning med tillval, svenska och engelska, ljust och mörkt läge.',en:'First version: ordering with extras, Swedish and English, light and dark mode.'}
 ];
-var GOODFOR = {sv:['Kontor och möten','Fredagspizza på jobbet','Skolor och förskolor','Idrottsföreningar och cuper','Kyrkor och församlingar','Studentfester och födelsedagar'],en:['Offices and meetings','Friday pizza at work','Schools and preschools','Sports clubs and tournaments','Churches and parishes','Graduation parties and birthdays']};
+var GOODFOR = {sv:['After work','Kontor och möten','Fredagspizza på jobbet','Skolor och förskolor','Idrottsföreningar och cuper','Kyrkor och församlingar','Studentfester och födelsedagar'],en:['After work','Offices and meetings','Friday pizza at work','Schools and preschools','Sports clubs and tournaments','Churches and parishes','Graduation parties and birthdays']};
 var FAQ = [
+  {sv:['Är det samma pris som i restaurangen?','Ja. Alla rätter kostar samma som i restaurangen, inklusive moms. Leveransen kostar 395 kr.'],en:['Is it the same price as in the restaurant?','Yes. Every dish costs the same as in the restaurant, VAT included. Delivery is SEK 395.']},
   {sv:['Var levererar ni?','I Södertörn: Botkyrka (Tumba, Tullinge, Grödinge), Södertälje, Huddinge (Flemingsberg), Salem och Nykvarn. Ligger du utanför? Skriv det i beställningen så svarar vi.'],en:['Where do you deliver?','In Södertörn: Botkyrka (Tumba, Tullinge, Grödinge), Södertälje, Huddinge (Flemingsberg), Salem and Nykvarn. Outside that area? Say so in your order and we will reply.']},
-  {sv:['Hur serveras maten?','Som buffé i stora fat, så att alla tar själva. Maten packas inte i enskilda portioner.'],en:['How is the food served?','As a buffet in large dishes, so everyone helps themselves. The food is not packed in single portions.']},
+  {sv:['Kan vi beställa till after work?','Ja. Välj snabbvalet "After work för 10" eller sätt ihop själv, och skriv tid och plats i beställningen.'],en:['Can we order for an after work?','Yes. Pick "After work for 10" or put your own order together, and add the time and place.']},
+  {sv:['Hur kommer maten?','Varm och klar att ställa fram, med servetter och bestick. Pizzorna kommer skurna i bitar, så de är lätta att dela.'],en:['How does the food arrive?','Hot and ready to serve, with napkins and cutlery. The pizzas come cut into slices, so they are easy to share.']},
   {sv:['Hur långt i förväg behöver jag beställa?','Senast två dagar innan. För fler än 50 personer gärna en vecka innan.'],en:['How far ahead do I need to order?','At least two days before. For more than 50 people, a week ahead is best.']},
-  {sv:['Finns det vegetariskt och glutenfritt?','Vegetariskt finns i alla bufféer. Behöver någon glutenfritt eller har allergier? Skriv antal och vad som gäller i beställningen, så bekräftar vi vad vi kan ordna.'],en:['Is there vegetarian and gluten-free food?','Every buffet has a vegetarian option. Does anyone need gluten-free food or have allergies? Write how many and what applies in your order, and we will confirm what we can do.']},
-  {sv:['Vad är minsta beställning?','10 personer. Du kan blanda flera bufféer i samma beställning.'],en:['What is the minimum order?','10 people. You can mix several buffets in one order.']},
+  {sv:['Vad är minsta beställning?','10 rätter: pizza, pasta, sallad, kebab, gyros eller falafel. Blanda som du vill.'],en:['What is the minimum order?','10 dishes: pizza, pasta, salad, kebab, gyros or falafel. Mix as you like.']},
+  {sv:['Finns det vegetariskt? Hur gör vi med allergier?','Rätter märkta Vegetarisk innehåller inte kött eller fisk. Har någon en allergi? Skriv det i beställningen, så bekräftar vi vad vi kan ordna innan något gäller.'],en:['Is there vegetarian food? What about allergies?','Dishes marked Vegetarian contain no meat or fish. Does anyone have an allergy? Say so in your order and we will confirm what we can do before anything applies.']},
+  {sv:['Kan vi få dryck?','Skriv vad ni vill ha i beställningen, så hör vi av oss.'],en:['Can we get drinks?','Write what you would like in your order and we will get back to you.']},
   {sv:['Kan vi få pizza varje fredag?','Ja, gärna. Skriv det i beställningen, till exempel "varje fredag kl 12", så hör vi av oss och gör ett upplägg.'],en:['Can we get pizza every Friday?','Yes, gladly. Say so in your order, for example "every Friday at noon", and we will get in touch to set it up.']},
-  {sv:['Vad kostar leveransen?','395 kr exklusive moms, oavsett hur stor beställningen är. Vi levererar till adressen du anger.'],en:['What does delivery cost?','SEK 395 excluding VAT, whatever the size of the order. We deliver to the address you give.']},
-  {sv:['Är priserna med moms?','Nej. Alla priser visas exklusive moms. Momsen kommer till på fakturan.'],en:['Do the prices include VAT?','No. All prices are shown excluding VAT. VAT is added on the invoice.']},
+  {sv:['Vad kostar leveransen?','395 kr, oavsett hur stor beställningen är. Vi levererar till adressen du anger.'],en:['What does delivery cost?','SEK 395, whatever the size of the order. We deliver to the address you give.']},
   {sv:['Hur betalar jag?','Företag, skolor och föreningar får faktura. Privatpersoner betalar när vi bekräftar beställningen.'],en:['How do I pay?','Companies, schools and clubs get an invoice. Private customers pay when we confirm the order.']}
 ];
 
@@ -709,42 +792,43 @@ var FAQ = [
 var T = {
   sv:{
     test_banner:'Testversion. Beställningar skickas inte på riktigt än.',
-    test_banner_site:'Testversion: priserna är exempel. Vi bekräftar varje beställning innan den gäller.',
+    test_banner_site:'Testversion: vi bekräftar varje beställning innan den gäller.',
     nav_menu:'Meny',nav_how:'Så funkar det',nav_faq:'Frågor',cta_order:'Beställ',
-    hero_kicker:'Buffécatering i Södertörn · från 10 personer',hero_l1:'Pizza, pasta och sallad till',hero_l2:'hela bordet',
-    hero_sub:'Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.',
+    hero_kicker:'Catering och after work i Södertörn',hero_l1:'Pizza, pasta och sallad till',hero_l2:'hela bordet',
+    hero_sub:'Restaurangens pizza, pasta, sallad och kebab, levererat till jobbet, after worken, föreningen eller festen. Samma priser som i restaurangen.',
     hero_cta:'Bygg din beställning',hero_cta2:'Så funkar det',
-    fact_from:'Från {p}/person exkl. moms',fact_min:'Minst 10 personer',fact_area:'Leverans i Södertörn',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
-    menu_kicker:'Buffé och pris',menu_h:'Bygg din beställning',menu_p:'Välj buffé och antal personer. Priser per person, exklusive moms.',
-    dishes_h:'Buffémenyer',dishes_p:'Allt serveras som buffé i stora fat.',contents_h:'Det här ingår',add:'Välj',pick:'Vårt tips',per:'/person',
-    less:'En person färre för {d}',more:'En person till för {d}',qty:'Antal personer för {d}',unit:'pers.',
-    addons_h:'Tillval',addons_p:'Priset gäller per person.',included:'Ingår',per_tray:'/bricka',tray_one:'1 bricka',
-    deliv_h:'Leverans',dv_note:'Vi levererar i Södertörn: Botkyrka, Södertälje, Huddinge, Salem och Nykvarn. Leveransen kostar {fee} exklusive moms, oavsett hur stor beställningen är.',
-    t_h:'Din beställning',t_empty:'Välj en buffé för att börja. Priset räknas ut här medan du väljer.',
-    t_line:'{n} personer × {p}',t_delivery:'Leverans',t_total:'Totalt',t_per:'≈ {x} per person',t_vat:'Exkl. moms',
-    nudge_min:'Lägg till <b>{n} personer</b> till. Minsta beställning är 10 personer.',
-    nudge_drink:'Tips: lägg till <b>dryck</b> för {x} per person.',nudge_drink_btn:'Lägg till dryck',drink_added:'Dryck tillagd ✓',
+    fact_same:'Samma pris som i restaurangen',fact_from:'Pizza från {p}',fact_min:'Minst 10 rätter',fact_area:'Leverans i Södertörn',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
+    menu_kicker:'Meny och pris',menu_h:'Bygg din beställning',menu_p:'Välj rätter och antal. Samma priser som i restaurangen, inklusive moms.',
+    presets_h:'Snabbval',presets_p:'Färdiga förslag från menyn. Lägg till och ändra som du vill.',preset_add:'Lägg till',preset_added:'Tillagt i beställningen ✓',preset_plus:' + leverans',
+    dishes_h:'Menyn',dishes_p:'Restaurangens rätter som tål att levereras.',add:'Lägg till',add_label:'Lägg till {d}',veg:'Vegetarisk',size_label:'Storlek för {d}',
+    search_ph:'Sök, till exempel kebab eller 30',search_label:'Sök bland rätterna',search_empty:'Ingen rätt matchar sökningen.',
+    less:'En färre {d}',more:'En till {d}',qty:'Antal {d}',unit:'pers.',pcs:'st',
+    deliv_h:'Leverans',dv_note:'Vi levererar i Södertörn: Botkyrka, Södertälje, Huddinge, Salem och Nykvarn. Leveransen kostar {fee}, oavsett hur stor beställningen är.',
+    t_h:'Din beställning',t_empty:'Välj rätter eller ett snabbval för att börja. Priset räknas ut här medan du väljer.',
+    t_line:'{n} st × {p}',t_delivery:'Leverans',t_total:'Totalt',t_count:'{n} rätter',t_vat:'Inkl. moms',
+    nudge_min:'Lägg till <b>{n} rätter</b> till. Minsta beställning är 10 rätter: pizza, pasta, sallad, kebab eller falafel.',
+    nudge_sallad:'Tips: <b>pizzasallad</b> till pizzorna, {x} styck.',nudge_sallad_btn:'Lägg till',sallad_added:'Pizzasallad tillagd ✓',
     continue:'Fortsätt',t_note:'Du betalar inget nu. Vi bekräftar inom 24 timmar.',
     d_h:'Dina uppgifter',f_name:'Namn',f_phone:'Telefon',f_email:'E-post',f_company:'Företag',opt:'valfritt',
     f_address:'Leveransadress',f_date:'Datum',f_time:'Tid',f_notes:'Allergier och önskemål',
     f_notes_ph:'Till exempel: 3 glutenfria, en nötallergi',contact_hint:'Telefon eller e-post räcker.',
-    err_contact:'Fyll i telefon eller e-post så att vi kan nå dig.',err_min:'Minsta beställning är 10 personer.',
+    err_contact:'Fyll i telefon eller e-post så att vi kan nå dig.',err_min:'Minsta beställning är 10 rätter.',
     err_send:'Det gick inte att skicka. Kolla nätet och försök igen.',
     send:'Skicka beställning',sending:'Skickar …',back:'Tillbaka',
     done_h:'Förhandsvisning',done_p:'Det här är en förhandsvisning, så inget skickades. På den riktiga sidan går beställningen direkt till oss.',
     sent_h:'Tack för din beställning!',sent_p:'Vi har fått den och hör av oss inom 24 timmar för att bekräfta. Här är en sammanfattning:',
     copy:'Kopiera sammanfattning',copied:'Kopierat',copy_fail:'Markera texten och kopiera själv.',edit:'Ändra beställning',new_order:'Gör en ny beställning',
-    bar_see:'Se beställning',bar_count:'{n} personer',
+    bar_see:'Se beställning',bar_count:'{n} rätter',
     how_kicker:'Tre steg',how_h:'Så funkar det',
-    s1_h:'Välj buffé och se priset',s1_p:'Buffé, antal personer och tillval. Priset räknas ut medan du väljer.',
+    s1_h:'Välj rätter och se priset',s1_p:'Från restaurangens meny eller ett färdigt snabbval. Priset räknas ut medan du väljer.',
     s2_h:'Skicka beställningen',s2_p:'Vi bekräftar datum, tid och allergier inom 24 timmar.',
-    s3_h:'Vi levererar',s3_p:'Buffén kommer i stora fat på utsatt tid, med servetter och bestick.',
+    s3_h:'Vi levererar',s3_p:'Maten kommer varm på utsatt tid, med servetter och bestick.',
     faq_kicker:'Innan du beställer',faq_h:'Vanliga frågor',
     upd_kicker:'Vad som är nytt',upd_h:'Senaste uppdateringar',
-    foot:'Hela Bordet · Version 0.4.',
+    foot:'Hela Bordet · Version 0.5.',
     fb_q:'Vad tycker du om sidan?',fb_btn:'Tyck till',fb_close:'Stäng',
     to_en:'Switch to English',theme_dark:'Byt till mörkt läge',theme_light:'Byt till ljust läge',
-    sum_title:'Beställning, Hela Bordet Catering',sum_vat:'exkl. moms',
+    sum_title:'Beställning, Hela Bordet',sum_vat:'inkl. moms',
     art_label:'Pizza, pasta och sallad sedda ovanifrån',
     install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
     nav_feedback:"Feedback",
@@ -762,7 +846,7 @@ var T = {
     or_address:"Adress",
     or_phone:"Telefon",
     or_email:"E-post",
-    or_persons:"Personer",
+    or_persons:"Rätter",
     or_notes:"Önskemål",
     foot_fb:"Feedback och förslag",
     close:"Stäng",
@@ -869,42 +953,43 @@ var T = {
   },
   en:{
     test_banner:'Test version. Orders are not sent for real yet.',
-    test_banner_site:'Test version: prices are examples. We confirm every order before it applies.',
+    test_banner_site:'Test version: we confirm every order before it applies.',
     nav_menu:'Menu',nav_how:'How it works',nav_faq:'FAQ',cta_order:'Order',
-    hero_kicker:'Buffet catering in Södertörn · from 10 people',hero_l1:'Pizza, pasta and salad for',hero_l2:'the whole table',
-    hero_sub:'Buffets for offices, schools, clubs and parties. Pick a buffet and the number of people, add the extras and see the price right away.',
+    hero_kicker:'Catering and after work in Södertörn',hero_l1:'Pizza, pasta and salad for',hero_l2:'the whole table',
+    hero_sub:'The restaurant\'s pizza, pasta, salad and kebab, delivered to the office, the after work, the club or the party. Same prices as in the restaurant.',
     hero_cta:'Build your order',hero_cta2:'How it works',
-    fact_from:'From {p}/person excl. VAT',fact_min:'Minimum 10 people',fact_area:'Delivery in Södertörn',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
-    menu_kicker:'Buffets and prices',menu_h:'Build your order',menu_p:'Pick a buffet and the number of people. Prices per person, excluding VAT.',
-    dishes_h:'Buffet menus',dishes_p:'Everything is served as a buffet in large dishes.',contents_h:'What is included',add:'Choose',pick:'Our pick',per:'/person',
-    less:'One person less for {d}',more:'One more person for {d}',qty:'Number of people for {d}',unit:'ppl',
-    addons_h:'Extras',addons_p:'Prices are per person.',included:'Included',per_tray:'/board',tray_one:'1 board',
-    deliv_h:'Delivery',dv_note:'We deliver in Södertörn: Botkyrka, Södertälje, Huddinge, Salem and Nykvarn. Delivery is {fee} excluding VAT, whatever the size of the order.',
-    t_h:'Your order',t_empty:'Pick a buffet to start. The price adds up here as you choose.',
-    t_line:'{n} people × {p}',t_delivery:'Delivery',t_total:'Total',t_per:'≈ {x} per person',t_vat:'Excl. VAT',
-    nudge_min:'Add <b>{n} more people</b>. The minimum order is 10 people.',
-    nudge_drink:'Tip: add <b>drinks</b> for {x} per person.',nudge_drink_btn:'Add drinks',drink_added:'Drinks added ✓',
+    fact_same:'Same price as in the restaurant',fact_from:'Pizza from {p}',fact_min:'Minimum 10 dishes',fact_area:'Delivery in Södertörn',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
+    menu_kicker:'Menu and prices',menu_h:'Build your order',menu_p:'Pick dishes and how many. Same prices as in the restaurant, VAT included.',
+    presets_h:'Quick picks',presets_p:'Ready-made orders from the menu. Add one and change it as you like.',preset_add:'Add',preset_added:'Added to your order ✓',preset_plus:' + delivery',
+    dishes_h:'The menu',dishes_p:'The restaurant dishes that travel well.',add:'Add',add_label:'Add {d}',veg:'Vegetarian',size_label:'Size for {d}',
+    search_ph:'Search, for example kebab or 30',search_label:'Search the dishes',search_empty:'No dish matches your search.',
+    less:'One less {d}',more:'One more {d}',qty:'Quantity of {d}',unit:'ppl',pcs:'pcs',
+    deliv_h:'Delivery',dv_note:'We deliver in Södertörn: Botkyrka, Södertälje, Huddinge, Salem and Nykvarn. Delivery is {fee}, whatever the size of the order.',
+    t_h:'Your order',t_empty:'Pick dishes or a quick pick to start. The price adds up here as you choose.',
+    t_line:'{n} × {p}',t_delivery:'Delivery',t_total:'Total',t_count:'{n} dishes',t_vat:'Incl. VAT',
+    nudge_min:'Add <b>{n} more dishes</b>. The minimum order is 10 dishes: pizza, pasta, salad, kebab or falafel.',
+    nudge_sallad:'Tip: <b>pizza salad</b> with the pizzas, {x} each.',nudge_sallad_btn:'Add',sallad_added:'Pizza salad added ✓',
     continue:'Continue',t_note:'You pay nothing now. We confirm within 24 hours.',
     d_h:'Your details',f_name:'Name',f_phone:'Phone',f_email:'Email',f_company:'Company',opt:'optional',
     f_address:'Delivery address',f_date:'Date',f_time:'Time',f_notes:'Allergies and requests',
     f_notes_ph:'For example: 3 gluten-free, one nut allergy',contact_hint:'Phone or email is enough.',
-    err_contact:'Add a phone number or email so we can reach you.',err_min:'The minimum order is 10 people.',
+    err_contact:'Add a phone number or email so we can reach you.',err_min:'The minimum order is 10 dishes.',
     err_send:'Could not send. Check your connection and try again.',
     send:'Send order',sending:'Sending …',back:'Back',
     done_h:'Preview',done_p:'This is a preview, so nothing was sent. On the real site the order goes straight to us.',
     sent_h:'Thank you for your order!',sent_p:'We have received it and will contact you within 24 hours to confirm. Here is a summary:',
     copy:'Copy summary',copied:'Copied',copy_fail:'Select the text and copy it yourself.',edit:'Edit order',new_order:'Place a new order',
-    bar_see:'View order',bar_count:'{n} people',
+    bar_see:'View order',bar_count:'{n} dishes',
     how_kicker:'Three steps',how_h:'How it works',
-    s1_h:'Pick a buffet and see the price',s1_p:'Buffet, number of people and extras. The price adds up as you choose.',
+    s1_h:'Pick dishes and see the price',s1_p:'From the restaurant menu or a quick pick. The price adds up as you choose.',
     s2_h:'Send the order',s2_p:'We confirm date, time and allergies within 24 hours.',
-    s3_h:'We deliver',s3_p:'The buffet arrives in large dishes on time, with napkins and cutlery.',
+    s3_h:'We deliver',s3_p:'The food arrives hot on time, with napkins and cutlery.',
     faq_kicker:'Before you order',faq_h:'Common questions',
     upd_kicker:"What's new",upd_h:'Latest updates',
-    foot:'Hela Bordet · Version 0.4.',
+    foot:'Hela Bordet · Version 0.5.',
     fb_q:'What do you think of the site?',fb_btn:'Feedback',fb_close:'Close',
     to_en:'Byt till svenska',theme_dark:'Switch to dark mode',theme_light:'Switch to light mode',
-    sum_title:'Order, Hela Bordet Catering',sum_vat:'excl. VAT',
+    sum_title:'Order, Hela Bordet',sum_vat:'incl. VAT',
     art_label:'Pizza, pasta and salad seen from above',
     install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
     nav_feedback:"Feedback",
@@ -921,7 +1006,7 @@ var T = {
     or_address:"Address",
     or_phone:"Phone",
     or_email:"Email",
-    or_persons:"People",
+    or_persons:"Dishes",
     or_notes:"Requests",
     back_home:"← Back to the site",
     foot_fb:"Feedback and suggestions",
@@ -1030,21 +1115,29 @@ var T = {
 };
 
 /* ---------- State ---------- */
-var S = {lang:'sv', qty:{}, addons:{}, step:'build', sent:false};
+// qty: how many of each dish, keyed by dish id (or "id|S" for a size). size: the size picked on a row.
+var S = {lang:'sv', qty:{}, size:{}, cat:'pizza', q:'', step:'build', sent:false};
 function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
 function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function keyOf(id,size){ return size ? id+'|'+size : id; }
+// The dish (and size) behind a cart key, or null if the menu no longer has it.
+function parseKey(k){
+  var i=k.indexOf('|'), m=ITEMS[i<0?k:k.slice(0,i)], size=i<0?null:k.slice(i+1);
+  if(!m || !!m.sizes !== !!size) return null;
+  if(size && !m.sizes.some(function(z){ return z.k===size; })) return null;
+  return {m:m, size:size};
+}
+function priceOf(m,size){ return size ? m.sizes.filter(function(z){ return z.k===size; })[0].p : m.p; }
+function rowSize(m){ return m.sizes ? (S.size[m.id]||m.sizes[0].k) : null; }
 (function restore(){
   var l = load('tk_lang'); if(l==='sv'||l==='en') S.lang = l;
-  var raw = load('tk_cart');
+  var raw = load('tk_cart2');
   if(raw){ try{
     var c = JSON.parse(raw);
-    if(c && typeof c==='object'){
-      if(c.qty) DISHES.forEach(function(d){ var n=parseInt(c.qty[d.id],10); if(n>0) S.qty[d.id]=Math.min(n,MAX_QTY); });
-      if(c.addons) ADDONS.forEach(function(a){ if(c.addons[a.id]) S.addons[a.id]=true; });
-    }
+    if(c && c.qty) Object.keys(c.qty).forEach(function(k){ var n=parseInt(c.qty[k],10); if(n>0 && parseKey(k)) S.qty[k]=Math.min(n,MAX_QTY); });
   }catch(e){} }
 })();
-function saveCart(){ store('tk_cart', JSON.stringify({qty:S.qty,addons:S.addons})); }
+function saveCart(){ store('tk_cart2', JSON.stringify({qty:S.qty})); }
 
 /* ---------- Helpers ---------- */
 function t(k,vars){ var s=(T[S.lang]&&T[S.lang][k]); if(s==null) s=T.sv[k]||k; if(vars) Object.keys(vars).forEach(function(v){ s=s.split('{'+v+'}').join(vars[v]); }); return s; }
@@ -1053,17 +1146,22 @@ function kr(n){ var key=S.lang; if(!fmtCache[key]) fmtCache[key]=new Intl.Number
 function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]}); }
 function $(id){ return document.getElementById(id); }
 function L(o){ return o[S.lang]||o.sv; }
-var CHECK='<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function nameOf(m,size){ return (S.lang==='en'&&m.ne?m.ne:m.n)+(size?' ('+size+')':''); }
 
-// Everything excludes VAT. Buffets and extras are per person (an extra marked tray:true is per tray),
-// delivery is one fixed fee per order.
+// Same prices as in the restaurant, VAT included; delivery is one fixed fee per order.
+// mains = dishes that count towards the minimum order.
 function calc(){
-  var persons=0, food=0, lines=[];
-  DISHES.forEach(function(d){ var q=S.qty[d.id]||0; if(q>0){ persons+=q; food+=q*d.price; lines.push({d:d,q:q,sum:q*d.price}); } });
-  var extras=[]; ADDONS.forEach(function(a){ if(S.addons[a.id]) extras.push({a:a,sum:a.tray?a.price:persons*a.price}); });
-  var sub=food+extras.reduce(function(s,e){return s+e.sum},0);
-  var fee=persons?FEE:0;
-  return {portions:persons,lines:lines,extras:extras,sub:sub,fee:fee,total:sub+fee};
+  var mains=0, pizzas=0, food=0, lines=[];
+  Object.keys(S.qty).forEach(function(k){
+    var r=parseKey(k), q=S.qty[k]; if(!r||!q) return;
+    var p=priceOf(r.m,r.size); food+=q*p;
+    if(CAT[r.m.c].main) mains+=q;
+    if(r.m.c==='pizza') pizzas+=q;
+    lines.push({k:k,m:r.m,size:r.size,q:q,price:p,sum:q*p});
+  });
+  lines.sort(function(a,b){ return MENU.indexOf(a.m)-MENU.indexOf(b.m) || (a.size||'').localeCompare(b.size||''); });
+  var fee=lines.length?FEE:0;
+  return {mains:mains,pizzas:pizzas,lines:lines,fee:fee,total:food+fee};
 }
 
 /* ---------- Render: static bits ---------- */
@@ -1075,9 +1173,12 @@ function applyText(){
   $('fbStripX').setAttribute('aria-label', t('close'));
   $('inStripX').setAttribute('aria-label', t('close'));
   $('art').setAttribute('aria-label', t('art_label'));
-  $('heroKitchens').innerHTML = Object.keys(KITCHENS).filter(function(k){ return KITCHENS[k].hero!==false; }).map(function(k){ var K=KITCHENS[k]; return '<span class="kchip '+K.cls+'"><i></i>'+esc(L(K))+'</span>'; }).join('');
-  var min = Math.min.apply(null, DISHES.map(function(d){return d.price}));
-  $('facts').innerHTML = [t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_area'),t('fact_fee',{fee:kr(FEE)}),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
+  $('menuSearch').placeholder = t('search_ph');
+  $('menuSearch').setAttribute('aria-label', t('search_label'));
+  $('cats').setAttribute('aria-label', t('dishes_h'));
+  $('heroKitchens').innerHTML = CATS.filter(function(c){ return c.hero; }).map(function(c){ return '<span class="kchip k-'+c.id+'"><i></i>'+esc(L(c))+'</span>'; }).join('');
+  var min = Math.min.apply(null, MENU.filter(function(m){ return m.c==='pizza' && m.p; }).map(function(m){ return m.p; }));
+  $('facts').innerHTML = [t('fact_same'),t('fact_from',{p:kr(min)}),t('fact_min'),t('fact_area'),t('fact_fee',{fee:kr(FEE)}),t('fact_lead')].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('dvNote').textContent = t('dv_note',{fee:kr(FEE)});
   $('goodfor').innerHTML = GOODFOR[S.lang].map(function(s){return '<li>'+esc(s)+'</li>'}).join('');
   $('faq').innerHTML = FAQ.map(function(f){ var q=L(f); return '<details><summary>'+esc(q[0])+'</summary><p>'+esc(q[1])+'</p></details>'; }).join('');
@@ -1086,75 +1187,86 @@ function applyText(){
   updateThemeBtn();
 }
 
-function dishControl(d){
-  var q=S.qty[d.id]||0, name=L(d)[0];
-  if(!q) return '<button type="button" class="add" data-add="'+d.id+'">'+esc(t('add'))+'</button>';
-  return '<span class="stepper"><button type="button" data-dec="'+d.id+'" aria-label="'+esc(t('less',{d:name}))+'">−</button>'+
-    '<input type="number" inputmode="numeric" min="0" max="'+MAX_QTY+'" id="q-'+d.id+'" data-qty="'+d.id+'" value="'+q+'" aria-label="'+esc(t('qty',{d:name}))+'">'+
-    '<button type="button" data-inc="'+d.id+'" aria-label="'+esc(t('more',{d:name}))+'">+</button></span>';
-}
-function renderDishes(){
-  $('dishes').innerHTML = DISHES.map(function(d){
-    var K=KITCHENS[d.k], txt=L(d), q=S.qty[d.id]||0;
-    return '<article class="dish'+(q?' on':'')+'" id="dish-'+d.id+'">'+
-      '<div class="dish-top"><span class="ktag"><i style="background:'+K.color+'"></i>'+esc(L(K))+'</span>'+(d.pick?'<span class="pick">'+esc(t('pick'))+'</span>':'')+'</div>'+
-      '<h4>'+esc(txt[0])+'</h4><p>'+esc(txt[1])+'</p>'+
-      '<p class="contents-h">'+esc(t('contents_h'))+'</p><ul class="menu-contents">'+L(d.c).map(function(x){ return '<li>'+esc(x)+'</li>'; }).join('')+'</ul>'+
-      '<ul class="allergens">'+d.a.map(function(a){ return '<li'+(a==='v'||a==='veg'?' class="vegan"':'')+'>'+esc(L(ALLERGENS[a]))+'</li>'; }).join('')+'</ul>'+
-      '<div class="dish-foot"><span class="price">'+esc(kr(d.price))+'<small>'+esc(t('per'))+'</small></span><span class="ctl" id="ctl-'+d.id+'">'+dishControl(d)+'</span></div>'+
-    '</article>';
+/* ---------- Ready-made orders ---------- */
+function presetTotal(p){ return Object.keys(p.items).reduce(function(s,k){ var r=parseKey(k); return s+priceOf(r.m,r.size)*p.items[k]; },0); }
+function renderPresets(){
+  $('presets').innerHTML = PRESETS.map(function(p){
+    var list = Object.keys(p.items).map(function(k){ var r=parseKey(k); return p.items[k]+' '+nameOf(r.m,r.size); }).join(', ');
+    return '<article class="preset" id="preset-'+p.id+'"><h4>'+esc(L(p))+'</h4><p>'+esc(list)+'</p>'+
+      '<div class="preset-foot"><span class="price">'+esc(kr(presetTotal(p)))+'<small>'+esc(t('preset_plus'))+'</small></span>'+
+      '<button type="button" class="add" data-preset="'+p.id+'">'+esc(t('preset_add'))+'</button></div></article>';
   }).join('');
-}
-function refreshDish(id, focus){
-  var d = DISHES.filter(function(x){return x.id===id})[0]; if(!d) return;
-  var card=$('dish-'+id), ctl=$('ctl-'+id); if(!card||!ctl) return;
-  card.classList.toggle('on', !!S.qty[id]);
-  var input = ctl.querySelector('input');
-  if(input && S.qty[id]) { input.value = S.qty[id]; }
-  else { ctl.innerHTML = dishControl(d); }
-  if(focus){ var el = ctl.querySelector(focus); if(el) el.focus(); }
 }
 
-function renderAddons(){
-  $('addons').innerHTML = GROUPS.map(function(g){
-    return '<div class="agroup"><h5>'+esc(L(g))+'</h5>'+ADDONS.filter(function(a){return a.g===g.id}).map(function(a){
-      return '<label class="addon"><input type="checkbox" id="ad-'+a.id+'" data-addon="'+a.id+'"'+(S.addons[a.id]?' checked':'')+'>'+
-        '<span class="check" aria-hidden="true">'+CHECK+'</span><span class="addon-name">'+esc(L(a))+(a.d?'<span class="addon-desc">'+esc(L(a.d))+'</span>':'')+'</span>'+
-        '<span class="addon-price">'+esc('+'+kr(a.price))+(a.tray?'<span class="per">'+esc(t('per_tray'))+'</span>':'')+'</span></label>';
-    }).join('')+'</div>';
-  }).join('');
+/* ---------- Menu ---------- */
+function itemControl(m){
+  var size=rowSize(m), k=keyOf(m.id,size), q=S.qty[k]||0, name=nameOf(m,size);
+  if(!q) return '<button type="button" class="add" data-add="'+esc(k)+'" aria-label="'+esc(t('add_label',{d:name}))+'">'+esc(t('add'))+'</button>';
+  return '<span class="stepper"><button type="button" data-dec="'+esc(k)+'" aria-label="'+esc(t('less',{d:name}))+'">−</button>'+
+    '<input type="number" inputmode="numeric" min="0" max="'+MAX_QTY+'" id="q-'+esc(k.replace('|','-'))+'" data-qty="'+esc(k)+'" value="'+q+'" aria-label="'+esc(t('qty',{d:name}))+'">'+
+    '<button type="button" data-inc="'+esc(k)+'" aria-label="'+esc(t('more',{d:name}))+'">+</button></span>';
+}
+function itemOn(m){ return m.sizes ? m.sizes.some(function(z){ return S.qty[keyOf(m.id,z.k)]; }) : !!S.qty[m.id]; }
+function itemRow(m){
+  var size=rowSize(m);
+  var price = m.sizes
+    ? '<select class="size" data-size="'+m.id+'" aria-label="'+esc(t('size_label',{d:nameOf(m)}))+'">'+m.sizes.map(function(z){ return '<option value="'+z.k+'"'+(z.k===size?' selected':'')+'>'+z.k+' · '+esc(kr(z.p))+'</option>'; }).join('')+'</select>'
+    : '<span class="price">'+esc(kr(m.p))+'</span>';
+  return '<div class="mi'+(itemOn(m)?' on':'')+'" id="mi-'+m.id+'"><div class="mi-txt">'+
+    '<span class="mi-name">'+(m.no?'<span class="mi-no">'+esc(m.no)+'</span>':'')+'<span>'+esc(nameOf(m))+'</span>'+(m.veg?'<span class="vtag">'+esc(t('veg'))+'</span>':'')+'</span>'+
+    (m.d?'<span class="mi-d">'+esc(S.lang==='en'?m.d[1]:m.d[0])+'</span>':'')+
+    '</div><div class="mi-act">'+price+'<span class="ctl" id="ctl-'+m.id+'">'+itemControl(m)+'</span></div></div>';
+}
+function visibleItems(){
+  var q=S.q.trim().toLowerCase();
+  if(!q) return MENU.filter(function(m){ return m.c===S.cat; });
+  return MENU.filter(function(m){ return [m.no,m.n,m.ne].concat(m.d||[]).join(' ').toLowerCase().indexOf(q)>-1; });
+}
+function renderMenu(){
+  $('cats').innerHTML = CATS.map(function(c){ return '<button type="button" class="fchip" data-cat="'+c.id+'" aria-pressed="'+(!S.q.trim() && S.cat===c.id)+'"><i style="background:'+c.color+'"></i>'+esc(L(c))+'</button>'; }).join('');
+  var groups=[];
+  visibleItems().forEach(function(m){ var h=m.g||m.c, g=groups[groups.length-1]; if(!g||g.h!==h){ g={h:h,items:[]}; groups.push(g); } g.items.push(m); });
+  $('menu').innerHTML = groups.length ? groups.map(function(g){
+    var head=HEADS[g.h];
+    return '<section class="mgroup"><h4>'+esc(L(head))+'</h4>'+(head.note?'<p class="mgroup-note">'+esc(L(head.note))+'</p>':'')+'<div class="mlist">'+g.items.map(itemRow).join('')+'</div></section>';
+  }).join('') : '<div class="empty">'+esc(t('search_empty'))+'</div>';
+}
+function refreshItem(id, focus){
+  var m=ITEMS[id], row=$('mi-'+id), ctl=$('ctl-'+id); if(!m||!row||!ctl) return;
+  row.classList.toggle('on', itemOn(m));
+  var q=S.qty[keyOf(id,rowSize(m))]||0, input=ctl.querySelector('input');
+  if(input && q) input.value=q; else ctl.innerHTML=itemControl(m);
+  if(focus){ var el=ctl.querySelector(focus); if(el) el.focus(); }
 }
 
 /* ---------- Ticket ---------- */
-function lineSub(e, persons){ return e.a.tray ? t('tray_one') : t('t_line',{n:persons,p:kr(e.a.price)}); }
 function renderTicket(){
   var c = calc();
   var body = $('tBody');
-  if(!c.portions){
+  if(!c.lines.length){
     body.innerHTML = '<div class="t-empty"><span class="plates" aria-hidden="true"><i></i><i></i><i></i></span><p>'+esc(t('t_empty'))+'</p></div>';
   } else {
-    var rows = c.lines.map(function(l){ return '<li><span>'+esc(L(l.d)[0])+'<span class="sub">'+esc(t('t_line',{n:l.q,p:kr(l.d.price)}))+'</span></span><span>'+esc(kr(l.sum))+'</span></li>'; });
-    c.extras.forEach(function(e){ rows.push('<li><span>'+esc(L(e.a))+'<span class="sub">'+esc(lineSub(e,c.portions))+'</span></span><span>'+esc(kr(e.sum))+'</span></li>'); });
+    var rows = c.lines.map(function(l){ return '<li><span>'+esc(nameOf(l.m,l.size))+'<span class="sub">'+esc(t('t_line',{n:l.q,p:kr(l.price)}))+'</span></span><span>'+esc(kr(l.sum))+'</span></li>'; });
     rows.push('<li><span>'+esc(t('t_delivery'))+'</span><span>'+esc(kr(c.fee))+'</span></li>');
     var nudge='';
-    if(c.portions<MIN) nudge='<div class="nudge"><span>'+t('nudge_min',{n:MIN-c.portions})+'</span></div>';
-    else if(!Object.keys(S.addons).length && S.step==='build') nudge='<div class="nudge"><span>'+t('nudge_drink',{x:esc(kr(ADDONS.filter(function(a){return a.id==='dryck'})[0].price))})+'</span><button type="button" data-add-drink>'+esc(t('nudge_drink_btn'))+'</button></div>';
+    if(c.mains<MIN) nudge='<div class="nudge"><span>'+t('nudge_min',{n:MIN-c.mains})+'</span></div>';
+    else if(c.pizzas && !S.qty.x1 && S.step==='build') nudge='<div class="nudge"><span>'+t('nudge_sallad',{x:esc(kr(ITEMS.x1.p))})+'</span><button type="button" data-add-sallad>'+esc(t('nudge_sallad_btn'))+'</button></div>';
     body.innerHTML =
       '<ul class="t-lines">'+rows.join('')+'</ul><hr class="rule">'+
       '<div class="t-total"><span class="lbl">'+esc(t('t_total'))+'</span><span class="amt">'+esc(kr(c.total))+'</span></div>'+
-      '<div class="t-sub"><span>'+esc(t('t_per',{x:kr(Math.round(c.total/c.portions))}))+'</span><span>'+esc(t('t_vat'))+'</span></div>'+
+      '<div class="t-sub"><span>'+esc(t('t_count',{n:c.mains}))+'</span><span>'+esc(t('t_vat'))+'</span></div>'+
       nudge+
-      (S.step==='build' ? '<div class="t-actions"><button type="button" class="btn btn-primary btn-block" id="toDetails"'+(c.portions<MIN?' disabled':'')+'>'+esc(t('continue'))+'</button><p class="t-note">'+esc(t('t_note'))+'</p></div>' : '');
+      (S.step==='build' ? '<div class="t-actions"><button type="button" class="btn btn-primary btn-block" id="toDetails"'+(c.mains<MIN?' disabled':'')+'>'+esc(t('continue'))+'</button><p class="t-note">'+esc(t('t_note'))+'</p></div>' : '');
   }
   renderBar(c);
 }
 
 function renderBar(c){
-  var bar=$('bar'), show = c.portions>0 && !ticketVisible && S.step!=='done' && currentView()==='home';
+  var bar=$('bar'), show = c.lines.length>0 && !ticketVisible && S.step!=='done' && currentView()==='home';
   bar.hidden = !show;
   document.body.classList.toggle('has-bar', show && window.innerWidth<1000);
   $('barTotal').textContent = kr(c.total);
-  $('barCount').textContent = t('bar_count',{n:c.portions});
+  $('barCount').textContent = t('bar_count',{n:c.mains});
 }
 
 /* ---------- Details form ---------- */
@@ -1186,8 +1298,7 @@ function collectDraft(){ var form=$('detailsForm'); if(!form) return; ['name','p
 
 function summaryText(){
   var c=calc(), lines=[t('sum_title'),''];
-  c.lines.forEach(function(l){ lines.push(L(l.d)[0]+' ('+t('t_line',{n:l.q,p:kr(l.d.price)})+')  '+kr(l.sum)); });
-  c.extras.forEach(function(e){ lines.push(L(e.a)+' ('+lineSub(e,c.portions)+')  '+kr(e.sum)); });
+  c.lines.forEach(function(l){ lines.push(nameOf(l.m,l.size)+' ('+t('t_line',{n:l.q,p:kr(l.price)})+')  '+kr(l.sum)); });
   lines.push(t('t_delivery')+'  '+kr(c.fee));
   lines.push(t('t_total')+': '+kr(c.total)+' ('+t('sum_vat')+')','');
   var f=formDraft;
@@ -1195,13 +1306,13 @@ function summaryText(){
   return lines.join('\n');
 }
 // The order as it is saved for the owner (always in Swedish, whatever language the visitor used).
+// persons = number of main dishes (the column predates ordering dish by dish).
 function orderRow(){
   var c=calc(), f=formDraft;
   return {
-    persons:c.portions, total:c.total,
-    items:{menus:c.lines.map(function(l){ return {id:l.d.id,name:l.d.sv[0],persons:l.q,price:l.d.price,sum:l.sum}; }),
-           extras:c.extras.map(function(e){ return {id:e.a.id,name:e.a.sv,tray:!!e.a.tray,price:e.a.price,sum:e.sum}; }),
-           delivery:c.fee, vat:'exkl. moms'},
+    persons:c.mains, total:c.total,
+    items:{menus:c.lines.map(function(l){ return {id:l.k,name:l.m.n+(l.size?' ('+l.size+')':''),qty:l.q,price:l.price,sum:l.sum}; }),
+           extras:[], delivery:c.fee, vat:'inkl. moms'},
     name:f.name||'', phone:f.phone||'', email:f.email||'', company:f.company||'', address:f.address||'',
     delivery_date:f.date, delivery_time:f.time||'', notes:f.notes||'', lang:S.lang
   };
@@ -1228,32 +1339,45 @@ var toastTimer;
 function toast(msg){ var el=$('toast'); el.textContent=msg; el.hidden=false; clearTimeout(toastTimer); toastTimer=setTimeout(function(){el.hidden=true},2200); }
 
 /* ---------- Events ---------- */
-function setQty(id,n,focus){
+function setQty(k,n,focus){
   n = Math.max(0, Math.min(MAX_QTY, n|0));
-  if(n) S.qty[id]=n; else delete S.qty[id];
-  saveCart(); refreshDish(id, focus); renderTicket();
+  if(n) S.qty[k]=n; else delete S.qty[k];
+  saveCart(); var r=parseKey(k); if(r) refreshItem(r.m.id, focus); renderTicket();
 }
-$('dishes').addEventListener('click', function(e){
+$('menu').addEventListener('click', function(e){
   var b = e.target.closest('button'); if(!b) return;
-  if(b.dataset.add){ setQty(b.dataset.add, MIN, '[data-inc]'); }
+  if(b.dataset.add){ setQty(b.dataset.add, (S.qty[b.dataset.add]||0)+1, '[data-inc]'); }
   else if(b.dataset.inc){ setQty(b.dataset.inc,(S.qty[b.dataset.inc]||0)+1); }
-  else if(b.dataset.dec){ var id=b.dataset.dec, n=(S.qty[id]||0)-1; setQty(id,n, n<=0?'[data-add]':null); }
+  else if(b.dataset.dec){ var k=b.dataset.dec, n=(S.qty[k]||0)-1; setQty(k,n, n<=0?'[data-add]':null); }
 });
-$('dishes').addEventListener('change', function(e){
-  var el=e.target; if(!el.dataset.qty) return;
+$('menu').addEventListener('change', function(e){
+  var el=e.target;
+  if(el.dataset.size){ S.size[el.dataset.size]=el.value; $('ctl-'+el.dataset.size).innerHTML=itemControl(ITEMS[el.dataset.size]); return; }
+  if(!el.dataset.qty) return;
   var n=parseInt(el.value,10); if(isNaN(n)) n=0;
   setQty(el.dataset.qty, n, n<=0?'[data-add]':null);
 });
-$('dishes').addEventListener('keydown', function(e){ if(e.key==='Enter' && e.target.dataset && e.target.dataset.qty){ e.target.blur(); } });
-$('addons').addEventListener('change', function(e){ var id=e.target.dataset.addon; if(!id) return; if(e.target.checked) S.addons[id]=true; else delete S.addons[id]; saveCart(); renderTicket(); });
+$('menu').addEventListener('keydown', function(e){ if(e.key==='Enter' && e.target.dataset && e.target.dataset.qty){ e.target.blur(); } });
+$('cats').addEventListener('click', function(e){
+  var b=e.target.closest('[data-cat]'); if(!b) return;
+  S.cat=b.getAttribute('data-cat'); S.q=''; $('menuSearch').value=''; renderMenu();
+  if($('menuSearch').getBoundingClientRect().top<0) $('menuSearch').scrollIntoView({block:'start'});  // back to the top of the new list
+});
+$('menuSearch').addEventListener('input', function(e){ S.q=e.target.value; renderMenu(); });
+$('presets').addEventListener('click', function(e){
+  var b=e.target.closest('[data-preset]'); if(!b) return;
+  var p=PRESETS.filter(function(x){ return x.id===b.getAttribute('data-preset'); })[0]; if(!p) return;
+  Object.keys(p.items).forEach(function(k){ S.qty[k]=Math.min(MAX_QTY,(S.qty[k]||0)+p.items[k]); });
+  saveCart(); renderMenu(); renderTicket(); toast(t('preset_added'));
+});
 
 document.querySelector('.ticket').addEventListener('click', function(e){
   var b=e.target.closest('button'); if(!b) return;
   if(b.id==='toDetails'){ setStep('details'); var h=$('dH'); if(h){ h.focus({preventScroll:true}); h.scrollIntoView({block:'start',behavior:'smooth'}); } }
   else if(b.id==='backBtn'){ setStep('build'); var tb=$('toDetails'); if(tb) tb.focus(); }
   else if(b.id==='editBtn'){ setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
-  else if(b.id==='newBtn'){ S.qty={}; S.addons={}; S.sent=false; formDraft={}; saveCart(); renderDishes(); renderAddons(); setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
-  else if(b.hasAttribute('data-add-drink')){ S.addons.dryck=true; saveCart(); renderAddons(); renderTicket(); toast(t('drink_added')); }
+  else if(b.id==='newBtn'){ S.qty={}; S.sent=false; formDraft={}; saveCart(); renderMenu(); setStep('build'); document.getElementById('bestall').scrollIntoView({behavior:'smooth'}); }
+  else if(b.hasAttribute('data-add-sallad')){ S.qty.x1=calc().pizzas; saveCart(); renderMenu(); renderTicket(); toast(t('sallad_added')); }
   else if(b.id==='copyBtn'){
     var txt=$('sumText').textContent;
     var fallback=function(){ var r=document.createRange(); r.selectNodeContents($('sumText')); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); toast(t('copy_fail')); };
@@ -1267,7 +1391,7 @@ document.querySelector('.ticket').addEventListener('submit', function(e){
   if(sendingOrder) return;
   var form=e.target, err=$('fErr'); err.hidden=true;
   collectDraft();
-  if(calc().portions<MIN){ err.textContent=t('err_min'); err.hidden=false; return; }
+  if(calc().mains<MIN){ err.textContent=t('err_min'); err.hidden=false; return; }
   if(!form.reportValidity()) return;
   if(!formDraft.phone && !formDraft.email){ err.textContent=t('err_contact'); err.hidden=false; form.elements.phone.focus(); return; }
   var finish=function(){
@@ -1277,7 +1401,7 @@ document.querySelector('.ticket').addEventListener('submit', function(e){
   if(!DB){ finish(); return; }   // preview (claude.ai link): nothing is sent
   var btn=$('sendBtn'); sendingOrder=true; btn.disabled=true; btn.textContent=t('sending');
   sb('/rest/v1/orders',{method:'POST',headers:{'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify(orderRow())})
-    .then(function(){ sendingOrder=false; S.sent=true; store('tk_cart',''); finish(); })
+    .then(function(){ sendingOrder=false; S.sent=true; store('tk_cart2',''); finish(); })
     .catch(function(){ sendingOrder=false; btn.disabled=false; btn.textContent=t('send'); err.textContent=t('err_send'); err.hidden=false; });
 });
 document.querySelector('.ticket').addEventListener('input', function(e){ if(e.target.form && e.target.form.id==='detailsForm') collectDraft(); });
@@ -1504,7 +1628,7 @@ function loadOrders(){
 }
 function orderCard(o){
   var it=o.items||{}, lines=[];
-  (it.menus||[]).forEach(function(m){ lines.push([m.name+' · '+m.persons+' '+t('unit'), m.sum]); });
+  (it.menus||[]).forEach(function(m){ lines.push([m.name+' · '+(m.qty!=null ? m.qty+' '+t('pcs') : m.persons+' '+t('unit')), m.sum]); });
   (it.extras||[]).forEach(function(x){ lines.push([x.name+(x.tray?'':' · '+o.persons+' '+t('unit')), x.sum]); });
   if(it.delivery) lines.push([t('t_delivery'), it.delivery]);
   var tel=String(o.phone||'').replace(/[^+\d]/g,''), mail=/^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(o.email||'') ? o.email : '';
@@ -1708,7 +1832,7 @@ $('fbList').addEventListener('click', function(e){
   window.claude.use('comments').then(function(ns){ if(!ns) return; comments=ns; if(currentView()==='feedback') renderAfterSend(); }, function(){});
 })();
 if(ON_SITE){ $('footInstall').hidden=false; $('navInstall').hidden=false; } // always: the page also shows how to install on other devices
-if(DB) $('testbar').setAttribute('data-i18n','test_banner_site');  // orders are sent, but prices are still examples
+if(DB) $('testbar').setAttribute('data-i18n','test_banner_site');  // orders are sent, but each one is confirmed by hand
 
 /* ---------- Hero illustration ---------- */
 function rng(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var x=Math.imul(seed^seed>>>15,1|seed); x=x+Math.imul(x^x>>>7,61|x)^x; return ((x^x>>>14)>>>0)/4294967296; }; }
@@ -1768,7 +1892,7 @@ function buildArt(){
 
 /* ---------- Boot ---------- */
 function renderAll(){
-  applyText(); renderDishes(); renderAddons();
+  applyText(); renderPresets(); renderMenu();
   if(S.step==='details') renderForm();
   if(S.step==='done') renderDone();
   renderTicket();
@@ -1786,7 +1910,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '17a46cfd6';
+  var BUILD = '17a608d80';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
