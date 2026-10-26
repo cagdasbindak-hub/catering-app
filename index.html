@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Stora Fatet Catering</title>
+<title>Hela Bordet Catering</title>
 <meta name="description" content="Buffécatering i Södertörn: pizza, pasta och sallad till kontor, skolor, föreningar och fester. Välj buffé och tillval och se priset direkt. Från 10 personer.">
 <meta name="theme-color" content="#F3F5F0" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0E1511" media="(prefers-color-scheme: dark)">
@@ -11,9 +11,9 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Stora Fatet">
+<meta name="apple-mobile-web-app-title" content="Hela Bordet">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Stora Fatet Catering">
+<meta property="og:title" content="Hela Bordet Catering">
 <meta property="og:description" content="Buffécatering i Södertörn: pizza, pasta och sallad till kontor, skolor, föreningar och fester. Välj buffé och tillval och se priset direkt. Från 10 personer.">
 <meta property="og:image" content="https://cagdasbindak-hub.github.io/catering-app/share.png">
 <meta property="og:url" content="https://cagdasbindak-hub.github.io/catering-app/">
@@ -439,7 +439,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 
 <header class="hdr">
   <div class="wrap hdr-in">
-    <a class="logo" href="#top" aria-label="Stora Fatet"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Stora Fatet</a>
+    <a class="logo" href="#top" aria-label="Hela Bordet"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Hela Bordet</a>
     <nav class="nav" aria-label="Meny">
       <a href="#bestall" data-i18n="nav_menu">Meny</a>
       <a href="#sa-funkar-det" data-i18n="nav_how">Så funkar det</a>
@@ -461,8 +461,8 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
       <div>
         <p class="eyebrow" data-i18n="hero_kicker">Buffécatering i Södertörn · från 10 personer</p>
         <h1 class="display" style="margin-top:14px">
-          <span class="l1" data-i18n="hero_l1">Pizza, pasta och sallad på</span>
-          <span class="l2" data-i18n="hero_l2">stora fat</span>
+          <span class="l1" data-i18n="hero_l1">Pizza, pasta och sallad till</span>
+          <span class="l2" data-i18n="hero_l2">hela bordet</span>
         </h1>
         <div class="kitchens" id="heroKitchens"></div>
         <p class="hero-sub" data-i18n="hero_sub">Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.</p>
@@ -580,7 +580,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
     <a class="back" href="#top" data-i18n="back_home">← Till sidan</a>
     <div class="section-head">
       <p class="eyebrow" data-i18n="in_kicker">Egen ikon på hemskärmen</p>
-      <h1 class="display view-h" id="inTitle" data-i18n="in_title">Installera Stora Fatet</h1>
+      <h1 class="display view-h" id="inTitle" data-i18n="in_title">Installera Hela Bordet</h1>
       <p data-i18n="in_why">Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.</p>
     </div>
     <div id="inBody"></div>
@@ -600,7 +600,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <span data-i18n="foot">Stora Fatet är ett arbetsnamn. Version 0.3.</span>
+    <span data-i18n="foot">Hela Bordet · Version 0.4.</span>
     <span class="foot-actions">
       <a class="linkbtn" href="#feedback" data-i18n="foot_fb">Feedback och förslag</a>
       <a class="linkbtn" href="#installera" id="footInstall" hidden data-i18n="in_link">Installera som app</a>
@@ -618,7 +618,7 @@ body.has-bar .strip-bottom{bottom:calc(env(safe-area-inset-bottom,0px) + 84px)}
   <button class="strip-x" type="button" id="fbStripX">×</button>
 </div>
 <div class="strip strip-bottom" id="inStrip" hidden>
-  <button class="strip-main" type="button" id="inStripGo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="in_nudge">Installera Stora Fatet som app 📲</span></button>
+  <button class="strip-main" type="button" id="inStripGo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="in_nudge">Installera Hela Bordet som app 📲</span></button>
   <button class="strip-x" type="button" id="inStripX">×</button>
 </div>
 
@@ -681,7 +681,8 @@ var ADDONS = [
 var GROUPS = [{id:'sauce',sv:'Såser',en:'Sauces'},{id:'side',sv:'Tillbehör',en:'Sides'},{id:'sweet',sv:'Dryck och dessert',en:'Drinks and dessert'}];
 var MIN = 10, FEE = 395, MAX_QTY = 2000;  // delivery: always 395 kr excl. VAT, no pickup, no free delivery
 var UPDATES = [
-  {d:'2026-10-26',sv:'Ny meny: pizza-, pasta-, sallads- och mixbuffé. Vi levererar i Södertörn, och sidan heter nu Stora Fatet (arbetsnamn). Priserna är exempel tills vidare.',en:'New menu: pizza, pasta, salad and mixed buffets. We deliver in Södertörn, and the site is now called Stora Fatet (working name). Prices are examples for now.'},
+  {d:'2026-10-26',sv:'Sidan heter nu Hela Bordet.',en:'The site is now called Hela Bordet.'},
+  {d:'2026-10-26',sv:'Ny meny: pizza-, pasta-, sallads- och mixbuffé. Vi levererar i Södertörn, och priserna är exempel tills vidare.',en:'New menu: pizza, pasta, salad and mixed buffets. We deliver in Södertörn, and prices are examples for now.'},
   {d:'2026-09-26',sv:'Nu beställer du buffé, med tydlig lista över vad som ingår. Priserna visas exklusive moms, leveransen kostar 395 kr och beställningen skickas direkt till oss.',en:'You now order buffets, with a clear list of what is included. Prices are shown excluding VAT, delivery is SEK 395 and your order goes straight to us.'},
   {d:'2026-09-26',sv:'Länken "Installera appen" syns nu alltid bredvid Feedback, även i appen, så att du kan visa andra hur man installerar.',en:'The "Install the app" link is now always next to Feedback, even in the app, so you can show others how to install it.'},
   {d:'2026-09-26',sv:'Notiser: tryck "Få notis när vi svarar" efter ditt förslag, så hör vi av oss direkt när svaret finns.',en:'Notifications: tap "Get notified when we reply" after your suggestion and we will let you know as soon as there is an answer.'},
@@ -709,7 +710,7 @@ var T = {
     test_banner:'Testversion. Beställningar skickas inte på riktigt än.',
     test_banner_site:'Testversion: priserna är exempel. Vi bekräftar varje beställning innan den gäller.',
     nav_menu:'Meny',nav_how:'Så funkar det',nav_faq:'Frågor',cta_order:'Beställ',
-    hero_kicker:'Buffécatering i Södertörn · från 10 personer',hero_l1:'Pizza, pasta och sallad på',hero_l2:'stora fat',
+    hero_kicker:'Buffécatering i Södertörn · från 10 personer',hero_l1:'Pizza, pasta och sallad till',hero_l2:'hela bordet',
     hero_sub:'Buffé till kontor, skolor, föreningar och fester. Välj buffé och antal personer, lägg till det lilla extra och se priset direkt.',
     hero_cta:'Bygg din beställning',hero_cta2:'Så funkar det',
     fact_from:'Från {p}/person exkl. moms',fact_min:'Minst 10 personer',fact_area:'Leverans i Södertörn',fact_fee:'Leverans {fee}',fact_lead:'Beställ 2 dagar innan',
@@ -739,10 +740,10 @@ var T = {
     s3_h:'Vi levererar',s3_p:'Buffén kommer i stora fat på utsatt tid, med servetter och bestick.',
     faq_kicker:'Innan du beställer',faq_h:'Vanliga frågor',
     upd_kicker:'Vad som är nytt',upd_h:'Senaste uppdateringar',
-    foot:'Stora Fatet är ett arbetsnamn. Version 0.3.',
+    foot:'Hela Bordet · Version 0.4.',
     fb_q:'Vad tycker du om sidan?',fb_btn:'Tyck till',fb_close:'Stäng',
     to_en:'Switch to English',theme_dark:'Byt till mörkt läge',theme_light:'Byt till ljust läge',
-    sum_title:'Beställning, Stora Fatet Catering',sum_vat:'exkl. moms',
+    sum_title:'Beställning, Hela Bordet Catering',sum_vat:'exkl. moms',
     art_label:'Pizza, pasta och sallad sedda ovanifrån',
     install:'Installera som app',ios_hint:'På iPhone: tryck på Dela och välj ”Lägg till på hemskärmen”.',
     nav_feedback:"Feedback",
@@ -840,20 +841,20 @@ var T = {
     nudge2:"Har du en idé? Skriv den här 💡",
     nudge3:"Vad tycker du om sidan? Tryck här",
     nudge4:"Något som krånglar? Berätta för oss",
-    in_nudge:"Installera Stora Fatet som app 📲",
+    in_nudge:"Installera Hela Bordet som app 📲",
     in_link:"Installera som app",
     in_kicker:"Egen ikon på hemskärmen",
-    in_title:"Installera Stora Fatet",
+    in_title:"Installera Hela Bordet",
     in_why:"Som app får sidan en egen ikon på hemskärmen, öppnas i helskärm och kan skicka notiser, precis som en vanlig app.",
     in_one_tap:"Installera",
-    in_done:"Stora Fatet är installerad. Öppna den från ikonen på hemskärmen.",
+    in_done:"Hela Bordet är installerad. Öppna den från ikonen på hemskärmen.",
     in_iphone:"Så gör du på iPhone",
     in_ios1:"Tryck på Dela-knappen",
     in_ios1_hint:"Längst ner i Safari (eller uppe till höger på iPad).",
     in_ios2:"Välj ”Lägg till på hemskärmen”",
     in_ios2_hint:"Scrolla ner i listan om du inte ser det direkt.",
     in_ios3:"Tryck på ”Lägg till”",
-    in_open:"Öppna Stora Fatet från den nya ikonen",
+    in_open:"Öppna Hela Bordet från den nya ikonen",
     in_android:"Så gör du på Android",
     in_and1:"Tryck på ⋮ uppe till höger",
     in_and2:"Välj ”Installera app” eller ”Lägg till på startskärmen”",
@@ -869,7 +870,7 @@ var T = {
     test_banner:'Test version. Orders are not sent for real yet.',
     test_banner_site:'Test version: prices are examples. We confirm every order before it applies.',
     nav_menu:'Menu',nav_how:'How it works',nav_faq:'FAQ',cta_order:'Order',
-    hero_kicker:'Buffet catering in Södertörn · from 10 people',hero_l1:'Pizza, pasta and salad on',hero_l2:'big platters',
+    hero_kicker:'Buffet catering in Södertörn · from 10 people',hero_l1:'Pizza, pasta and salad for',hero_l2:'the whole table',
     hero_sub:'Buffets for offices, schools, clubs and parties. Pick a buffet and the number of people, add the extras and see the price right away.',
     hero_cta:'Build your order',hero_cta2:'How it works',
     fact_from:'From {p}/person excl. VAT',fact_min:'Minimum 10 people',fact_area:'Delivery in Södertörn',fact_fee:'Delivery {fee}',fact_lead:'Order 2 days ahead',
@@ -899,10 +900,10 @@ var T = {
     s3_h:'We deliver',s3_p:'The buffet arrives in large dishes on time, with napkins and cutlery.',
     faq_kicker:'Before you order',faq_h:'Common questions',
     upd_kicker:"What's new",upd_h:'Latest updates',
-    foot:'Stora Fatet is a working name. Version 0.3.',
+    foot:'Hela Bordet · Version 0.4.',
     fb_q:'What do you think of the site?',fb_btn:'Feedback',fb_close:'Close',
     to_en:'Byt till svenska',theme_dark:'Switch to dark mode',theme_light:'Switch to light mode',
-    sum_title:'Order, Stora Fatet Catering',sum_vat:'excl. VAT',
+    sum_title:'Order, Hela Bordet Catering',sum_vat:'excl. VAT',
     art_label:'Pizza, pasta and salad seen from above',
     install:'Install as app',ios_hint:'On iPhone: tap Share and choose “Add to Home Screen”.',
     nav_feedback:"Feedback",
@@ -1000,20 +1001,20 @@ var T = {
     nudge2:"Got an idea? Write it here 💡",
     nudge3:"What do you think of the site? Tap here",
     nudge4:"Something not working? Tell us",
-    in_nudge:"Install Stora Fatet as an app 📲",
+    in_nudge:"Install Hela Bordet as an app 📲",
     in_link:"Install as app",
     in_kicker:"Your own icon on the home screen",
-    in_title:"Install Stora Fatet",
+    in_title:"Install Hela Bordet",
     in_why:"As an app the site gets its own icon on the home screen, opens full screen and can send notifications, just like a regular app.",
     in_one_tap:"Install",
-    in_done:"Stora Fatet is installed. Open it from the icon on your home screen.",
+    in_done:"Hela Bordet is installed. Open it from the icon on your home screen.",
     in_iphone:"On iPhone",
     in_ios1:"Tap the Share button",
     in_ios1_hint:"At the bottom of Safari (top right on iPad).",
     in_ios2:"Choose “Add to Home Screen”",
     in_ios2_hint:"Scroll down the list if you do not see it right away.",
     in_ios3:"Tap “Add”",
-    in_open:"Open Stora Fatet from the new icon",
+    in_open:"Open Hela Bordet from the new icon",
     in_android:"On Android",
     in_and1:"Tap ⋮ at the top right",
     in_and2:"Choose “Install app” or “Add to Home screen”",
@@ -1784,7 +1785,7 @@ route();
    Installing and the install strip live in the page itself (they need its texts). */
 (function () {
   'use strict';
-  var BUILD = '17a2a8ba7';
+  var BUILD = '17a2f331a';
   var CHECK_EVERY_MS = 5 * 60 * 1000;
   var opened = Date.now();
   function $(id) { return document.getElementById(id); }
